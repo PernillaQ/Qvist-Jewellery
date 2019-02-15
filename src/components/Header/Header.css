@@ -1,0 +1,197 @@
+.App-header-wrapper{
+  display: flex;
+  flex-direction: row;
+}
+
+.App-header{
+  display: flex;
+  flex-direction: column;
+  background:linear-gradient(to bottom right, #121416, #000000);
+}
+
+.App-h1-wrapper{
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.75rem;
+  line-height: 1rem;
+  justify-content: center;
+  display: flex;
+  bottom: 1.3rem;
+  right: 3.6rem;
+  flex-direction: column;
+  align-self: flex-end;
+  padding: 0;
+  height: 20rem;
+  width: 35rem;
+}
+
+h1{
+  color:#f4f4f4;
+  letter-spacing: 0.2rem;
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin: 1rem;
+}
+
+.vividDream, .hiddenDesires{
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.distantMemories{
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.vividDream h1:nth-child(1){
+  margin-left: 2rem;
+  position: relative;
+  opacity: 0.85;
+  animation: fadeIn1 3s ease-in-out both;
+}
+
+.vividDream h1:nth-child(2){
+  margin-left: 8rem;
+  position: relative;
+  opacity: 0.85;
+  animation: fadeIn1 3s ease-in-out both;
+  animation-delay: 1s;
+}
+
+h1:nth-child(1) h1:nth-child(2){
+  color: #f3e5c9;
+}
+
+.hiddenDesires h1:nth-child(1){
+  position: absolute;
+  z-index: 2;
+  opacity: 0.65;
+  animation: fadeIn2 3s ease-in-out both;
+  animation-delay: 1.5s;
+}
+
+.hiddenDesires h1:nth-child(2){
+  position: absolute;
+  z-index: 2;
+  margin-left: 14rem;
+  opacity: 0.65;
+  animation: fadeIn2 3s ease-in-out both;
+  animation-delay: 2s;
+}
+
+.and h1{
+  position: absolute;
+      font-size: 10rem;
+      align-self: center;
+      margin-top: 3.5rem;
+      margin-left: 2rem;
+      opacity: 0.15;
+      color: #f3e5c9;
+      z-index: 1;
+      animation: fadeIn3 3s ease-in-out both;
+      animation-delay: 2.5s;
+}
+
+.distantMemories h1:nth-child(1){
+  margin-right: 8rem;
+  margin-bottom: 2rem;
+  position: relative;
+  opacity: 0.5;
+  animation: fadeIn4 3s ease-in-out both;
+  animation-delay: 3s;
+}
+
+.distantMemories h1:nth-child(2){
+  margin-left: 1rem;
+  position: relative;
+  letter-spacing: 1.4rem;
+  opacity: 0.3;
+  animation: fadeIn 3s ease-in-out both;
+  animation-delay: 4s;
+}
+
+@keyframes fadeIn1{
+  0% {opacity:0}
+  50%{opacity:1}
+  100%{opacity:0.85}
+}
+
+@keyframes fadeIn2{
+  0% {opacity:0}
+  50%{opacity:0.75}
+  100%{opacity:0.65}
+}
+
+@keyframes fadeIn3{
+  0% {opacity:0}
+  50%{opacity:0.25}
+  100%{opacity:0.15}
+}
+
+@keyframes fadeIn4{
+  0% {opacity:0}
+  50%{opacity:0.55}
+  100%{opacity:0.45}
+}
+
+@keyframes fadeIn{
+  0% {opacity:0}
+  50%{opacity:0.4}
+  100%{opacity:0.3}
+}
+
+@keyframes fadeInLogo{
+  0% {opacity:0}
+  50%{opacity:0.6}
+  100%{opacity:0.5}
+}
+
+.App-header img { /* logo*/
+  width: 11%;
+  height: auto;
+  position: absolute;
+  top: 0.75rem;
+  left: 3.5rem;
+  /*opacity: 0.5;*/
+  animation: fadeInLogo 3s ease-in-out both;
+  animation-delay: 4.25s;
+}
+
+canvas{
+    max-width: 100%;
+  background: transparent;
+/*  background: linear-gradient(to bottom right, #000000,#121416,#1a2023);*/
+  position: relative;
+  top:0;
+}
+
+.App-header svg{
+  width: 75%;
+  right: 7rem;
+  margin-top: 3.2rem;
+  position: absolute;
+}
+
+.App-header p {
+  position: absolute;
+  margin-top: 11rem;
+}
+
+.App-header .App-headerLine{
+  stroke-dasharray: 2400;
+  stroke-dashoffset: 2400;
+  animation:dash 5s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

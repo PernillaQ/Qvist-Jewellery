@@ -1,0 +1,384 @@
+/* Ska det vara både hexagon och wrapper??? */
+
+button{
+  display: inline-block;
+  position: relative;
+  background: none;
+  border: none;
+  color:gray;
+  /*color: #f3e5c9;*/
+  /*font-family: 'Open Sans', sans-serif;*/
+  margin-top: 38rem;
+  font-size: 1rem;
+  font-weight: 100;
+  cursor: pointer;
+  background: rgba(0,0,0,0.15);
+  outline-color: gray;
+}
+span{
+  display: block;
+  padding: 0.4rem 1.27rem;
+  outline-color: gray;
+}
+button::before, button::after{
+  content:"";
+  width: 0;
+  height: 0.7px;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #464646;
+}
+
+span::before, span::after{
+  content:"";
+  width:0.7px;
+  height:0;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #464646;
+}
+button:hover::before, button:hover::after{
+  width: 100%;
+}
+button:hover span::before, button:hover span::after{
+  height: 100%;
+}
+/*----- button 1 -----*/
+.btn-1::before{
+  left: 50%;
+  top: 0;
+  transition-duration: 0.4s;
+}
+.btn-1::after{
+  left: 50%;
+  bottom: 0;
+  transition-duration: 0.4s;
+}
+.btn-1 span::before{
+  left: 0;
+  top: 50%;
+  transition-duration: 0.4s;
+}
+.btn-1 span::after{
+  right: 0;
+  top: 50%;
+  transition-duration: 0.4s;
+}
+
+.btn-1:hover::before, .btn-1:hover::after{
+  left: 0;
+}
+.btn-1:hover span::before, .btn-1:hover span::after{
+  top: 0;
+}
+
+.Collections-wrapper
+{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100vw;
+  max-width: 100%;
+  height: auto;
+/*  padding-top: 2.7rem;*/
+  margin-top: -3rem;
+  color:#121416;
+  background-color: #000000;
+}
+
+.Collections-hexagon{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  max-width: 100%;
+  height: 65rem;
+/*  margin-top: -2.75rem;*/
+  background: radial-gradient(#1a2023, #121416,#000000, #090909);
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.Collections-wrapper h2{
+align-self: center;
+text-shadow: inset 2px 2px 3px rgba(0,0,0,0.5);
+ -webkit-background-clip: text;
+    -moz-background-clip: text;
+         background-clip: text;
+transform: rotate(90deg) scaleX(-1) scaleY(-1);
+font-size: 4.5rem;
+letter-spacing: 0.3rem;
+opacity: 0.8;
+}
+
+.Collections-wrapper h3{
+    font-size: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+  /*
+  font-size: 2rem;
+  font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;*/
+  margin-top: 3.5rem;
+  color:#f3e5c9;
+  position: absolute;
+}
+
+/*.Collections-wrapper button {
+    margin-top: 32rem;
+    background: -webkit-gradient(linear,left top, right bottom,from(#101416),to(#000000));
+    background: -webkit-linear-gradient(top left,#101416,#000000);
+    background: -o-linear-gradient(top left,#101416,#000000);
+    background: linear-gradient(to bottom right,#101416,#000000);
+    color: #f4f4f4;
+    font-weight: normal;
+    padding: 0.5em 2em;
+    border-top: 1px double #464646;
+    border-radius:0.75em;
+    cursor: pointer;
+    -webkit-box-shadow:
+     0px 0px 1px 3px rgba(0,0,0,0.7),
+     inset 5px 17px 32px -87px rgba(43,42,43,1);
+    -moz-box-shadow:
+    0px 0px 1px 3px rgba(0,0,0,0.7),
+     inset 5px 17px 32px -87px rgba(43,42,43,1);
+    box-shadow:
+    0px 0px 1px 3px rgba(0,0,0,0.7),
+    inset 5px 17px 32px -87px rgba(43,42,43,1);
+}
+
+.Collections-wrapper button:hover{
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}*/
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e5c100, 0 0 40px #e5c100, 0 0 50px #e5c100, 0 0 60px #e5c100, 0 0 70px #e5c100;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ffe766, 0 0 40px #ffe766, 0 0 50px #ffe766, 0 0 60px #ffe766, 0 0 70px #ffe766, 0 0 80px #ffe766;
+  }
+}
+
+.TheDesertJewellery-wrapper, .TheCityJewellery-wrapper {
+  width: 100vw;
+  max-width: 100%;
+  height: auto;
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 6rem;
+  background: radial-gradient(#ffffff, #f4f4f4,#ededed, #e0e0e0);
+/*  -webkit-clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
+clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);*/
+}
+
+.TheCityJewellery-wrapper h3, .TheDesertJewellery-wrapper h3{
+align-self: flex-start;
+width: 100vw;
+max-width: 100%;
+ background-color: #e4e4e4;
+ color: transparent;
+  text-shadow: 2px 2px 3px rgba(255,255,255,0.6);
+ -webkit-background-clip: text;
+    -moz-background-clip: text;
+         background-clip: text;
+font-size: 4.5rem;
+font-family: 'Open Sans' ,sans-serif;
+letter-spacing: 0.3rem;
+font-weight: 700;
+margin-top: 6rem;
+opacity: 0.9;
+width: 25rem;
+/*text-align: left;
+margin-left: 6rem;*/
+}
+.TheCityJewellery-wrapper a, .TheDesertJewellery-wrapper a {
+  align-self: flex-end;
+  margin-top: 2rem;
+  margin-right: 5rem;
+}
+.TheCityJewellery-wrapper button, .TheDesertJewellery-wrapper  button{
+  margin-top: 2rem;
+  border:none;
+  font-size: 2rem;
+  background-color: transparent;
+  color:#121416;
+}
+
+.TheCity-jewellery , .TheDesert-jewellery{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+  width: 50%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+.allCityJewels-wrapper{
+    display: flex;
+    flex-direction: row;
+    margin-top: 12rem;
+}
+.TheCityJewellery-wrapper h4 , .TheDesertJewellery-wrapper h4{
+  margin-top: 4rem;
+  position: absolute;
+  font-size: 2rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+}
+
+ .TheCityJewellery-wrapper p , .TheDesertJewellery-wrapper p{
+  font-weight: lighter;
+  letter-spacing: 0.04rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  color: gray;
+  margin-top: 11rem;
+  width: 22rem;
+  line-height: 2rem;
+  position: absolute;
+  text-align: justify;
+}
+
+.TheCityJewellery-wrapper img , .TheDesertJewellery-wrapper img{
+  width: 45%;
+  height: auto;
+  margin-bottom: 0;
+  position: relative;
+}
+.TheCityJewelley-wrapper h4, .TheDesertJewellery-wrapper h4 {
+  margin-top: 0;
+
+}
+
+.Collections-theCity-wrapper, .Collections-theDesert-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8rem;
+  width: 30vw;
+  height: 40rem;
+  background-color: transparent;
+}
+
+.Collections-theCity-wrapper img , .Collections-theDesert-wrapper img{
+  width: 20%;
+  height: auto;
+  position: absolute;
+}
+
+/*.Collections-bangles-wrapper img {
+  width: 30%;
+  height: auto;
+}*/
+
+.Collections-theCity-wrapper{
+  margin-left: 8rem;
+  margin-bottom: 8rem;
+}
+
+.Collections-theDesert-wrapper{
+  margin-right: 8rem;
+  margin-bottom: 8rem;
+}
+
+.Collections-theCity-wrapper p, .Collections-theDesert-wrapper p {
+  font-weight: lighter;
+  letter-spacing: 0.04rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  color: gray;
+  margin-top: 11rem;
+  width: 22rem;
+  line-height: 2rem;
+  position: absolute;
+  text-align: justify;
+}
+
+.Collections-hexagon svg:nth-child(2){
+  align-self: flex-start;
+  position: absolute;
+  margin-left: 1rem;
+  margin-top: 2rem;
+  height: 17rem;
+  width: 2rem;
+}
+
+.Collections-hexagon svg:nth-child(3){
+  margin: 0.5rem;
+  margin-top: 12rem;
+  height: 12rem;
+  width: 2rem;
+}
+.jewelleryInfo-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  max-width: 100%;
+  height: 60rem;
+}
+
+.jewelleryInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+  height: auto;
+  background-color: #f4f4f4;
+}
+.jewelleryInfo-wrapper h3 {
+  display: none;
+}
+.jewelleryInfo-wrapper h4 {
+  font-size: 2rem;
+  font-family: 'Opeen Sans', sans-serif;
+  font-weight: 300;
+  position: absolute;
+  margin-top: -1rem;
+  color: #1a2023;
+}
+
+.jewelleryInfo p {
+    width: 35%;
+    font-weight: lighter;
+    letter-spacing: 0.04rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    color: gray;
+    margin-top: 10rem;
+    position: absolute;
+    line-height: 2rem;
+    text-align: justify;
+    padding-bottom: 4rem;
+}
+.jewelleryInfo img {
+  width: 30%;
+  height: auto;
+  margin-bottom: 10rem;
+}
+.jewelleryInfo a{
+  height: 3rem;
+position: absolute;
+margin-top: -18rem;
+border:none;
+padding-top: 0;
+font-size: 2rem;
+background-color: #f4f4f4;
+color:#121416;
+}
