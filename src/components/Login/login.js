@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import './Login.css'
+//import api from './../../Utils/firebase.js';
 
 class Login extends Component{
+  /*state = {
+    message:''
+  }*/
 
 // when user sign in
    componentDidMount(){
@@ -20,47 +24,22 @@ class Login extends Component{
      })
    }
 
-   onLogin = () => {
-    const { email, password } = this.props
-    firebase.auth()
-    .signInWithEmailAndPassword(email, password)
-    .then(console.log("signed in:", email))
-    .catch(error => console.log(error));
-   }
-   /*
-   e.preventDefault();
-const { email, password } = this.state;
-if (validateLogin(email, password)) {
-  api.signIn(email, password)
-    .catch(({message}) => {
-      this.setState({
-        message: { type: 'ERROR', body: message },
-        email: '',
-        password: ''
-      });
-    });
-} else {
-  this.setState({
-    message: { type: 'ERROR', body: 'Wrong password or email' },
-    email: '',
-    password: ''
-  });
-}*/
-
    onLogout = () => {
+     const { setMessage } = this.props
     firebase.auth()
     .signOut()
-    .then(console.log("signed out"))
+    .then(setMessage("signed out"))
    }
 
    onSubmit = e => {
-     const { email, password } = this.props
+     const { email, password, setMessage } = this.props
+     firebase.auth()
+     firebase.signIn(email, password)
+     .then(setMessage("signed in:" + email))
+     .catch(error => setMessage(error));
     e.preventDefault();
-    firebase.auth()
-    .createUserWithEmailAndPassword(email, password)
-    .then(console.log("created user"))
-    .catch(error => console.log(error))
    }
+
    // listner function.value save in event -store in state. name email, name password
 onChange = e => {
   const {setEmail, setPassword} = this.props
@@ -72,23 +51,23 @@ onChange = e => {
   }
 }
     render(){
-      const { user, email, password } = this.props
+
+      const { user, email, password, message} = this.props
+            console.log(message)
         return(
               <div className="login" id="login">
-                {user &&
-                  <h2>Welcome</h2>}
                 {!user &&
-                  <h2>Log in</h2>}
+                  <h3>Log in</h3>}
                 <form onSubmit={this.onSubmit}>
                   {!user &&
                     <input type="text" name="email" placeholder="Email" value={email} onChange={this.onChange}/>}
                   {!user &&
                     <input type="password" name="password" placeholder="Password" value={password} onChange={this.onChange}/>}
                   {!user &&
-                    <input type="submit" value="Register"/>}
+                    <input type="submit" value="Log in"/>}
                 </form>
-                  {!user &&
-                    <button onClick={this.onLogin}>log in</button>}
+                {/*  {!user &&
+                    <button onClick={this.onLogin}>log in</button>}*/}
                   {user &&
                     <button onClick={this.onLogout}>log out</button>}
               </div>

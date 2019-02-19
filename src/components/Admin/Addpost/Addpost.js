@@ -4,26 +4,15 @@ import firebase from './../../../Utils/firebase.js';
 
 class AddPost extends Component{
 
- state ={
- title: '',
- content: '',
- allCollections:[],
- newCollection:'',
- addCollection:false,
- collection:'',
- filename: '',
- selectedImage: '',
- url: ''
-}
-
 componentWillMount() {
+  const { setCollectionOptions } = this.props //setAllCollections
     firebase.database().ref(`collections`).on('value', (snapshot) => {
-    const allCollections = this.toArray(snapshot.val());
-    this.setState({allCollections: allCollections}, ()=>{console.log(this.state.allCollections)})
+    const allTheCollections = this.toArray(snapshot.val());
+    setCollectionOptions(allTheCollections)
   })
 }
 
-toArray(firebaseObject) {
+toArray = (firebaseObject) => {
  let array = []
  for(let item in firebaseObject){
  array.push( item )
@@ -40,116 +29,126 @@ addAll = (e) => {
 
 addPost = (e) => {
 e.preventDefault();
-/*const{ title, content, fileName, url , setTitle, setContent, setUrl} = this.props
+const {title, content, selectedImage, url, setTitle, setContent, setFile, setUrl, setSelectedImage, newCollection, collection} = this.props
 const objectToPush = {
-  title: title,
-  content: content,
-  filename: fileName,
-  url: url
-}*/
- const objectToPush = {
- title: this.state.title,
- content: this.state.content,
- filename:this.state.selectedImage.name,
- url:this.state.url
- }
+  title:title,
+  content:content,
+  filename:selectedImage,
+  url:url
+}
 
 let chosenCollection = ''
 
-if ( this.state.newCollection !== '' ){
-  chosenCollection = this.state.newCollection
+if ( newCollection !== '' ){
+  chosenCollection = newCollection
 }
 else {
-  chosenCollection = this.state.collection
+  chosenCollection = collection
 }
  firebase.database().ref(`collections/${chosenCollection}`).push(objectToPush)
- .then(()=> { console.log('Pushed!' + this.state.title) }) // title
- .then(()=> this.setState({title:'', content:'', url:'', filename:'', selectedImage:''}))
+ .then(()=> { console.log('Pushed!' + title) }) // title
+ .then(()=>(setTitle(''),setContent(''),setUrl(''),setFile(''),setSelectedImage('')))
  .catch(error => { console.log('You messed up', error) })
  }
 
  fileSelectedHandler = (e) => {
-   //const {setSelectedImage, setFileName} = this.props
- if(e.target.files[0]) { // selectedImage(e.target.files[0]), fileName(e.target.files[0])
-   this.setState({selectedImage: e.target.files[0], filename:e.target.files[0]})
-   ;}
+  const { setSelectedImage, setFile } = this.props
+  setFile(e.target.files[0])
+  setSelectedImage(e.target.files[0].name)
 }
 
- fileUploadHandler = () => {
-   // const {selectedImage, url} = this.props  selectedImage.name   selectedImage
- let uploadTask = firebase.storage().ref(`images/${this.state.selectedImage.name}`).put(this.state.selectedImage);
- uploadTask.on('state_changed',(snapshot) => {console.log("a file was uploaded")}
+fileUploadHandler = () => { //.name
+  const { selectedImage,file , setUrl } = this.props
+  let uploadTask = firebase.storage().ref(`images/${selectedImage}`).put(file)
+  uploadTask.on('state_changed',(snapshot) => {console.log("a file was uploaded")}
  	, (error) => { console.log('file not uploadedd' + error)},
-() => {
- firebase.storage().ref('images').child(this.state.selectedImage.name).getDownloadURL()
- .then(url => {
-  this.setState({url}) })
- console.log(this.state.url);// url(url)
-})
+  () => {
+  firebase.storage().ref('images').child(selectedImage).getDownloadURL()
+  .then(url => { setUrl(url) })
+  })
 }
 
 createOption = () => {
-  let allCollections = this.state.allCollections;
+  const {collectionOptions} = this.props // allCollections
+  let allCollections = collectionOptions
   return allCollections.map(collection =>
   <option key={collection} value={collection}>{collection}</option> )
 }
-handleInputChange= (e)=> {
-    const target = e.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
 
-    if (target.checked === true)
+handleInputChange= (e)=> {
+  const {setAddCollection} = this.props
+
+    if (e.target.checked === true)
     {
-        this.setState({addCollection:true})
+        setAddCollection(true)
     }
-    else {
-      this.setState({addCollection:false})
+    else{
+        setAddCollection(false)
     }
   }
 
-onChange = e => this.setState({[e.target.name]: e.target.value});
+onChange = e => {
+  e.preventDefault()
+  const {setTitle, setContent, setNewCollection} = this.props
+  if (e.target.name === 'title'){
+    setTitle(e.target.value)
+  }
+  if (e.target.name === 'content'){
+    setContent(e.target.value)
+  }
+  if (e.target.name === 'newCollection'){
+    setNewCollection(e.target.value)
+  }
+  //this.setState({[e.target.name]: e.target.value});
+}
 
-handleChange = e => this.setState({collection: e.target.value});
+handleChange = e => {
+  e.preventDefault()
+  const {setCollection} = this.props
+  setCollection(e.target.value)
+}
 
-render(){
-  const {addCollection} = this.state
-  console.log(this.state.allCollections)
+render() {
+   const {title, content, url, file, addCollection, newCollection, collection} = this.props
+   console.log(file)
+//  const {addCollection} = this.state
 	return(
 		  <div className ="post-wrapper">
         <h3>Add a post</h3>
         <p>Wait for image to show under uploadbutton, before submitting post</p>
-		    <input type="file" onChange={this.fileSelectedHandler} />
+        <label htmlFor="inputtypefile">Choose an image</label>
+		    <input type="file" onChange={this.fileSelectedHandler} id='inputtypefile'/>
         <button onClick={this.fileUploadHandler}>Upload</button>
-        {this.state.url !== '' ?
-          <img src={this.state.url}alt="a Piece of jewellery"/>
+        {url !== '' ?
+          <img src={url}alt="a Piece of jewellery"/>
         :''}
-	      <form onSubmit={this.addAll}> {/*addAll*/}
+	      <form onSubmit={this.addAll}>
           <input type="text"
           name="title"
           placeholder="Add a title"
-          value={this.state.title}
+          value={title}
           onChange={this.onChange}/>
           {!addCollection && <label>
               Choose subject:
-                <select value={this.state.collection} onChange={this.handleChange}>
+                <select value={collection} onChange={this.handleChange}>
                   {this.createOption()}
                 </select>
               </label>}
           <label>
             Add a new collection?
-            <input name="addCollection" type="checkbox" checked={this.state.addCollection} onChange={this.handleInputChange} />
+            <input name="addCollection" type="checkbox" checked={addCollection} onChange={this.handleInputChange} />
           </label>
           {addCollection &&
           <input type="text"
           name="newCollection"
           placeholder="Add a collection"
-          value={this.state.newCollection}
+          value={newCollection}
           onChange={this.onChange}/>}
           <textarea
           id="textarea3"
           type="text"
-          placeholder = "Write something.."
-          value={this.state.content}
+          placeholder = "Add content"
+          value={content}
           onChange={this.onChange}
           name="content"/>
           <input type="submit" value="Add Post" />

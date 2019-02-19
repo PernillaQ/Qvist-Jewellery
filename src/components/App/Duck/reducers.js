@@ -3,7 +3,7 @@ import { Types } from './actions'
 import { INITIAL_STATE } from './initialState'
 
 // Reducer sets state based on type, with or without payload.
-const _toggleTheCity = (state = INITIAL_STATE, action)=> {
+const _toggleTheCity = (state = INITIAL_STATE, action) => {
   return {
     ...state,
     theCity: action.value
@@ -27,14 +27,14 @@ const _toggleShowAllJewels = (state = INITIAL_STATE, action) => {
 const _setDetailIndex = (state = INITIAL_STATE, action) => {
   return {
     ...state,
-    detailIndex:action.value
+    detailIndex: action.value
   }
 }
 
 const _toggleAdmin = (state = INITIAL_STATE, action) => {
   return {
     ...state,
-    admin:action.value
+    admin: action.value
   }
 }
 
@@ -58,6 +58,40 @@ const _setPassword = (state = INITIAL_STATE, action) => {
   }
 }
 
+const _setMessage = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    message: action.value
+  }
+}
+
+const _setCollectionOptions = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    collectionOptions: action.value
+  }
+}
+
+const _setNewCollection = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    newCollection: action.value
+  }
+}
+
+const _setAddCollecion = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    addCollection: action.value
+  }
+}
+const _setCollection = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    collection: action.value
+  }
+}
+
 const _setTitle = (state = INITIAL_STATE, action) => {
   return {
     ...state,
@@ -72,10 +106,10 @@ const _setContent = (state = INITIAL_STATE, action) => {
   }
 }
 
-const _setFileName = (state = INITIAL_STATE, action) => {
+const _setFile = (state = INITIAL_STATE, action) => {
   return {
     ...state,
-    fileName: action.value
+    file: action.value
   }
 }
 
@@ -92,6 +126,7 @@ const _setUrl = (state = INITIAL_STATE, action) => {
     url: action.value
   }
 }
+
 // redux sauce - map actiontype to reducer.
 const HANDLERS = {
   [Types.TOGGLE_THE_CITY]: _toggleTheCity,
@@ -102,9 +137,14 @@ const HANDLERS = {
   [Types.SET_USER]: _setUser,
   [Types.SET_EMAIL]: _setEmail,
   [Types.SET_PASSWORD]: _setPassword,
+  [Types.SET_MESSAGE]: _setMessage,
+  [Types.SET_COLLECTION_OPTIONS]: _setCollectionOptions,
+  [Types.SET_NEW_COLLECTION]: _setNewCollection,
+  [Types.SET_ADD_COLLECTION]: _setAddCollecion,
+  [Types.SET_COLLECTION]: _setCollection,
   [Types.SET_TITLE]: _setTitle,
   [Types.SET_CONTENT]: _setContent,
-  [Types.SET_FILE_NAME]: _setFileName,
+  [Types.SET_FILE]: _setFile,
   [Types.SET_SELECTED_IMAGE]: _setSelectedImage,
   [Types.SET_URL]: _setUrl
 }

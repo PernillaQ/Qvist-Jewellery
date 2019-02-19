@@ -8,7 +8,7 @@ import TheDesert from './TheDesert/theDesert.js'
 class Collections extends Component {
 
   show = (collection, index) => {
-    const { toggleTheCity, toggleTheDesert, toggleShowAllJewels, detailIndex } = this.props
+    const { toggleTheCity, toggleTheDesert, toggleShowAllJewels } = this.props
 
     if(collection === 'desert') {
       toggleTheCity(false)

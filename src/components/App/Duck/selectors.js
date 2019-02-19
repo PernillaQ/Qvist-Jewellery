@@ -33,6 +33,26 @@ const getPassword = (state) => {
   return getApp(state).password
 }
 
+const getMessage = (state) => {
+  return getApp(state).message
+}
+
+const getCollectionOptions = (state) => {
+  return getApp(state).collectionOptions
+}
+
+const getNewCollection = (state) => {
+  return getApp(state).newCollection
+}
+
+const getAddCollection = (state) => {
+  return getApp(state).addCollection
+}
+
+const getCollection = (state) => {
+  return getApp(state).collection
+}
+
 const getTitle = (state) => {
   return getApp(state).title
 }
@@ -41,8 +61,8 @@ const getContent = (state) => {
   return getApp(state).content
 }
 
-const getFileName = (state) => {
-  return getApp(state).fileName
+const getFile = (state) => {
+  return getApp(state).file
 }
 
 const getSelectedImage = (state) => {
@@ -62,9 +82,14 @@ export default {
   getUser,
   getEmail,
   getPassword,
+  getMessage,
+  getCollectionOptions,
+  getNewCollection,
+  getAddCollection,
+  getCollection,
   getTitle,
   getContent,
-  getFileName,
+  getFile,
   getSelectedImage,
   getUrl
 }

@@ -1,18 +1,46 @@
 .admin-wrapper {
   width: 100vw;
+  height: auto;
   max-width: 100%;
   display: flex;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   align-items: center;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
-  background: linear-gradient(to bottom ,#000000,#000000, #121416, #000000, #000000, #000000);
+  background: linear-gradient(to bottom, #121416, #000000, #000000, #000000);
 }
 
 label{
   text-align: center;
+  color:gray;
+}
+
+.admin a {
+  border: none;
+  background: none;
+  color: #f4f4f4;
+  align-self: flex-end;
+  margin: 2rem 4rem;
+}
+
+.admin-content h2 {
+  align-self: center;
+  text-shadow: inset 2px 2px 3px rgba(0,0,0,0.5);
+   -webkit-background-clip: text;
+      -moz-background-clip: text;
+           background-clip: text;
+  font-size: 4.5rem;
+  letter-spacing: 0.3rem;
+  opacity: 0.8;
+}
+
+.admin-content h3  {
+color:gray;
+font-weight: 300;
 }
 
 .admin{
@@ -21,14 +49,15 @@ label{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
+
 .post-wrapper {
-  height: 40rem;
+  height: 35rem;
   width: 100vw;
   max-width: 100%;
   color: gray;
 }
-
 
 .admin-addpost {
 width: 50rem;
@@ -42,32 +71,98 @@ height: auto;
   width: 10rem;
   height: auto;
 }
+
 .post-wrapper form {
-  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  height: 22rem;
   width: 15rem;
   margin-left: 17rem;
+  margin-bottom: 4em;
 }
 
 .post-wrapper input{
+  color:gray;
+  border:2px inset gray;
+  border-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  padding: 0.25rem;
+  background: linear-gradient(to bottom,#f4f4f4, #ffffff, #f4f4f4);
+  cursor: pointer;
   width: 100%;
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
+
+.post-wrapper textarea {
+  color:gray;
+  border:2px inset gray;
+  border-radius: 0.5rem;
+  background: linear-gradient(to bottom,#f4f4f4, #ffffff, #f4f4f4);
+  cursor: pointer;
+  width: 100%;
+  height: 5rem;
+  resize: none;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
 .admin-addpost input[type="file"]{
   width: 10rem;
   height: 2rem;
   margin-top: 1rem;
+  background: none;
+  border: none;
+}
+
+#inputtypefile {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.admin-addpost input[type='submit']{
+  padding:0.75rem 3rem;
+  border-radius: 0.5em;
+  font-family: "Pacifico";
+  color:#ead6c0;
+  border:1px solid black;
+  background: linear-gradient(to bottom,#000000, #1a2023, #000000);
+  cursor: pointer;
+}
+
+.admin-addpost select {
+  width: 100%;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 100;
+  padding: 0.15em 2em;
+  color:#ead6c0;
+  margin-top: 1em;
+  border-bottom-left-radius: 0.5em;
+  border-top-left-radius:0.5em;
+  border:1px solid black;
+  text-align-last: center;
+  background: linear-gradient(to bottom,#000000, #1a2023, #000000);
+    -webkit-box-shadow: inset 10px 10px 29px -6px rgba(0,0,0,0.75);
+     -moz-box-shadow: inset 10px 10px 29px -6px rgba(0,0,0,0.75);
+  box-shadow: inset 10px 10px 29px -6px rgba(0,0,0,0.75);
+}
+
+.admin-addpost option {
+  background-color:#1d2731;
+  cursor: pointer;
 }
 
 .post-wrapper button {
   width: 6rem;
   height: 2rem;
   margin-top: 1rem;
-}
-
-.post-wrapper textarea {
-  width: 100%;
-  height: 5rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  color:#ead6c0;
+  border:2px inset gray;
+  border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  border:1px solid black;
+  background: linear-gradient(to bottom,#000000, #1a2023, #000000);
+  cursor: pointer;
 }

@@ -12,15 +12,14 @@ class Admin extends Component {
   }
 
   render () {
-    const { user} = this.props
+    const { user } = this.props
     return (
 
       <div className='admin'>
         <div className='admin-content'>
+        <h2>Administration</h2>
           {!user &&
-          <div className='admin-login'>
-            <Login {...this.props} />
-          </div>}
+            <Login {...this.props} />}
           {user &&
           <div className='admin-addpost'>
             <AddPost {...this.props} />

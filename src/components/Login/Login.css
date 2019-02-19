@@ -1,3 +1,68 @@
 .login h2 {
   color:#f4f4f4;
 }
+
+.login-wrapper
+{
+  display: flex;
+  justify-content: center;
+}
+.login
+{
+   width: 50em;
+   height: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+   background:radial-gradient( #000000, #121618,#1a2023);
+   color: gray;
+       padding: 2em 0;
+   margin: 1em 0 0 0;
+}
+.login h3
+{
+  position: absolute;
+    top: 20rem;
+
+}
+.login form
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+.login input
+{
+    width: 100%;
+     background: linear-gradient(to bottom, #111417, #000000, #111417);
+    font-family: "Quicksand";
+    color:#ead6c0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 0.25em 0;
+    border:1px inset gray;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+.appLogin input[type=submit]
+{
+      background: linear-gradient(to bottom,#000000, #22282e, #000000);
+      font-family: "Pacifico";
+      border-radius: 0.5em;
+      border: 1px outset gray;
+      margin-top: 1em;
+      margin-bottom: 1em;
+}
+.appLogin input[type=submit]:hover
+{
+   background: linear-gradient(to bottom,#000000, #333c45, #000000);
+   color:#f4e9dd;
+}
+.appLogin button
+{
+   margin-top: 0;
+    margin-bottom: 4em;
+}

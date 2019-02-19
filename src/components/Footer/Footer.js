@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-//import { HashLink as Link } from 'react-router-hash-link';
 import './Footer.css'
 
 
@@ -12,6 +11,8 @@ class Footer extends Component {
   render () {
     return (
       <div className='footer-wrapper'>
+      <a href="http://instagram.com/qvistjewellery?ref=badge" className="fa fa-instagram" ></a>
+      <a href="http://facebook.com/qvistjewellery?ref=badge" className="fa fa-facebook" ></a>
       <button onClick={this.toAdmin}>Admin</button>
      </div>
 
