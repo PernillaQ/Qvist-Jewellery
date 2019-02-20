@@ -7,12 +7,7 @@ import TheCity from './TheCity/TheCity.js'
 import TheDesert from './TheDesert/theDesert.js'
 
 class Collections extends Component {
-  state = {
-    allCityPosts:[],
-    allDesertPosts:[]
-  }
-  
-  //get all posts
+
   componentWillMount(){
       firebase.database().ref(`collections`).on('value', (snapshot) => {
       this.toArray(snapshot.val());
@@ -20,6 +15,8 @@ class Collections extends Component {
   }
 
  toArray = (firebaseObject) => {
+   const {setAllCityPosts, setAllDesertPosts} = this.props
+
    let city = []
    let desert = []
 
@@ -39,9 +36,8 @@ class Collections extends Component {
        }
      }
    }
-   this.setState({allCityPosts:city, allDesertPosts:desert})
-   console.log(this.state.allCityPosts);
-   console.log(this.state.allDesertPosts);
+   setAllCityPosts(city)
+   setAllDesertPosts(desert)
  }
 
 
@@ -75,16 +71,14 @@ class Collections extends Component {
 
 }
   render () {
-  const { theCity, theDesert } = this.props
-  //console.log( this.state.allPosts[0])//array
-  //console.log(this.state.allPosts.postCollections)
-  let cityList = this.state.allCityPosts.map(post =>
+  const { theCity, theDesert, allCityPosts, allDesertPosts } = this.props
+  let cityList = allCityPosts.map(post =>
   <div className="post" key={post.key}>
     <img src={post.value.url}alt="a Piece of jewellery"/>
     <h3>{post.value.title}</h3>
     <p>{post.value.content}</p>
   </div>)
-  let desertList = this.state.allDesertPosts.map(postD =>
+  let desertList = allDesertPosts.map(postD =>
   <div className="post" key={postD.key}>
     <img src={postD.value.url}alt="a Piece of jewellery"/>
     <h3>{postD.value.title}</h3>

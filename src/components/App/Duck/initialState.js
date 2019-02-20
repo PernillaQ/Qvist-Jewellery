@@ -12,6 +12,8 @@ export const INITIAL_STATE = {
   newCollection: '',
   addCollection: false,
   collection: 'thecity',
+  allCityPosts: [],
+  allDesertPosts: [],
   title: '',
   content: '',
   file: '',

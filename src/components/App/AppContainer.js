@@ -17,6 +17,8 @@ const mapStateToProps = state => {
   const newCollection = appSelectors.getNewCollection(state)
   const addCollection = appSelectors.getAddCollection(state)
   const collection = appSelectors.getCollection(state)
+  const allCityPosts = appSelectors.getAllCityPosts(state)
+  const allDesertPosts = appSelectors.getAllDesertPosts(state)
   const title = appSelectors.getTitle(state)
   const content = appSelectors.getContent(state)
   const file = appSelectors.getFile(state)
@@ -37,6 +39,8 @@ const mapStateToProps = state => {
     newCollection,
     addCollection,
     collection,
+    allCityPosts,
+    allDesertPosts,
     title,
     content,
     file,
@@ -59,6 +63,8 @@ const mapDispatchToProps = dispatch => {
   const setNewCollection = (value) => dispatch(appCreators.setNewCollection(value))
   const setAddCollection = (value) => dispatch(appCreators.setAddCollection(value))
   const setCollection = (value) => dispatch(appCreators.setCollection(value))
+  const setAllCityPosts = (value) => dispatch(appCreators.setAllCityPosts(value))
+  const setAllDesertPosts = (value) => dispatch(appCreators.setAllDesertPosts(value))
   const setTitle = (value) => dispatch(appCreators.setTitle(value))
   const setContent = (value) => dispatch(appCreators.setContent(value))
   const setFile = (value) => dispatch(appCreators.setFile(value))
@@ -79,6 +85,8 @@ const mapDispatchToProps = dispatch => {
     setNewCollection,
     setAddCollection,
     setCollection,
+    setAllCityPosts,
+    setAllDesertPosts,
     setTitle,
     setContent,
     setFile,
