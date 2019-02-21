@@ -18,5 +18,6 @@ export const INITIAL_STATE = {
   content: '',
   file: '',
   selectedImage: null, // {}
-  url: ''
+  url: '',
+  introImage: false
 }

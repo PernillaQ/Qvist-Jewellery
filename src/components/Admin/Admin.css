@@ -13,6 +13,45 @@
   text-align: center;
   background: linear-gradient(to bottom, #121416, #000000, #000000, #000000);
 }
+.admin-preview .post {
+display: flex;
+flex-direction: row;
+justify-content: left;
+width: 60vw;
+height: auto;
+}
+
+.admin-preview .post img {
+  width: 7rem;
+  height: auto;
+}
+.admin-preview .post h3 {
+  margin: 0;
+  color: #f4f4f4;
+}
+.admin-posttext {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  width: 100%;
+  text-align: justify;
+}
+.admin-posttext button {
+  align-self: flex-end;
+  border-radius: 50%;
+  width: 2rem;
+  padding: 0.4rem 0.1rem 0.45rem 0.2rem;
+  align-items: center;
+  background-color: #1a2023;
+ color: #1a2023;
+ border: 1px outset gray;
+  text-decoration: none;
+/*  background: linear-gradient(to bottom, #121416, #000000, #000000, #000000);;/*Same as background*/
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+/*  border-bottom: solid 3px darkgray;*/
+  font-weight: bold;
+  text-shadow: -0.5px -0.5px rgba(255, 255, 255, 0.44), 0.5px 0.5px rgba(0, 0, 0, 0.38);
+}
 
 label{
   text-align: center;
@@ -75,7 +114,7 @@ height: auto;
 .post-wrapper form {
   display: flex;
   flex-direction: column;
-  height: 22rem;
+  height: auto;
   width: 15rem;
   margin-left: 17rem;
   margin-bottom: 4em;
@@ -122,7 +161,7 @@ height: auto;
 }
 
 .admin-addpost input[type='submit']{
-  padding:0.75rem 3rem;
+  padding:0.5rem 3rem;
   border-radius: 0.5em;
   font-family: "Pacifico";
   color:#ead6c0;
@@ -151,6 +190,12 @@ height: auto;
 .admin-addpost option {
   background-color:#1d2731;
   cursor: pointer;
+}
+
+.admin-homebtn {
+  background: none;
+  border: none;
+  color:#f4f4f4;
 }
 
 .post-wrapper button {

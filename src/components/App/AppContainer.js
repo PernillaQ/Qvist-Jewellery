@@ -24,6 +24,7 @@ const mapStateToProps = state => {
   const file = appSelectors.getFile(state)
   const selectedImage = appSelectors.getSelectedImage(state)
   const url = appSelectors.getUrl(state)
+  const introImage = appSelectors.getIntroImage(state)
 
   return {
     theCity,
@@ -45,7 +46,8 @@ const mapStateToProps = state => {
     content,
     file,
     selectedImage,
-    url
+    url,
+    introImage
   }
 }
 //  set
@@ -70,6 +72,7 @@ const mapDispatchToProps = dispatch => {
   const setFile = (value) => dispatch(appCreators.setFile(value))
   const setSelectedImage = (value) => dispatch(appCreators.setSelectedImage(value))
   const setUrl = (value) => dispatch(appCreators.setUrl(value))
+  const toggleIntroImage = (value) => dispatch(appCreators.toggleIntroImage(value))
 
   return {
     toggleTheCity,
@@ -91,7 +94,8 @@ const mapDispatchToProps = dispatch => {
     setContent,
     setFile,
     setSelectedImage,
-    setUrl
+    setUrl,
+    toggleIntroImage
   }
 }
 

@@ -81,6 +81,10 @@ const getUrl = (state) => {
   return getApp(state).url
 }
 
+const getIntroImage = (state) => {
+  return getApp(state).introImage
+}
+
 export default {
   getTheCity,
   getTheDesert,
@@ -101,5 +105,6 @@ export default {
   getContent,
   getFile,
   getSelectedImage,
-  getUrl
+  getUrl,
+  getIntroImage
 }

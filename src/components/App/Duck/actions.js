@@ -21,7 +21,8 @@ const { Types, Creators } = createActions({
   setContent: ['value'],
   setFile: ['value'],
   setSelectedImage: ['value'],
-  setUrl: ['value']
+  setUrl: ['value'],
+  toggleIntroImage: ['value']
 }, {})
 
 export { Types, Creators }

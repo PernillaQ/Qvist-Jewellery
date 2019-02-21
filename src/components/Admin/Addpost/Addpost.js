@@ -27,36 +27,6 @@ addAll = (e) => {
 	this.addPost(e);
 }
 
-addPost = (e) => {
-e.preventDefault();
-const {title, content, selectedImage, url, setTitle, setContent, setFile, setUrl, setSelectedImage, newCollection, collection} = this.props
-const objectToPush = {
-  title:title,
-  content:content,
-  filename:selectedImage,
-  url:url
-}
-
-let chosenCollection = ''
-
-if ( newCollection !== '' ){
-  chosenCollection = newCollection
-}
-else {
-  chosenCollection = collection
-}
- firebase.database().ref(`collections/${chosenCollection}`).push(objectToPush)
- .then(()=> { console.log('Pushed!' + title) }) // title
- .then(()=>(setTitle(''),setContent(''),setUrl(''),setFile(''),setSelectedImage('')))
- .catch(error => { console.log('You messed up', error) })
- }
-
- fileSelectedHandler = (e) => {
-  const { setSelectedImage, setFile } = this.props
-  setFile(e.target.files[0])
-  setSelectedImage(e.target.files[0].name)
-}
-
 fileUploadHandler = () => { //.name
   const { selectedImage,file , setUrl } = this.props
   let uploadTask = firebase.storage().ref(`images/${selectedImage}`).put(file)
@@ -68,6 +38,51 @@ fileUploadHandler = () => { //.name
   })
 }
 
+addPost = (e) => {
+e.preventDefault();
+const {title, content, selectedImage, url, introImage, newCollection, collection} = this.props
+const objectToPush = {
+  title:title,
+  content:content,
+  filename:selectedImage,
+  url:url,
+  introimage:introImage
+
+}
+
+let chosenCollection = ''
+
+if ( newCollection !== '' ){
+  chosenCollection = newCollection
+}
+else {
+  chosenCollection = collection
+}
+
+objectToPush.collection = chosenCollection
+
+ firebase.database().ref(`collections/${chosenCollection}`).push(objectToPush)
+ .then(()=> { console.log('Pushed!' + title) }) // title
+ .then(()=>(this.clear()))
+ .catch(error => { console.log('You messed up', error) })
+ }
+
+ clear = () => {
+   const {toggleIntroImage, setTitle, setContent, setFile, setUrl, setSelectedImage} = this.props
+   setTitle('')
+   setContent('')
+   setUrl('')
+   setFile('')
+   setSelectedImage('')
+   toggleIntroImage(false)
+ }
+
+ fileSelectedHandler = (e) => {
+  const { setSelectedImage, setFile } = this.props
+  setFile(e.target.files[0])
+  setSelectedImage(e.target.files[0].name)
+}
+
 createOption = () => {
   const {collectionOptions} = this.props // allCollections
   let allCollections = collectionOptions
@@ -76,14 +91,20 @@ createOption = () => {
 }
 
 handleInputChange= (e)=> {
-  const {setAddCollection} = this.props
+  const {setAddCollection, toggleIntroImage} = this.props
 
     if (e.target.checked === true)
     {
-        setAddCollection(true)
+        if(e.target.name === 'addCollection'){
+          setAddCollection(true)
+        }
+        if( e.target.name === 'addIntroImage'){
+          toggleIntroImage(true)
+        }
     }
     else{
         setAddCollection(false)
+        toggleIntroImage(false)
     }
   }
 
@@ -109,8 +130,7 @@ handleChange = e => {
 }
 
 render() {
-   const {title, content, url, file, addCollection, newCollection, collection} = this.props
-   console.log(file)
+   const {title, content, url,introImage, addCollection, newCollection, collection} = this.props
 //  const {addCollection} = this.state
 	return(
 		  <div className ="post-wrapper">
@@ -119,7 +139,7 @@ render() {
         <label htmlFor="inputtypefile">Choose an image</label>
 		    <input type="file" onChange={this.fileSelectedHandler} id='inputtypefile'/>
         <button onClick={this.fileUploadHandler}>Upload</button>
-        {url !== '' ?
+        {title !== '' ?
           <img src={url}alt="a Piece of jewellery"/>
         :''}
 	      <form onSubmit={this.addAll}>
@@ -137,6 +157,10 @@ render() {
           <label>
             Add a new collection?
             <input name="addCollection" type="checkbox" checked={addCollection} onChange={this.handleInputChange} />
+          </label>
+          <label>
+            Set as introimage
+            <input name="addIntroImage" type="checkbox" checked={introImage} onChange={this.handleInputChange} />
           </label>
           {addCollection &&
           <input type="text"

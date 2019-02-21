@@ -141,6 +141,13 @@ const _setUrl = (state = INITIAL_STATE, action) => {
   }
 }
 
+const _toggleIntroImage = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    introImage: action.value
+  }
+}
+
 // redux sauce - map actiontype to reducer.
 const HANDLERS = {
   [Types.TOGGLE_THE_CITY]: _toggleTheCity,
@@ -162,7 +169,8 @@ const HANDLERS = {
   [Types.SET_CONTENT]: _setContent,
   [Types.SET_FILE]: _setFile,
   [Types.SET_SELECTED_IMAGE]: _setSelectedImage,
-  [Types.SET_URL]: _setUrl
+  [Types.SET_URL]: _setUrl,
+  [Types.TOGGLE_INTRO_IMAGE]: _toggleIntroImage
 }
 
 export default createReducer(INITIAL_STATE, HANDLERS)
