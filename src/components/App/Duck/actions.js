@@ -2,10 +2,11 @@ import { createActions } from 'reduxsauce'
 
 // actiontype, payload (to be state).
 const { Types, Creators } = createActions({
+  toggleCollectionIntroView: ['value'],
   toggleTheCity: ['value'],
   toggleTheDesert: ['value'],
   toggleShowAllJewels: ['value'],
-  setDetailIndex: ['value'],
+  setDetailView: ['value'],
   setUser: ['value'],
   setEmail: ['value'],
   setPassword: ['value'],
@@ -17,6 +18,7 @@ const { Types, Creators } = createActions({
   setCollection: ['value'],
   setAllCityPosts: ['value'],
   setAllDesertPosts: ['value'],
+  setDetailId: ['value'],
   setTitle: ['value'],
   setContent: ['value'],
   setFile: ['value'],

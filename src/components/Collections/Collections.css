@@ -279,13 +279,7 @@ margin-left: 6rem;*/
   position: absolute;
 }
 
-/*.Collections-bangles-wrapper img {
-  width: 30%;
-  height: auto;
-}*/
-
 .Collections-theCity-wrapper{
-  margin-left: 8rem;
   margin-bottom: 8rem;
 }
 
@@ -339,22 +333,20 @@ margin-left: 6rem;*/
   width: 60%;
   padding-bottom: 4rem;
   padding-top: 2rem;
-  height: auto;
+  height: 35rem;
   background-color: #f4f4f4;
 }
-.jewelleryInfo-wrapper h3 {
-  display: none;
-}
+
 .jewelleryInfo-wrapper h4 {
   font-size: 2rem;
   font-family: 'Opeen Sans', sans-serif;
   font-weight: 300;
-  position: absolute;
-  margin-top: -1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   color: #1a2023;
 }
 
-.jewelleryInfo p {
+/*.jewelleryInfo p {
     width: 35%;
     font-weight: lighter;
     letter-spacing: 0.04rem;
@@ -366,11 +358,10 @@ margin-left: 6rem;*/
     line-height: 2rem;
     text-align: justify;
     padding-bottom: 4rem;
-}
+}*/
 .jewelleryInfo img {
   width: 30%;
   height: auto;
-  margin-bottom: 10rem;
 }
 .jewelleryInfo a{
   height: 3rem;
@@ -400,4 +391,37 @@ color:#121416;
 }
 .post p {
   color:#f4f4f4;
+}
+.Collections-detailview {
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:4rem 2rem;
+}
+.jewelleryInfo-wrapper  h3 {
+  display: none;
+}
+.jewelleryInfo a {
+  position: absolute;
+  align-self: flex-end;
+}
+.jewelleryInfo button {
+  background: transparent;
+  font-size: 1.5rem;
+  margin-top: 34rem;
+}
+.Collection-detailview h4 {
+  font-size: 2rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+  margin-top: 3.5rem;
+  color:#f3e5c9;
+}
+.jewelleryInfo  p {
+  text-align: justify;
+  color:gray;
 }

@@ -1,4 +1,5 @@
 export const INITIAL_STATE = {
+  collectionIntroView: true,
   theCity: false,
   theDesert: false,
   showAllJewels: true,
@@ -6,7 +7,7 @@ export const INITIAL_STATE = {
   email: '',
   password: '',
   message: '',
-  detailIndex: '',
+  detailView: '',
   admin: false,
   collectionOptions: [],
   newCollection: '',
@@ -14,6 +15,7 @@ export const INITIAL_STATE = {
   collection: 'thecity',
   allCityPosts: [],
   allDesertPosts: [],
+  detailId: '',
   title: '',
   content: '',
   file: '',

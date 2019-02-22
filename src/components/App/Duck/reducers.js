@@ -3,6 +3,12 @@ import { Types } from './actions'
 import { INITIAL_STATE } from './initialState'
 
 // Reducer sets state based on type, with or without payload.
+const _toggleCollectionIntroView = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    collectionIntroView: action.value
+  }
+}
 const _toggleTheCity = (state = INITIAL_STATE, action) => {
   return {
     ...state,
@@ -24,10 +30,10 @@ const _toggleShowAllJewels = (state = INITIAL_STATE, action) => {
   }
 }
 
-const _setDetailIndex = (state = INITIAL_STATE, action) => {
+const _setDetailView = (state = INITIAL_STATE, action) => {
   return {
     ...state,
-    detailIndex: action.value
+    detailView: action.value
   }
 }
 
@@ -106,6 +112,13 @@ const _setAllDesertPosts = (state = INITIAL_STATE, action) => {
   }
 }
 
+const _setDetailId = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    detailId: action.value
+  }
+}
+
 const _setTitle = (state = INITIAL_STATE, action) => {
   return {
     ...state,
@@ -150,10 +163,11 @@ const _toggleIntroImage = (state = INITIAL_STATE, action) => {
 
 // redux sauce - map actiontype to reducer.
 const HANDLERS = {
+  [Types.TOGGLE_COLLECTION_INTRO_VIEW]: _toggleCollectionIntroView,
   [Types.TOGGLE_THE_CITY]: _toggleTheCity,
   [Types.TOGGLE_THE_DESERT]: _toggleTheDesert,
   [Types.TOGGLE_SHOW_ALL_JEWELS]: _toggleShowAllJewels,
-  [Types.SET_DETAIL_INDEX]: _setDetailIndex,
+  [Types.SET_DETAIL_VIEW]: _setDetailView,
   [Types.TOGGLE_ADMIN]: _toggleAdmin,
   [Types.SET_USER]: _setUser,
   [Types.SET_EMAIL]: _setEmail,
@@ -165,6 +179,7 @@ const HANDLERS = {
   [Types.SET_COLLECTION]: _setCollection,
   [Types.SET_ALL_CITY_POSTS]: _setAllCityPosts,
   [Types.SET_ALL_DESERT_POSTS]: _setAllDesertPosts,
+  [Types.SET_DETAIL_ID]: _setDetailId,
   [Types.SET_TITLE]: _setTitle,
   [Types.SET_CONTENT]: _setContent,
   [Types.SET_FILE]: _setFile,

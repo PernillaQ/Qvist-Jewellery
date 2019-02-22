@@ -1,6 +1,9 @@
 // returns state.
 const getApp = state => state.app
 
+const getCollectionIntroView = (state) => {
+  return getApp(state).collectionIntroView
+}
 const getTheCity = (state) => {
   return getApp(state).theCity
 }
@@ -13,8 +16,8 @@ const getShowAllJewels = (state) => {
   return getApp(state).showAllJewels
 }
 
-const getDetailIndex = (state) => {
-  return getApp(state).detailIndex
+const getDetailView = (state) => {
+  return getApp(state).detailView
 }
 
 const getAdmin = (state) => {
@@ -61,6 +64,10 @@ const getAllDesertPosts = (state) => {
   return getApp(state).allDesertPosts
 }
 
+const getDetailId = (state) => {
+  return getApp(state).detailId
+}
+
 const getTitle = (state) => {
   return getApp(state).title
 }
@@ -86,10 +93,11 @@ const getIntroImage = (state) => {
 }
 
 export default {
+  getCollectionIntroView,
   getTheCity,
   getTheDesert,
   getShowAllJewels,
-  getDetailIndex,
+  getDetailView,
   getAdmin,
   getUser,
   getEmail,
@@ -101,6 +109,7 @@ export default {
   getCollection,
   getAllCityPosts,
   getAllDesertPosts,
+  getDetailId,
   getTitle,
   getContent,
   getFile,

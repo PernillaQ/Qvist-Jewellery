@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import './Collections.css'
 import firebase from './../../Utils/firebase.js'
-import bangle from './CollectionImages/bangleWeb.png'
-import earcuffs from './CollectionImages/desertNight.png'
-import TheCity from './TheCity/TheCity.js'
-import TheDesert from './TheDesert/theDesert.js'
+import DetailView from './Detailview/Detailview.js'
+import { HashLink as Link } from 'react-router-hash-link'
 
 class Collections extends Component {
 
@@ -43,72 +41,117 @@ class Collections extends Component {
    setAllDesertPosts(desert)
  }
 
-  show = (collection, index) => {
-    const { toggleTheCity, toggleTheDesert, toggleShowAllJewels } = this.props
-
+  show = (collection, id) => {
+    const { toggleTheCity, toggleTheDesert, toggleShowAllJewels, toggleCollectionIntroView, setDetailId, setDetailView} = this.props
+// whole collection
     if(collection === 'desert') {
       toggleTheCity(false)
       toggleTheDesert(true)
       toggleShowAllJewels(true)
+      toggleCollectionIntroView(false)
+      setDetailView(collection)
+      this.getContent(collection)
     }
     if(collection === 'city') {
        toggleTheCity(true)
        toggleTheDesert(false)
        toggleShowAllJewels(true)
+       toggleCollectionIntroView(false)
+       setDetailView(collection)
+       this.getContent(collection)
     }
+  // single jewellery
     if(collection === 'cityDetail'||collection === 'desertDetail'){
       toggleShowAllJewels(false)
-    }
+      toggleCollectionIntroView(false)
+      setDetailId(id)
+      setDetailView(collection)
+  }
+
   }
 
   hideTheJewels = (collection) => {
-    const { toggleTheCity, toggleTheDesert, toggleShowAllJewels } = this.props
-  if (collection === 'closeAllCityJewels'||collection === 'closeAllDesertJewels' ){
+    const { toggleTheCity, toggleTheDesert, toggleShowAllJewels, toggleCollectionIntroView } = this.props
+  if (collection === 'closeAllJewels'){
     toggleTheCity(false)
     toggleTheDesert(false)
+    toggleCollectionIntroView(true)
   }
   if (collection === 'closeDetailView'){
     toggleShowAllJewels(true)
   }
 }
 
-  getIntroImages = (collection) => {
-    const { allCityPosts, allDesertPosts } = this.props
-    let list = ''
-    let coll = ''
-    collection === 'city' ?  coll = allCityPosts : coll = allDesertPosts
+  getDetailInfo = (collection, id) => {
+  const { allCityPosts, allDesertPosts } = this.props
+  let coll = ''
+  // show choosen jewellery info
+  collection === 'cityDetail'?  coll = allCityPosts : coll = allDesertPosts
 
+  let filterList = coll.filter(post1 => post1.key === id)
+  console.log(filterList)
+
+  let detailList = filterList.map(post =>
+  <div className="Collections-detailview" key={post.key}>
+    <img src={post.value.url}alt="a Piece of jewellery"/>
+    <h4>{post.value.title}</h4>
+    <p>{post.value.content}</p>
+    <Link to='#theCityJewellery'><button onClick={() => { this.hideTheJewels('closeDetailView') }}>X</button></Link>
+  </div>
+)
+
+return detailList
+
+}
+
+  getContent = (collection) => {
+    const { allCityPosts, allDesertPosts, collectionIntroView } = this.props //showAllJewels, showIntroJewels
+
+    let list = ''
+    let collectionsList = ''
+    let coll = ''
+
+    collection === 'city'?  coll = allCityPosts : coll = allDesertPosts
+
+    // show all city or deserstjewels
+    if (collectionIntroView === false)
+    {
+      collectionsList = coll.map(post =>
+    <div className='TheCity-jewellery' id='theCityJewellery' key={post.key}>
+      <img src={post.value.url}alt="a Piece of jewellery" onClick={()=>{this.show(collection + 'Detail', post.key)}}/>
+    </div>)
+    return collectionsList
+
+} else {
       list = coll.map(post =>
       post.value.introimage ?
       <div className="Collections-theCity-wrapper" key={post.key}>
         <img src={post.value.url}alt="a Piece of jewellery"/>
         <h3>{post.value.title}</h3>
         <p>{post.value.content}</p>
-        <button className='btn-1' onClick={()=>{this.show('city')}}><span>View More</span></button>
+        <button className='btn-1' onClick={()=>{this.show(collection)}}><span>View More</span></button>
       </div>:'')
-    
     return list
   }
+}
 
   render () {
-  const { theCity, theDesert } = this.props
+
+  const { collectionIntroView } = this.props
     return (
       <div className='Collections-wrapper' id='collections'>
+      {collectionIntroView &&
         <div className='Collections-hexagon'>
-          {this.getIntroImages('city')}
+          {this.getContent('city')}
           <svg id='2' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 70'>
             <line className='App-collectionsLine' x1='0.5' x2='0.5' y2='300' fill='none' stroke='#464646' strokeMiterlimit='10' strokeWidth='0.2' />
           </svg>
           <h2>Collections</h2>
-          {this.getIntroImages('desert')}
-        </div>
-        {theCity &&
-        <div className='theCity'>
-          <TheCity {...this.props} funcHide={this.hideTheJewels} funcShow={this.show}/>
+          {this.getContent('desert')}
         </div>}
-        {theDesert &&
-        <div className='theDesert'>
-          <TheDesert {...this.props} funcHide={this.hideTheJewels} funcShow={this.show}/>
+        {!collectionIntroView &&
+        <div className='theCity'>
+          <DetailView {...this.props} funcHide={this.hideTheJewels} funcShow={this.show} funcPosts={this.getContent} funcDetail={this.getDetailInfo}/>
         </div>}
       </div>
     )
