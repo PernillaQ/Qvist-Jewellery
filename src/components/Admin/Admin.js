@@ -3,7 +3,6 @@ import './Admin.css'
 import Login from './../Login/login.js'
 import AddPost from './Addpost/Addpost.js'
 import { HashLink as Link } from 'react-router-hash-link';
-//import { removePost } from './Addpost/Removepost.js'
 import firebase from './../../Utils/firebase.js'
 
 class Admin extends Component {
@@ -26,7 +25,7 @@ removePost = (key, collection, filename) => {
   }
 
   getPreviewList = (collection) => {
-    const { allCityPosts, allDesertPosts, allPosts } = this.props
+    const { allPosts } = this.props
     let previewList = ''
     let collect = allPosts
 
@@ -43,16 +42,26 @@ removePost = (key, collection, filename) => {
     return previewList
   }
 
+  onLogout = () => {
+    const { setMessage } = this.props
+   firebase.auth()
+   .signOut()
+   .then(setMessage("signed out"))
+  }
+
   render () {
     const { user } = this.props
     return (
       <div className='admin'>
+      {user &&
+        <button className='signoutBtn' onClick={this.logout}><span>Logout</span></button>
+      }
       <div className ='admin-preview'>
       {this.getPreviewList()}
       </div>
         <div className='admin-content'>
         <h2>Administration</h2>
-          {!user &&
+        {!user &&
             <Login {...this.props} />}
           {user &&
           <div className='admin-addpost'>

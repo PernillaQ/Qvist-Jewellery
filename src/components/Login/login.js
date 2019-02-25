@@ -24,17 +24,9 @@ class Login extends Component{
      })
    }
 
-   onLogout = () => {
-     const { setMessage } = this.props
-    firebase.auth()
-    .signOut()
-    .then(setMessage("signed out"))
-   }
-
    onSubmit = e => {
      const { email, password, setMessage } = this.props
-     firebase.auth()
-     firebase.signIn(email, password)
+     firebase.auth().signInWithEmailAndPassword(email, password)
      .then(setMessage("signed in:" + email))
      .catch(error => setMessage(error));
     e.preventDefault();
@@ -53,7 +45,7 @@ onChange = e => {
     render(){
 
       const { user, email, password, message} = this.props
-            console.log(message)
+            console.log( email, password, message)
         return(
               <div className="login" id="login">
                 {!user &&
@@ -66,10 +58,6 @@ onChange = e => {
                   {!user &&
                     <input type="submit" value="Log in"/>}
                 </form>
-                {/*  {!user &&
-                    <button onClick={this.onLogin}>log in</button>}*/}
-                  {user &&
-                    <button onClick={this.onLogout}>log out</button>}
               </div>
         )
     }

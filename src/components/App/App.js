@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import './App.css'
 import Header from './../Header/Header.js'
 import Navbar from './../Navigation/Navigation.js'
-import Collections from './../Collections/Collections.js'
+import CollectionsContainer from './../Collections/CollectionsContainer.js'
 import About from './../About/About.js'
 import Retailers from './../Retailers/Retailers.js'
 import Contact from './../Contact/Contact.js'
-import Admin from './../Admin/Admin.js'
-import Footer from './../Footer/Footer.js'
+import AdminContainer from './../Admin/AdminContainer.js'
+import FooterContainer from './../Footer/FooterContainer.js'
 
-/*render() {
+/* render() {
     if(this.state.user === 'none')
     {
       return (
@@ -58,18 +58,18 @@ class App extends Component {
       <div className='App'>
         {!admin &&
           <div className='main'>
-        <Header />
-        <Navbar />
-        <div className='triangle' />
-        <Collections {...this.props}/>
-        <Retailers />
-        <About {...this.props}/>
-        <Contact />
-        <Footer {...this.props} />
-      </div>}
+            <Header />
+            <Navbar />
+            <div className='triangle' />
+            <CollectionsContainer />
+            <Retailers />
+            <About />
+            <Contact />
+            <FooterContainer {...this.props} />
+          </div>}
         {admin &&
           <div className='admin-wrapper'>
-          <Admin {...this.props} />
+            <AdminContainer {...this.props} />
           </div>
         }
       </div>

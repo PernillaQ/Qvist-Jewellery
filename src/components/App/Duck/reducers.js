@@ -9,19 +9,6 @@ const _toggleCollectionIntroView = (state = INITIAL_STATE, action) => {
     collectionIntroView: action.value
   }
 }
-const _toggleTheCity = (state = INITIAL_STATE, action) => {
-  return {
-    ...state,
-    theCity: action.value
-  }
-}
-
-const _toggleTheDesert = (state = INITIAL_STATE, action) => {
-  return {
-    ...state,
-    theDesert: action.value
-  }
-}
 
 const _toggleShowAllJewels = (state = INITIAL_STATE, action) => {
   return {
@@ -101,21 +88,7 @@ const _setCollection = (state = INITIAL_STATE, action) => {
 const _setAllPosts = (state = INITIAL_STATE, action) => {
   return {
     ...state,
-    allPosts:action.value
-  }
-}
-
-const _setAllCityPosts = (state = INITIAL_STATE, action) => {
-  return {
-    ...state,
-    allCityPosts: action.value
-  }
-}
-
-const _setAllDesertPosts = (state = INITIAL_STATE, action) => {
-  return {
-    ...state,
-    allDesertPosts: action.value
+    allPosts: action.value
   }
 }
 
@@ -171,8 +144,6 @@ const _toggleIntroImage = (state = INITIAL_STATE, action) => {
 // redux sauce - map actiontype to reducer.
 const HANDLERS = {
   [Types.TOGGLE_COLLECTION_INTRO_VIEW]: _toggleCollectionIntroView,
-  [Types.TOGGLE_THE_CITY]: _toggleTheCity,
-  [Types.TOGGLE_THE_DESERT]: _toggleTheDesert,
   [Types.TOGGLE_SHOW_ALL_JEWELS]: _toggleShowAllJewels,
   [Types.SET_DETAIL_VIEW]: _setDetailView,
   [Types.TOGGLE_ADMIN]: _toggleAdmin,
@@ -185,8 +156,6 @@ const HANDLERS = {
   [Types.SET_ADD_COLLECTION]: _setAddCollecion,
   [Types.SET_COLLECTION]: _setCollection,
   [Types.SET_ALL_POSTS]: _setAllPosts,
-  [Types.SET_ALL_CITY_POSTS]: _setAllCityPosts,
-  [Types.SET_ALL_DESERT_POSTS]: _setAllDesertPosts,
   [Types.SET_DETAIL_ID]: _setDetailId,
   [Types.SET_TITLE]: _setTitle,
   [Types.SET_CONTENT]: _setContent,

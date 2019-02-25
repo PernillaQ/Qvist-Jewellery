@@ -3,8 +3,6 @@ import { createActions } from 'reduxsauce'
 // actiontype, payload (to be state).
 const { Types, Creators } = createActions({
   toggleCollectionIntroView: ['value'],
-  toggleTheCity: ['value'],
-  toggleTheDesert: ['value'],
   toggleShowAllJewels: ['value'],
   setDetailView: ['value'],
   setUser: ['value'],
@@ -17,8 +15,6 @@ const { Types, Creators } = createActions({
   setAddCollection: ['value'],
   setCollection: ['value'],
   setAllPosts: ['value'],
-  setAllCityPosts: ['value'],
-  setAllDesertPosts: ['value'],
   setDetailId: ['value'],
   setTitle: ['value'],
   setContent: ['value'],

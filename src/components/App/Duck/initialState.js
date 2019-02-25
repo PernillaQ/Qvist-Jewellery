@@ -1,7 +1,5 @@
 export const INITIAL_STATE = {
   collectionIntroView: true,
-  theCity: false,
-  theDesert: false,
   showAllJewels: true,
   user: '',
   email: '',
@@ -14,8 +12,6 @@ export const INITIAL_STATE = {
   addCollection: false,
   collection: 'thecity',
   allPosts: [],
-  allCityPosts: [],
-  allDesertPosts: [],
   detailId: '',
   title: '',
   content: '',

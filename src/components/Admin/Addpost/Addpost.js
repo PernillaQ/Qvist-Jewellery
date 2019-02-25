@@ -3,23 +3,6 @@ import firebase from './../../../Utils/firebase.js';
 //import api from './../Utils/firebase.js'
 
 class AddPost extends Component{
-
-componentWillMount() {
-/*  const { setCollectionOptions } = this.props //setAllCollections
-    firebase.database().ref(`collections`).on('value', (snapshot) => {
-    const allTheCollections = this.toArray(snapshot.val());
-    setCollectionOptions(allTheCollections)
-  })*/
-}
-
-toArray = (firebaseObject) => {
- let array = []
- for(let item in firebaseObject){
- array.push( item )
- }
- return array;
-}
-
 // Add img to storage and add a post to firebase.
 addAll = (e) => {
 	e.preventDefault();
@@ -28,7 +11,7 @@ addAll = (e) => {
 }
 
 fileUploadHandler = () => { //.name
-  const { selectedImage,file , setUrl } = this.props
+  const { selectedImage, file , setUrl } = this.props
   let uploadTask = firebase.storage().ref(`images/${selectedImage}`).put(file)
   uploadTask.on('state_changed',(snapshot) => {console.log("a file was uploaded")}
  	, (error) => { console.log('file not uploadedd' + error)},
@@ -47,17 +30,11 @@ const objectToPush = {
   filename:selectedImage,
   url:url,
   introimage:introImage
-
 }
 
 let chosenCollection = ''
 
-if ( newCollection !== '' ){
-  chosenCollection = newCollection
-}
-else {
-  chosenCollection = collection
-}
+newCollection !== '' ? chosenCollection = newCollection : chosenCollection = collection
 
 objectToPush.collection = chosenCollection
 
@@ -130,12 +107,11 @@ handleChange = e => {
 }
 
 render() {
-   const {title, content, url,introImage, addCollection, newCollection, collection} = this.props
+   const {title, content, url, introImage, addCollection, newCollection, collection} = this.props
 //  const {addCollection} = this.state
 	return(
 		  <div className ="post-wrapper">
         <h3>Add a post</h3>
-        <p>Wait for image to show under uploadbutton, before submitting post</p>
         <label htmlFor="inputtypefile">Choose an image</label>
 		    <input type="file" onChange={this.fileSelectedHandler} id='inputtypefile'/>
         <button onClick={this.fileUploadHandler}>Upload</button>
