@@ -26,16 +26,16 @@ removePost = (key, collection, filename) => {
   }
 
   getPreviewList = (collection) => {
-    const { allCityPosts, allDesertPosts } = this.props
+    const { allCityPosts, allDesertPosts, allPosts } = this.props
     let previewList = ''
-    let collect = ''
-    collection === 'city' ?  collect = allCityPosts : collect = allDesertPosts
+    let collect = allPosts
 
       previewList = collect.map(post =>
         <div className="post" key={post.key}>
           <img src={post.value.url}alt="a Piece of jewellery"/>
           <div className="admin-posttext">
           <h3>{post.value.title}</h3>
+          <p>{post.value.collection}</p>
           <button onClick={()=>{this.removePost(post.key, post.value.collection, post.value.filename)}}>x</button>
           </div>
         </div>)
@@ -48,8 +48,7 @@ removePost = (key, collection, filename) => {
     return (
       <div className='admin'>
       <div className ='admin-preview'>
-      {this.getPreviewList('city')}
-      {this.getPreviewList('desert')}
+      {this.getPreviewList()}
       </div>
         <div className='admin-content'>
         <h2>Administration</h2>

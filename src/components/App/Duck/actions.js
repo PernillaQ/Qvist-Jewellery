@@ -16,6 +16,7 @@ const { Types, Creators } = createActions({
   setNewCollection: ['value'],
   setAddCollection: ['value'],
   setCollection: ['value'],
+  setAllPosts: ['value'],
   setAllCityPosts: ['value'],
   setAllDesertPosts: ['value'],
   setDetailId: ['value'],

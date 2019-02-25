@@ -18,6 +18,7 @@ const mapStateToProps = state => {
   const newCollection = appSelectors.getNewCollection(state)
   const addCollection = appSelectors.getAddCollection(state)
   const collection = appSelectors.getCollection(state)
+  const allPosts = appSelectors.getAllPosts(state)
   const allCityPosts = appSelectors.getAllCityPosts(state)
   const allDesertPosts = appSelectors.getAllDesertPosts(state)
   const detailId = appSelectors.getDetailId(state)
@@ -43,6 +44,7 @@ const mapStateToProps = state => {
     newCollection,
     addCollection,
     collection,
+    allPosts,
     allCityPosts,
     allDesertPosts,
     detailId,
@@ -70,6 +72,7 @@ const mapDispatchToProps = dispatch => {
   const setNewCollection = (value) => dispatch(appCreators.setNewCollection(value))
   const setAddCollection = (value) => dispatch(appCreators.setAddCollection(value))
   const setCollection = (value) => dispatch(appCreators.setCollection(value))
+  const setAllPosts = (value) => dispatch(appCreators.setAllPosts(value))
   const setAllCityPosts = (value) => dispatch(appCreators.setAllCityPosts(value))
   const setAllDesertPosts = (value) => dispatch(appCreators.setAllDesertPosts(value))
   const setDetailId = (value) => dispatch(appCreators.setDetailId(value))
@@ -95,6 +98,7 @@ const mapDispatchToProps = dispatch => {
     setNewCollection,
     setAddCollection,
     setCollection,
+    setAllPosts,
     setAllCityPosts,
     setAllDesertPosts,
     setDetailId,

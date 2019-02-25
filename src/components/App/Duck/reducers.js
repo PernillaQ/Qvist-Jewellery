@@ -98,6 +98,13 @@ const _setCollection = (state = INITIAL_STATE, action) => {
   }
 }
 
+const _setAllPosts = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    allPosts:action.value
+  }
+}
+
 const _setAllCityPosts = (state = INITIAL_STATE, action) => {
   return {
     ...state,
@@ -177,6 +184,7 @@ const HANDLERS = {
   [Types.SET_NEW_COLLECTION]: _setNewCollection,
   [Types.SET_ADD_COLLECTION]: _setAddCollecion,
   [Types.SET_COLLECTION]: _setCollection,
+  [Types.SET_ALL_POSTS]: _setAllPosts,
   [Types.SET_ALL_CITY_POSTS]: _setAllCityPosts,
   [Types.SET_ALL_DESERT_POSTS]: _setAllDesertPosts,
   [Types.SET_DETAIL_ID]: _setDetailId,

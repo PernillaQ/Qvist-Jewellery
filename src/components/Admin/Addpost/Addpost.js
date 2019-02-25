@@ -5,11 +5,11 @@ import firebase from './../../../Utils/firebase.js';
 class AddPost extends Component{
 
 componentWillMount() {
-  const { setCollectionOptions } = this.props //setAllCollections
+/*  const { setCollectionOptions } = this.props //setAllCollections
     firebase.database().ref(`collections`).on('value', (snapshot) => {
     const allTheCollections = this.toArray(snapshot.val());
     setCollectionOptions(allTheCollections)
-  })
+  })*/
 }
 
 toArray = (firebaseObject) => {

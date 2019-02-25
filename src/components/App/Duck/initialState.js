@@ -13,6 +13,7 @@ export const INITIAL_STATE = {
   newCollection: '',
   addCollection: false,
   collection: 'thecity',
+  allPosts: [],
   allCityPosts: [],
   allDesertPosts: [],
   detailId: '',

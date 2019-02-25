@@ -56,6 +56,10 @@ const getCollection = (state) => {
   return getApp(state).collection
 }
 
+const getAllPosts = (state) => {
+  return getApp(state).allPosts
+}
+
 const getAllCityPosts = (state) => {
   return getApp(state).allCityPosts
 }
@@ -107,6 +111,7 @@ export default {
   getNewCollection,
   getAddCollection,
   getCollection,
+  getAllPosts,
   getAllCityPosts,
   getAllDesertPosts,
   getDetailId,
