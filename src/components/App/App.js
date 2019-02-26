@@ -9,25 +9,7 @@ import Contact from './../Contact/Contact.js'
 import AdminContainer from './../Admin/AdminContainer.js'
 import FooterContainer from './../Footer/FooterContainer.js'
 
-/* render() {
-    if(this.state.user === 'none')
-    {
-      return (
-        <div className='mainContainer'>
-          <Loginform/>
-        </div>
-      );
-    }
-    else if(this.state.userType === 'admin'){
-      return (
-        <div className='mainContainer'>
-          <Button onClick={this.logout}>logga ut</Button>
-          <Admin userType={this.state.userType}/>
-        </div>
-      );
-    }
-    else{
-      return (
+/*    return (
         <Router>
           <div className='mainContainer'>
             <div className='mainMenu'>
@@ -57,10 +39,10 @@ class App extends Component {
     return (
       <div className='App'>
         {!admin &&
-          <div className='main'>
+          <div className='App-main'>
             <Header />
             <Navbar />
-            <div className='triangle' />
+            <div className='App-triangle' />
             <CollectionsContainer />
             <Retailers />
             <About />
@@ -68,9 +50,7 @@ class App extends Component {
             <FooterContainer {...this.props} />
           </div>}
         {admin &&
-          <div className='admin-wrapper'>
-            <AdminContainer {...this.props} />
-          </div>
+        <AdminContainer {...this.props} />
         }
       </div>
 

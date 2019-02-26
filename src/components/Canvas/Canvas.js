@@ -33,13 +33,13 @@ class Canvas extends Component {
       mouse.y = event.y
     //  console.log(mouse)
     })
-/*
+
     window.addEventListener('resize', function (event) {
-      canvas.width = window.innerWidth -5
-      canvas.height = window.innerHeight
+      canvas.width = window.innerWidth
+    //  canvas.height = window.innerHeight
 
       init()
-    })*/
+    })
 
     function Circle (x, y, dx, dy, radius) {
       this.x = x

@@ -1,4 +1,4 @@
-.footer-wrapper {
+.Footer-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,7 +8,7 @@
   height: 10rem;
 }
 
-.footer-wrapper button {
+.Footer-wrapper button {
   background: none;
   border:none;
   font-family: 'Roboto';
@@ -20,7 +20,7 @@
   margin: 0 3rem;
 }
 
-.footer-wrapper a {
+.Footer-wrapper a {
   font-size: 20px;
   color:#f4f4f4;
   text-decoration: none;

@@ -1,25 +1,30 @@
-.navbar{
+/*** Navigation ***/
+
+.Navigation {
   width: 5rem;
   height: 45rem;
+  font-weight: lighter;
   position: absolute;
+  top: 0;
   left: 0;
-  z-index: 1;
   margin-top: 8.5rem;
   margin-left: 4rem;
-  font-weight: lighter;
-  top: 0;
+  z-index: 1;
 }
-.navbar ul {
+
+.Navigation ul {
   list-style-type: none;
   padding-top: 0.5rem;
 }
-.navbar li{
+
+.Navigation li {
   transform: rotate(90deg) scaleX(-1) scaleY(-1);
-  margin-top: 5rem;
   letter-spacing: 0.1rem;
   text-transform: lowercase;
+  margin-top: 5rem;
 }
-.navbar li a{
+
+.Navigation li a {
   color:#f3e5c9;
   text-decoration: none;
 }

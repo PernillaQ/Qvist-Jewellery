@@ -47,7 +47,7 @@ onChange = e => {
       const { user, email, password, message} = this.props
             console.log( email, password, message)
         return(
-              <div className="login" id="login">
+              <div className="Login" id="login">
                 {!user &&
                   <h3>Log in</h3>}
                 <form onSubmit={this.onSubmit}>

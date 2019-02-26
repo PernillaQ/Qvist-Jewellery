@@ -70,7 +70,7 @@ class Collections extends Component {
       <img src={post.value.url}alt="a Piece of jewellery"/>
       <h4>{post.value.title}</h4>
       <p>{post.value.content}</p>
-      <Link to='#theCityJewellery'><button onClick={() => { this.hideTheJewels('closeDetailView') }}>X</button></Link>
+      <Link to='#collection'><button onClick={() => { this.hideTheJewels('closeDetailView') }}>X</button></Link>
     </div>
   )
   return detailList
@@ -97,19 +97,19 @@ class Collections extends Component {
     {
       collectionsList = coll.map(post =>
       post.value.collection === currentCollection ?
-      <div className='TheCity-jewellery' id='theCityJewellery' key={post.key}>
-        <img src={post.value.url}alt="a Piece of jewellery" onClick={()=>{this.show(post.value.collection + 'Detail', post.key)}}/>
+      <div className='Collections-collection' key={post.key}>
+      <Link to='#detailview'><img src={post.value.url}alt="a Piece of jewellery" onClick={()=>{this.show(post.value.collection + 'Detail', post.key)}}/></Link>
       </div>:'')
     return collectionsList
     }
     else {
       list = coll.map(post =>
       post.value.introimage ?
-      <div className="Collections-theCity-wrapper" key={post.key}>
+      <div className="Collections-intro-wrapper" key={post.key}>
         <img src={post.value.url}alt="a Piece of jewellery"/>
         <h3>{post.value.title}</h3>
         <p>{post.value.content}</p>
-        <button className='btn-1' onClick={()=>{this.show(post.value.collection)}}><span>View More</span></button>
+          <Link to='#collection'><button className='btn-1' onClick={()=>{this.show(post.value.collection)}}><span>View More</span></button></Link>
       </div>:'')
     return list
   }
@@ -117,8 +117,9 @@ class Collections extends Component {
 
   render () {
   const { collectionIntroView } = this.props
+  console.log(collectionIntroView)
     return (
-      <div className='Collections-wrapper' id='collections'>
+      <div className='Collections-wrapper' id='introview'>
       {collectionIntroView &&
         <div className='Collections-hexagon'>
           {this.getContent()}

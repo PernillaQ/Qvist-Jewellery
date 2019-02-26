@@ -7,6 +7,8 @@ export const INITIAL_STATE = {
   message: '',
   detailView: '',
   admin: false,
+  removePost: false,
+  addPost: false,
   collectionOptions: [],
   newCollection: '',
   addCollection: false,

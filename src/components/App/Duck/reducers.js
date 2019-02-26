@@ -31,6 +31,20 @@ const _toggleAdmin = (state = INITIAL_STATE, action) => {
   }
 }
 
+const _toggleRemovePost = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    removePost: action.value
+  }
+}
+
+const _toggleAddPost = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    addPost: action.value
+  }
+}
+
 const _setUser = (state = INITIAL_STATE, action) => {
   return {
     ...state,
@@ -147,6 +161,8 @@ const HANDLERS = {
   [Types.TOGGLE_SHOW_ALL_JEWELS]: _toggleShowAllJewels,
   [Types.SET_DETAIL_VIEW]: _setDetailView,
   [Types.TOGGLE_ADMIN]: _toggleAdmin,
+  [Types.TOGGLE_REMOVE_POST]: _toggleRemovePost,
+  [Types.TOGGLE_ADD_POST]: _toggleAddPost,
   [Types.SET_USER]: _setUser,
   [Types.SET_EMAIL]: _setEmail,
   [Types.SET_PASSWORD]: _setPassword,

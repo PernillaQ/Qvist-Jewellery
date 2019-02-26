@@ -17,6 +17,14 @@ const getAdmin = (state) => {
   return getApp(state).admin
 }
 
+const getRemovePost = (state) => {
+  return getApp(state).removePost
+}
+
+const getAddPost = (state) => {
+  return getApp(state).addPost
+}
+
 const getUser = (state) => {
   return getApp(state).user
 }
@@ -86,6 +94,8 @@ export default {
   getShowAllJewels,
   getDetailView,
   getAdmin,
+  getRemovePost,
+  getAddPost,
   getUser,
   getEmail,
   getPassword,

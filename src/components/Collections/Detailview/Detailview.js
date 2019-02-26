@@ -11,25 +11,25 @@ class TheCity extends Component {
     let header = detailView
 
     if (showAllJewels === true) {
-      cssStyling = 'TheCityJewellery-wrapper'
+      cssStyling = 'Detailview-collection-wrapper' // Detailview-collection-wrapper och nedan collection
     }
     if (showAllJewels === false) {
-      cssStyling = 'jewelleryInfo-wrapper'
+      cssStyling = 'Detailview-detailinfo-wrapper' // jewelleryDetail?
     }
 
     return (
       <div className={cssStyling}>
         <h3>{header}</h3>
         { showAllJewels && // images of all city collections
-          <div className='allCityJewels-wrapper'>
+          <div className='Detailview-collection' id='collection'>
             {this.props.funcPosts(detailView)}
           </div>}
         {!showAllJewels && // single jewellery info
-        <div className='jewelleryInfo'>
+        <div className='Detailview-detailinfo' id='detailview'>
           {this.props.funcDetail(detailView, detailId)}
         </div>}
         { showAllJewels &&
-          <Link to='#theCity'><button onClick={() => { this.props.funcHide('closeAllJewels') }}>X</button></Link>}
+          <Link to='#introview'><button onClick={() => { this.props.funcHide('closeAllJewels') }}>X</button></Link>}
       </div>
     )
   }

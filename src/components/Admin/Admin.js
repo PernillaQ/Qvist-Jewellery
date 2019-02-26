@@ -30,15 +30,15 @@ removePost = (key, collection, filename) => {
     let collect = allPosts
 
       previewList = collect.map(post =>
-        <div className="post" key={post.key}>
+        <div className="Admin-post" key={post.key}>
           <img src={post.value.url}alt="a Piece of jewellery"/>
-          <div className="admin-posttext">
+          <div className="Admin-posttext">
           <h3>{post.value.title}</h3>
           <p>{post.value.collection}</p>
           <button onClick={()=>{this.removePost(post.key, post.value.collection, post.value.filename)}}>x</button>
           </div>
-        </div>)
-
+        </div>
+        )
     return previewList
   }
 
@@ -49,26 +49,52 @@ removePost = (key, collection, filename) => {
    .then(setMessage("signed out"))
   }
 
+  handleChange= (e)=> {
+    const { toggleRemovePost, toggleAddPost } = this.props
+    if (e.target.checked === true) {
+      e.target.name === 'removePost' ? toggleRemovePost(true) : toggleAddPost(true)
+    }
+    else {
+      e.target.name === 'removePost' ? toggleRemovePost(false) : toggleAddPost(false)
+    }
+  }
+
   render () {
-    const { user } = this.props
+    const { user, removePost, addPost } = this.props
     return (
-      <div className='admin'>
+      <div className='Admin-wrapper' id='admin'>
       {user &&
-        <button className='signoutBtn' onClick={this.logout}><span>Logout</span></button>
+        <button className='signoutBtn' onClick={this.onLogout}><span>Logout</span></button>
       }
-      <div className ='admin-preview'>
-      {this.getPreviewList()}
-      </div>
-        <div className='admin-content'>
         <h2>Administration</h2>
+        {user &&
+        <div className='Admin-selectToDo'>
+        <h3>What do you want to change?</h3>
+        <label>
+          <input name="removePost" type="checkbox" checked={removePost} onChange={this.handleChange} />
+          Remove a post?
+        </label>
+        <label>
+          <input name="addPost" type="checkbox" checked={addPost} onChange={this.handleChange} />
+          Add a post?
+        </label>
+        </div>}
+    {removePost &&
+        <div className ='Admin-preview'>
+        <h3>Remove a post</h3>
+        <h4>DangerZone</h4>
+      {this.getPreviewList()}
+      </div>}
+
+        <div className='Admin-content'>
         {!user &&
             <Login {...this.props} />}
-          {user &&
-          <div className='admin-addpost'>
+       {addPost &&
+          <div className='Admin-addpost'>
             <AddPost {...this.props} />
           </div>}
-        </div>
-         <Link to='#home'><button className='admin-homebtn' onClick={this.home}>Home</button></Link>
+        </div>}
+         <Link to='#home'><button className='homeBtn' onClick={this.home}>Home</button></Link>
       </div>
     )
   }

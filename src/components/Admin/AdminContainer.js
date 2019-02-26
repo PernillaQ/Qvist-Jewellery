@@ -18,6 +18,9 @@ const mapStateToProps = state => {
   const collection = appSelectors.getCollection(state)
   const addCollection = appSelectors.getAddCollection(state)
   const collectionOptions = appSelectors.getCollectionOptions(state)
+  const detailView = appSelectors.getDetailView(state) // ?
+  const removePost = appSelectors.getRemovePost(state)
+  const addPost = appSelectors.getAddPost(state)
 
   return {
     user,
@@ -34,7 +37,10 @@ const mapStateToProps = state => {
     newCollection,
     collection,
     addCollection,
-    collectionOptions
+    collectionOptions,
+    detailView,
+    removePost,
+    addPost
   }
 }
 
@@ -53,6 +59,9 @@ const mapDispatchToProps = dispatch => {
   const setNewCollection = (value) => dispatch(appCreators.setNewCollection(value))
   const setCollection = (value) => dispatch(appCreators.setCollection(value))
   const setAddCollection = (value) => dispatch(appCreators.setAddCollection(value))
+  const setDetailView = (value) => dispatch(appCreators.setDetailView(value)) // ?
+  const toggleRemovePost = (value) => dispatch(appCreators.toggleRemovePost(value))
+  const toggleAddPost = (value) => dispatch(appCreators.toggleAddPost(value))
 
   return {
     toggleAdmin,
@@ -68,7 +77,10 @@ const mapDispatchToProps = dispatch => {
     toggleIntroImage,
     setNewCollection,
     setCollection,
-    setAddCollection
+    setAddCollection,
+    setDetailView,
+    toggleRemovePost,
+    toggleAddPost
   }
 }
 
