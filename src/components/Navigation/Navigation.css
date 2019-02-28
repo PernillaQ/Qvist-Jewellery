@@ -15,16 +15,29 @@
 .Navigation ul {
   list-style-type: none;
   padding-top: 0.5rem;
+  margin-top: 2rem;
 }
 
 .Navigation li {
   transform: rotate(90deg) scaleX(-1) scaleY(-1);
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.15rem;
   text-transform: lowercase;
   margin-top: 5rem;
 }
 
 .Navigation li a {
-  color:#f3e5c9;
+  font-family: 'Open-Sans', sans-serif;
+  font-weight: 300;
+  color: #303b40;
   text-decoration: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  background-image: linear-gradient(to right,#f3e5c9,#f3e5c9 50%,#303b40 50%);
+}
+
+.Navigation li a:hover {
+ transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+ background-position: 0%;
 }

@@ -9,7 +9,7 @@ class Navbar extends Component {
         <nav>
           <ul>
             <li><Link to='#collections'>Collections</Link></li>
-            <li><Link to='#about'>About</Link></li>
+            <li><Link to='#about'>Story</Link></li>
             <li><Link to='#retailers'>Retailers</Link></li>
             <li><Link to='#contact'>Contact</Link></li>
           </ul>

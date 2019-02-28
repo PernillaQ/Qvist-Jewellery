@@ -5,7 +5,7 @@ import 'firebase/auth'
 
 // Initialize Firebase
 var config = {
-  apiKey:  /* process.env.FIREBASE_APIKEY */
+  apiKey: /* process.env.FIREBASE_APIKEY */,
   authDomain: 'qvist-jewellery.firebaseapp.com',
   databaseURL: 'https://qvist-jewellery.firebaseio.com',
   projectId: 'qvist-jewellery',

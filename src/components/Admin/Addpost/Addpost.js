@@ -97,7 +97,6 @@ onChange = e => {
   if (e.target.name === 'newCollection'){
     setNewCollection(e.target.value)
   }
-  //this.setState({[e.target.name]: e.target.value});
 }
 
 handleChange = e => {

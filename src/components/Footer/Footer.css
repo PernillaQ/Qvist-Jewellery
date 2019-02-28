@@ -1,4 +1,5 @@
 .Footer-wrapper {
+  background:radial-gradient(#ffffff,#f4f4f4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,25 +7,43 @@
   width: 100vw;
   max-width: 100%;
   height: 10rem;
+  margin-top: -1rem;
 }
 
 .Footer-wrapper button {
   background: none;
   border:none;
-  font-family: 'Roboto';
   font-weight: 100;
   width: 5rem;
   height: 2rem;
-  color:#f4f4f4;
+  color:gray;
+  cursor: pointer;
   letter-spacing: 0.05rem;
-  margin: 0 3rem;
+  text-decoration: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  background-image: linear-gradient(to right,#303b40,#303b40 50%,gray 50%);
 }
 
 .Footer-wrapper a {
   font-size: 20px;
-  color:#f4f4f4;
+  color:gray;
   text-decoration: none;
   margin: 0 3rem;
   width: 5rem;
   height: 2rem;
+  text-decoration: none;
+  align-self: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  background-image: linear-gradient(to right,#303b40,#303b40 50%,gray 50%);
+}
+
+.Footer-wrapper a:hover , .Footer-wrapper button:hover{
+ transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+ background-position: 0%;
 }

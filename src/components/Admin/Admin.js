@@ -34,7 +34,7 @@ removePost = (key, collection, filename) => {
           <img src={post.value.url}alt="a Piece of jewellery"/>
           <div className="Admin-posttext">
           <h3>{post.value.title}</h3>
-          <p>{post.value.collection}</p>
+        {/*  <p>{post.value.collection}</p> */}
           <button onClick={()=>{this.removePost(post.key, post.value.collection, post.value.filename)}}>x</button>
           </div>
         </div>
@@ -85,7 +85,6 @@ removePost = (key, collection, filename) => {
         <h4>DangerZone</h4>
       {this.getPreviewList()}
       </div>}
-
         <div className='Admin-content'>
         {!user &&
             <Login {...this.props} />}

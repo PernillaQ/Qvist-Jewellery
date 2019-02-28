@@ -6,12 +6,13 @@
   max-width: 100%;
   height: auto;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
   margin: 0;
-  padding-bottom: 6rem;
+  padding-bottom: 4rem;
 }
 
 .Admin-wrapper h2 {
@@ -35,7 +36,7 @@
   color: #f4f4f4;
   align-self: flex-end;
   border: none;
-  margin: 2rem 4rem;
+  margin: 3rem 5rem 0 5rem;
 }
 
 .Admin-wrapper label {
@@ -109,7 +110,7 @@
   justify-content: left;
   margin-bottom: 2rem;
   margin: 2rem;
-  border: 0.5px solid #bf0000;
+  border: 0.9px dotted #bf0000;
   padding: 0 2rem;
 }
 
@@ -119,7 +120,7 @@
 }
 
 .Admin-preview .Admin-post h3 {
-  color: #f4f4f4;
+  color:#f3e5c9;
   font-weight: 100;
   margin: 0;
   letter-spacing: 0.05rem;
@@ -137,7 +138,15 @@
 
 /*** Remove button ***/
 .Admin-preview .Admin-posttext button {
-  background-color: #1a2023;
+  background: none;
+  border:none;
+  color: gray;
+  margin-top: 0;
+  font-size: 1.5rem;
+  align-self: flex-end;
+  transform:scaleX(1.3);
+  cursor: pointer;
+/*  background-color: #1a2023;
   color: #1a2023;
   width: 2rem;
   align-self: flex-end;
@@ -150,8 +159,25 @@
   outline-color:  0.5px solid #bf0000;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
   padding: 0.4rem 0.1rem 0.45rem 0.2rem;
-  margin-top: 0;
+  margin-top: 0;*/
 }
+
+.Admin-preview .Admin-posttext button:hover{
+color:#f4f4f4;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #bf0000, 0 0 40px #bf0000, 0 0 50px #bf0000, 0 0 60px #bf0000, 0 0 70px #bf0000;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #FF0000, 0 0 40px #FF0000, 0 0 50px #FF0000, 0 0 60px #FF0000, 0 0 70px #FF0000, 0 0 80px #FF0000;
+  }
+}
+
 
 .Admin-content h2 {
   align-self: center;

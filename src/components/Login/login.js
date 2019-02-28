@@ -47,6 +47,7 @@ onChange = e => {
       const { user, email, password, message} = this.props
             console.log( email, password, message)
         return(
+          <div className='Login-wrapper'>
               <div className="Login" id="login">
                 {!user &&
                   <h3>Log in</h3>}
@@ -59,6 +60,7 @@ onChange = e => {
                     <input type="submit" value="Log in"/>}
                 </form>
               </div>
+            </div>
         )
     }
 }

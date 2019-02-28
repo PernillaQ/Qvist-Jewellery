@@ -62,7 +62,7 @@ class Collections extends Component {
 
   getDetailInfo = (collection, id) => {
     const { allPosts } = this.props
-    let coll = allPosts // coll = ''
+    let coll = allPosts
     let filterList = coll.filter(post1 => post1.key === id)
 
     let detailList = filterList.map(post =>
@@ -119,9 +119,9 @@ class Collections extends Component {
   const { collectionIntroView } = this.props
   console.log(collectionIntroView)
     return (
-      <div className='Collections-wrapper' id='introview'>
+      <div className='Collections-wrapper' id='collections'>
       {collectionIntroView &&
-        <div className='Collections-hexagon'>
+        <div className='Collections-hexagon' id='introview'>
           {this.getContent()}
           <svg id='2' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 70'>
             <line className='App-collectionsLine' x1='0.5' x2='0.5' y2='300' fill='none' stroke='#464646' strokeMiterlimit='10' strokeWidth='0.2' />
@@ -129,7 +129,7 @@ class Collections extends Component {
           <h2>Collections</h2>
         </div>}
         {!collectionIntroView &&
-        <div className='theCity'>
+        <div className='Collection-theCollections'>
           <DetailView {...this.props} funcHide={this.hideTheJewels} funcShow={this.show} funcPosts={this.getContent} funcDetail={this.getDetailInfo}/>
         </div>}
       </div>

@@ -13,16 +13,21 @@
 }
 
 .Collections-hexagon {
-  /*  background: radial-gradient(#1a2023, #121416,#000000, #090909);
-    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+   background: radial-gradient(#1a2023 13%, #121416,#000000, #090909);
+  /*  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
   width: 100vw;
   max-width: 100%;
-  height: 65rem;
+  height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-top: -2rem;
+  animation: fadeInOpacity ease-in 1s;
 }
 
 .Collections-hexagon svg:nth-child(2) {
@@ -39,7 +44,7 @@
   height: 12rem;
   position: absolute;
   margin-top: -18rem;
-  margin: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .Collections-wrapper button {
@@ -120,8 +125,10 @@
 }
 
 .Collections-wrapper h2 {
-  align-self: center;
+  background-color: #000000; /*** check when dark **/
+  color: transparent; /** check when dark **/
   position: absolute;
+  margin-left: 35vw;
   text-shadow: inset 2px 2px 3px rgba(0,0,0,0.5);
    -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -198,10 +205,13 @@
   width: 20%;
   height: auto;
   position: absolute;
+  animation-delay: 0.5s;
+  animation: fadeInOpacity ease-in 2s;
 }
 
 .Collections-intro-wrapper {
-  margin: 5rem;
+  margin:  2rem 8rem;
+  animation: fadeInOpacity ease-in 2s;
 }
 
 .Collections-intro-wrapper p {
@@ -217,14 +227,13 @@
 }
 
 .Collections-collection {
-  width: 50%;
+  width: 33.33%;
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 
 .Collections-detailview {
@@ -249,7 +258,7 @@
 /*** DetailView ***/
 
 .Detailview-collection-wrapper {
-  background: radial-gradient(#ffffff, #f4f4f4,#ededed, #e0e0e0);
+/*  background: radial-gradient(#ffffff, #f4f4f4,#ededed, #e0e0e0);*/
   width: 100vw;
   max-width: 100%;
   height: auto;
@@ -257,26 +266,35 @@
   align-items: center;
   flex-direction: column;
   padding-bottom: 6rem;
-/*  -webkit-clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
-clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);*/
+   background: radial-gradient(#1a2023, #121416,#000000, #090909);
+  /*  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
+  -webkit-clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
+clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
+animation: fadeInOpacity ease-in-out 2.9s;
 }
 
 .Detailview-collection-wrapper h3 {
-  background-color: #e4e4e4;
-  color: transparent;
-  width: 100vw;
+  background-color: #121416;
   width: 25rem;
   align-self: flex-start;
   font-size: 4.5rem;
   font-family: 'Open Sans' ,sans-serif;
   letter-spacing: 0.3rem;
   font-weight: 700;
-  text-shadow: 2px 2px 3px rgba(255,255,255,0.6);
-  -webkit-background-clip: text;
-    -moz-background-clip: text;
-         background-clip: text;
+  text-shadow: inset 3px 3px 4px rgba(0,0,0,0.6);
+   -webkit-background-clip: text;
+      -moz-background-clip: text;
+           background-clip: text;
   margin-top: 6rem;
+  margin-left: 5rem;
   opacity: 0.9;
+  background-color: #121416;
+  color: transparent;
+}
+
+.Detailview-collection-wrapper h3::first-letter {
+  text-transform: uppercase;
 }
 
 .Detailview-collection-wrapper h4 {
@@ -301,24 +319,31 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);*/
 }
 
 .Detailview-collection-wrapper a {
-  align-self: flex-end;
-  margin-top: 2rem;
-  margin-right: 5rem;
+  margin-top: 4rem;
 }
 
 .Detailview-collection-wrapper button {
   background-color: transparent;
-  color:#121416;
+  color: gray;
+  position: absolute;
   font-size: 2rem;
-  border:none;
-  margin-top: 2rem;
+  border: none;
+  margin-top: 0;
 }
 
 .Detailview-collection-wrapper img {
   width: 45%;
   height: auto;
-  position: relative;
-  margin-bottom: 0;
+  opacity: 1;
+  animation: fadeInOpacity ease-in-out 2.9s;
+}
+
+.Detailview-collection {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  margin-top: 12rem;
+  margin-bottom: 5rem;
 }
 
 .Detailview-detailinfo-wrapper {
@@ -335,16 +360,21 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);*/
 }
 
 .Detailview-detailinfo-wrapper h4 {
-  color: #1a2023;
-  font-family: 'Opeen Sans', sans-serif;
+  color: #f3e5c9;
+  font-family: 'Open Sans', sans-serif;
   font-size: 2rem;
-  font-weight: 300;
-  margin-top: 2rem;
+  font-weight: 100;
+  position: absolute;
+  margin-top: 3rem;
   margin-bottom: 1rem;
 }
 
 .Detailview-detailinfo {
-  background-color: #f4f4f4;
+  background: radial-gradient(#1a2023, #121416,#000000, #090909);
+ /*  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
+ -webkit-clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
+clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
   width: 60%;
   height: 35rem;
   display: flex;
@@ -353,11 +383,14 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);*/
   justify-content: center;
   padding-bottom: 4rem;
   padding-top: 2rem;
+  animation: fadeInOpacity ease-in 1s;
 }
 
 .Detailview-detailinfo img {
-  width: 30%;
+  width: 45%;
   height: auto;
+  animation-delay: 0.5s;
+  animation: fadeInOpacity ease-in 1s;
 }
 
 .Detailview-detailinfo a {
@@ -383,12 +416,18 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);*/
 }
 
 .Detailview-detailinfo p {
-  color:gray;
+  color: gray;
+  width: 30%;
   text-align: justify;
+  line-height: 1.5rem;
+  position: absolute;
+  margin-top: 7rem;
 }
-
-.Detailview-collection {
-  display: flex;
-  flex-direction: row;
-  margin-top: 12rem;
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }

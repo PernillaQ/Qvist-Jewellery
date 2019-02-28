@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './../Collections.css'
 import { HashLink as Link } from 'react-router-hash-link'
 
-class TheCity extends Component {
+class DetailView extends Component {
 
   render () {
     const { showAllJewels, detailId, detailView } = this.props
@@ -35,4 +35,4 @@ class TheCity extends Component {
   }
 }
 
-export default TheCity
+export default DetailView
