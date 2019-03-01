@@ -29,7 +29,9 @@ class DetailView extends Component {
           {this.props.funcDetail(detailView, detailId)}
         </div>}
         { showAllJewels &&
-          <Link to='#introview'><button onClick={() => { this.props.funcHide('closeAllJewels') }}>X</button></Link>}
+          <div className='DetailView-btn-wrapper'>
+            <button onClick={() => { this.props.funcHide('closeAllJewels') }}>X</button>
+          </div>}
       </div>
     )
   }

@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   padding-bottom: 12rem;
+  position: relative;
   margin-top: -1rem;
 }
 
@@ -20,7 +21,7 @@
 .About-wrapper img:nth-child(3){
   width: 7%;
   position: absolute;
-  margin-top: 46%;
+  bottom: 5rem;
 }
 
 .About-h2-wrapper {

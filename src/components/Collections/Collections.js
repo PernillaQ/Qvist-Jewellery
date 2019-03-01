@@ -70,7 +70,7 @@ class Collections extends Component {
       <img src={post.value.url}alt="a Piece of jewellery"/>
       <h4>{post.value.title}</h4>
       <p>{post.value.content}</p>
-      <Link to='#collection'><button onClick={() => { this.hideTheJewels('closeDetailView') }}>X</button></Link>
+      <button onClick={() => { this.hideTheJewels('closeDetailView') }}>X</button>
     </div>
   )
   return detailList
@@ -98,7 +98,7 @@ class Collections extends Component {
       collectionsList = coll.map(post =>
       post.value.collection === currentCollection ?
       <div className='Collections-collection' key={post.key}>
-      <Link to='#detailview'><img src={post.value.url}alt="a Piece of jewellery" onClick={()=>{this.show(post.value.collection + 'Detail', post.key)}}/></Link>
+      <img src={post.value.url}alt="a Piece of jewellery" onClick={()=>{this.show(post.value.collection + 'Detail', post.key)}}/>
       </div>:'')
     return collectionsList
     }
@@ -109,7 +109,7 @@ class Collections extends Component {
         <img src={post.value.url}alt="a Piece of jewellery"/>
         <h3>{post.value.title}</h3>
         <p>{post.value.content}</p>
-          <Link to='#collection'><button className='btn-1' onClick={()=>{this.show(post.value.collection)}}><span>View More</span></button></Link>
+        <button className='btn-1' onClick={()=>{this.show(post.value.collection)}}><span>View More</span></button>
       </div>:'')
     return list
   }
@@ -123,9 +123,9 @@ class Collections extends Component {
       {collectionIntroView &&
         <div className='Collections-hexagon' id='introview'>
           {this.getContent()}
-          <svg id='2' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 70'>
+        {/*  <svg id='2' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 70'>
             <line className='App-collectionsLine' x1='0.5' x2='0.5' y2='300' fill='none' stroke='#464646' strokeMiterlimit='10' strokeWidth='0.2' />
-          </svg>
+          </svg>*/}
           <h2>Collections</h2>
         </div>}
         {!collectionIntroView &&
