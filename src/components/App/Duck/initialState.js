@@ -9,6 +9,7 @@ export const INITIAL_STATE = {
   admin: false,
   removePost: false,
   addPost: false,
+  editStory: false,
   collectionOptions: [],
   newCollection: '',
   addCollection: false,

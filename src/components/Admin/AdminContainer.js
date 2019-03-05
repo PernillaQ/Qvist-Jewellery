@@ -21,6 +21,7 @@ const mapStateToProps = state => {
   const detailView = appSelectors.getDetailView(state) // ?
   const removePost = appSelectors.getRemovePost(state)
   const addPost = appSelectors.getAddPost(state)
+  const editStory = appSelectors.getEditStory(state)
 
   return {
     user,
@@ -40,7 +41,8 @@ const mapStateToProps = state => {
     collectionOptions,
     detailView,
     removePost,
-    addPost
+    addPost,
+    editStory
   }
 }
 
@@ -62,6 +64,7 @@ const mapDispatchToProps = dispatch => {
   const setDetailView = (value) => dispatch(appCreators.setDetailView(value)) // ?
   const toggleRemovePost = (value) => dispatch(appCreators.toggleRemovePost(value))
   const toggleAddPost = (value) => dispatch(appCreators.toggleAddPost(value))
+  const toggleEditStory = (value) => dispatch(appCreators.toggleEditStory(value))
 
   return {
     toggleAdmin,
@@ -80,7 +83,8 @@ const mapDispatchToProps = dispatch => {
     setAddCollection,
     setDetailView,
     toggleRemovePost,
-    toggleAddPost
+    toggleAddPost,
+    toggleEditStory
   }
 }
 

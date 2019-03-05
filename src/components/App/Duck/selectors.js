@@ -25,6 +25,10 @@ const getAddPost = (state) => {
   return getApp(state).addPost
 }
 
+const getEditStory = (state) => {
+  return getApp(state).editStory
+}
+
 const getUser = (state) => {
   return getApp(state).user
 }
@@ -96,6 +100,7 @@ export default {
   getAdmin,
   getRemovePost,
   getAddPost,
+  getEditStory,
   getUser,
   getEmail,
   getPassword,

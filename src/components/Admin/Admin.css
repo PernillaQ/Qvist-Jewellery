@@ -1,7 +1,7 @@
 /*** Admin ***/
 
 .Admin-wrapper {
-  background: radial-gradient(#121416, #000000);
+  background: radial-gradient(#1a2023,#121416 15%, #000000);
   width: 100vw;
   max-width: 100%;
   height: auto;
@@ -17,18 +17,18 @@
 
 .Admin-wrapper h2 {
   background-color: #121416;
-  color: transparent;
+/*  color: transparent;*/
   width: 100%;
   font-size: 4.5rem;
   letter-spacing: 0.3rem;
   text-align: center;
-  text-shadow: inset 3px 3px 4px rgba(0,0,0,0.5);
+  text-shadow: inset 3px 3px 4px rgba(0,0,0,0.8);
   -webkit-background-clip: text;
       -moz-background-clip: text;
            background-clip: text;
   margin-top: 3rem;
   margin-bottom: 5rem;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .Admin-wrapper a {
@@ -39,28 +39,49 @@
   margin: 3rem 5rem 0 5rem;
 }
 
-.Admin-wrapper label {
-  color:gray;
-  margin-bottom: 2rem;
-}
-
 .Admin-wrapper .homeBtn {
-  background: none;
-  color:gray;
+  font-family: 'Open-Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
   border: none;
-}
-
-.Admin-wrapper .homeBtn:hover, .Admin-wrapper .signoutBtn:hover {
-  color: #f4f4f4;
+  color: #303b40;
+  text-decoration: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  background-image: linear-gradient(to right,#f3e5c9,#f3e5c9 50%,#303b40 50%);
 }
 
 .Admin-wrapper .signoutBtn {
-  background: none;
-  color: gray;
+  font-family: 'Open-Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  border: none;
+  color: #303b40;
+  text-decoration: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  background-image: linear-gradient(to right,#f3e5c9,#f3e5c9 50%,#303b40 50%);
   align-self: flex-end;
   border: none;
   margin-top: 3rem;
   margin-right: 3rem;
+}
+
+.Admin-wrapper .homeBtn:hover, .Admin-wrapper .signoutBtn:hover {
+  transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+  background-position: 0%;
+}
+
+.Admin-content {
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Admin-selectToDo {
@@ -70,25 +91,91 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 0;
   margin-bottom: 5rem;
 }
 
-.Admin-selectToDo h3 {
+.Admin-selectToDo input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 1rem;
+  width: 1rem;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  left:10rem;
+}
+
+.checkbox1, .checkbox2, .checkbox3  {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  background: radial-gradient(#121416, #000000);
+  border-radius: 50%;
+  border: 1px inset #1a2023;
+  -webkit-box-shadow: inset 2px 10px 2px 0px rgba(0,0,0,0.7),
+   1px 1px 3px 2px rgba(26,32,35,0.4);
+  -moz-box-shadow: 1px 1px 3px 2px rgba(26,32,35,0.4),
+  inset 2px 2px 10px 0px rgba(0,0,0,0.7);
+  box-shadow: 1px 1px 3px 2px rgba(26,32,35,0.4),
+  inset 2px 2px 10px 0px rgba(0,0,0,0.7);
+  left: 10rem;
+}
+
+.container:hover input ~ .checkbox1, .container:hover input ~ .checkbox2, .container:hover input ~ .checkbox3 {
+  background: radial-gradient(#1a2013, #000000);
+}
+
+/*.container input:checked ~ .checkbox{
+  background-color: #121416;
+  -webkit-box-shadow: inset 10px 10px 118px 0px rgba(0,0,0,0.83);
+-moz-box-shadow: inset 10px 10px 118px 0px rgba(0,0,0,0.83);
+box-shadow: inset 10px 10px 118px 0px rgba(0,0,0,0.83);
+}*/
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox1::after, .checkbox2::after, .checkbox3::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container .checkbox1::after, .container .checkbox2::after, .container .checkbox3::after{
+  left: 4px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  background-color: #e6c68a;
+  border: outset 0.75px #1a2023;
+  box-shadow:
+  inset 2px 0 4px #ffffff,
+  inset -3px 2px 3px #ddb260,
+  inset -1px 1.5px 2.5px #3b484f,
+    inset 1px 1.5px 2.5px #d49e36;
+  border-radius:50%;
+}
+
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkbox1::after, .container input:checked ~ .checkbox2::after, .container input:checked ~ .checkbox3::after {
+  display: block;
+}
+
+/*.Admin-selectToDo h3 {
   color: #f4f4f4;
   font-weight: 100;
   margin: 0;
   margin-top: 1rem;
   margin-bottom: 2rem;
   letter-spacing: 0.05rem;
-}
+}*/
 
 .Admin-preview {
   margin-bottom: 4rem;
 }
 
-.Admin-preview h3 {
-  color: gray;
+.Admin-preview h3, .Admin-selectToDo h3{
+  color:#303b40;
   font-size: 2rem;
   font-weight: 300;
   margin-bottom: 4rem;
@@ -98,7 +185,11 @@
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
   font-weight: 100;
-  color: #bf0000;
+  color:#f4f4f4;
+      padding-bottom: 1.5rem;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
 }
 
 .Admin-preview .Admin-post {
@@ -108,36 +199,76 @@
   flex-direction: row;
   align-items: center;
   justify-content: left;
+  -webkit-box-shadow: inset 10px 10px 50px 5px rgba(0,0,0,0.21),
+   10px 10px 62px 21px rgba(26,32,35,0.35);
+  -moz-box-shadow: inset 10px 10px 50px 5px rgba(0,0,0,0.21),
+   10px 10px 62px 21px rgba(26,32,35,0.35);
+  box-shadow: inset 10px 10px 50px 5px rgba(0,0,0,0.50),
+   10px 10px 62px 21px rgba(26,32,35,0.35);
   margin-bottom: 2rem;
+  border: 2px inset #1a2023;
+  background: radial-gradient(#121416, #000000);
   margin: 2rem;
-  border: 0.9px dotted #bf0000;
+  border-radius: 0.5rem;
   padding: 0 2rem;
 }
 
 .Admin-preview .Admin-post img {
   width: 7rem;
   height: auto;
+  margin-top: 2rem;
 }
 
 .Admin-preview .Admin-post h3 {
-  color:#f3e5c9;
+  color: gray;
   font-weight: 100;
+  font-size: 1.3rem;
   margin: 0;
   letter-spacing: 0.05rem;
 }
 
 .Admin-preview .Admin-posttext {
+  align-content: center;
   color: gray;
   width: 100%;
   font-family: 'Open Sans', sans-serif;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   text-align: justify;
-  margin: 3rem 0 2rem 3rem;
+  margin: 3rem 0 2rem 1.5rem;
 }
 
 /*** Remove button ***/
-.Admin-preview .Admin-posttext button {
+.Admin-preview .Admin-posttext button  {
+  font-family: 'Open-Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #303b40;
+  border: none;
+  align-self: flex-end;
+  outline: #1a2023;
+  text-decoration: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  background-image: linear-gradient(to right,#f3e5c9,#f3e5c9 50%,#303b40 50%);
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+}
+
+.Admin-preview .Admin-posttext button::before, .Admin-preview .Admin-posttext button::after {
+  height: 0;
+  transition: none;
+}
+
+.Admin-preview .Admin-posttext button:hover {
+  transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+  background-position: 0%;
+}
+/*.Admin-preview .Admin-posttext button {
+
   background: none;
   border:none;
   color: gray;
@@ -146,7 +277,7 @@
   align-self: flex-end;
   transform:scaleX(1.3);
   cursor: pointer;
-/*  background-color: #1a2023;
+ background-color: #1a2023;
   color: #1a2023;
   width: 2rem;
   align-self: flex-end;
@@ -159,15 +290,15 @@
   outline-color:  0.5px solid #bf0000;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
   padding: 0.4rem 0.1rem 0.45rem 0.2rem;
-  margin-top: 0;*/
-}
+  margin-top: 0;
+}*/
 
-.Admin-preview .Admin-posttext button:hover{
+/*.Admin-preview .Admin-posttext button:hover{
 color:#f4f4f4;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
-}
+}*/
 
 @-webkit-keyframes glow {
   from {
@@ -191,9 +322,10 @@ color:#f4f4f4;
 }
 
 .Admin-content h3  {
-  color:gray;
+  color: #303b40;
   font-size: 2rem;
   font-weight: 300;
+  margin-bottom: 4rem;
 }
 
 .Admin-addpost {
@@ -201,15 +333,47 @@ width: 50rem;
 height: auto;
 }
 
+.Admin-selectToDo {
+  display: flex;
+  flex-direction: column;
+}
 
-/*** Addpost ***/
+.Admin-selectToDo .container {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+    -webkit-user-select: none;
+      -moz-user-select: none;
+        -ms-user-select: none;
+  user-select: none;
+}
 
-.Addpost-wrapper {
+.Admin-selectToDo label {
+  color: gray;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/*** Addpost/ AddStory ***/
+.AddPost-uploadImg, .AddStory-uploadImg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.Addpost-wrapper, .AddStory-wrapper {
   color: gray;
   width: 100vw;
   max-width: 100%;
-  height: 35rem;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .Addpost-wrapper label {
@@ -226,35 +390,36 @@ height: auto;
   height: auto;
 }
 
-.Addpost-wrapper form {
+.Addpost-wrapper form, .AddStory-wrapper form{
   width: 15rem;
   height: auto;
   display: flex;
   flex-direction: column;
-  margin-bottom: 4em;
-  margin-left: 17rem;
 }
 
 .Addpost-wrapper input {
-  background: linear-gradient(to bottom,#f4f4f4, #ffffff, #f4f4f4);
-  color:gray;
-  width: 100%;
+  background: radial-gradient(#121416, #000000);
+  color: gray;
+  /*width: 100%;*/
   font-family: 'Open Sans', sans-serif;
-  border:2px inset gray;
+  border: 2px inset #1a2023;
   border-radius: 0.5rem;
   cursor: pointer;
   padding: 0.25rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
+/*.Addpost-wrapper .checkbox4, .Addpost-wrapper .checkbox5{
+  margin-top: 1rem;
+}*/
 
-.Addpost-wrapper textarea {
-  background: linear-gradient(to bottom,#f4f4f4, #ffffff, #f4f4f4);
+.Addpost-wrapper textarea, .AddStory-wrapper textarea {
+  background: radial-gradient(#121416, #000000);
   color:gray;
   width: 100%;
   height: 5rem;
   font-family: 'Open Sans', sans-serif;
-  border:2px inset gray;
+  border:2px inset #1a2023;
   border-radius: 0.5rem;
   cursor: pointer;
   resize: none;
@@ -262,7 +427,7 @@ height: auto;
   margin-bottom: 1rem;
 }
 
-.Addpost-wrapper input[type="file"]{
+.Addpost-wrapper input[type="file"], .AddStory-wrapper input[type="file"]{
   background: none;
   width: 10rem;
   height: 2rem;
@@ -276,14 +441,14 @@ height: auto;
   z-index: -1;
 }
 
-.Addpost-wrapper input[type='submit']{
-  background: linear-gradient(to bottom,#000000, #1a2023, #000000);
+.Addpost-wrapper input[type='submit'], .AddStory-wrapper input[type='submit']{
+  background: radial-gradient(#1a2023, #000000);
+  height: 2rem;
   color:#ead6c0;
   font-family: 'Open Sans', sans-serif;
-  border:1px solid black;
+  border:1px outset #1a2013;
   border-radius: 0.5em;
   cursor: pointer;
-  padding:0.5rem 3rem;
 }
 
 .Addpost-wrapper select {
@@ -309,15 +474,14 @@ height: auto;
   cursor: pointer;
 }
 
-.Addpost-wrapper button {
-  background: linear-gradient(to bottom,#000000, #1a2023, #000000);
+.Addpost-wrapper button,  .AddStory-wrapper button {
+  background: radial-gradient(#1a2023, #000000);
   color:#ead6c0;
   width: 6rem;
   height: 2rem;
-  border:2px inset gray;
-  border:1px solid black;
-  border-radius: 0.5rem;
+  border: 1px outset #1a2013;
+  border-radius: 0.5em;
   cursor: pointer;
   padding: 0.25rem;
-  margin-top: 1rem;
+  margin-left: 1rem;
 }

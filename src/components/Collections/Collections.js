@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './Collections.css'
 import firebase from './../../Utils/firebase.js'
 import DetailView from './Detailview/Detailview.js'
-import { HashLink as Link } from 'react-router-hash-link'
 
 class Collections extends Component {
 

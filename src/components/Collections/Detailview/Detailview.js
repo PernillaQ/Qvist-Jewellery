@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './../Collections.css'
-import { HashLink as Link } from 'react-router-hash-link'
 
 class DetailView extends Component {
 

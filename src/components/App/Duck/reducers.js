@@ -45,6 +45,13 @@ const _toggleAddPost = (state = INITIAL_STATE, action) => {
   }
 }
 
+const _toggleEditStory = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    editStory: action.value
+  }
+}
+
 const _setUser = (state = INITIAL_STATE, action) => {
   return {
     ...state,
@@ -163,6 +170,7 @@ const HANDLERS = {
   [Types.TOGGLE_ADMIN]: _toggleAdmin,
   [Types.TOGGLE_REMOVE_POST]: _toggleRemovePost,
   [Types.TOGGLE_ADD_POST]: _toggleAddPost,
+  [Types.TOGGLE_EDIT_STORY]: _toggleEditStory,
   [Types.SET_USER]: _setUser,
   [Types.SET_EMAIL]: _setEmail,
   [Types.SET_PASSWORD]: _setPassword,

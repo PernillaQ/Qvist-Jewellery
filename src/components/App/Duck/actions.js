@@ -12,6 +12,7 @@ const { Types, Creators } = createActions({
   toggleAdmin: ['value'],
   toggleRemovePost: ['value'],
   toggleAddPost: ['value'],
+  toggleEditStory: ['value'],
   setCollectionOptions: ['value'],
   setNewCollection: ['value'],
   setAddCollection: ['value'],

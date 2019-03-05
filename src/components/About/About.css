@@ -65,3 +65,44 @@
 .About-wrapper p::first-letter {
   font-size: 1.5rem;
 }
+@media screen and (min-width:200px) and (max-width: 374px){
+  .About-h2-wrapper h2 {
+    max-width: 100%;
+    font-size: 3rem;
+    text-align: center;
+    margin-left: 0;
+  }
+  .About-wrapper p {
+    max-width: 80%;
+  }
+.About-wrapper img:nth-child(2){
+  width: 80%;
+  height: auto;
+}
+.About-wrapper img:nth-child(3){
+  width: 20%;
+  height: auto;
+}
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px){
+  .About-wrapper p {
+    width: 80%;
+  }
+  .About-wrapper img:nth-child(2){
+    width: 80%;
+    height: auto;
+  }
+  .About-wrapper img:nth-child(3){
+    width: 20%;
+    height: auto;
+  }
+  .About-h2-wrapper {
+    margin-top: 0;
+  }
+  .About-h2-wrapper h2 {
+    font-size: 4rem;
+    text-align: center;
+    margin-left: 0;
+  }
+}

@@ -111,9 +111,11 @@ render() {
 	return(
 		  <div className ="Addpost-wrapper">
         <h3>Add a post</h3>
+				<div className='AddPost-uploadImg'>
         <label htmlFor="inputtypefile">Choose an image</label>
 		    <input type="file" onChange={this.fileSelectedHandler} id='inputtypefile'/>
         <button onClick={this.fileUploadHandler}>Upload</button>
+				</div>
         {title !== '' ?
           <img src={url}alt="a Piece of jewellery"/>
         :''}
@@ -130,13 +132,13 @@ render() {
                 </select>
               </label>}
           <label>
-            Add a new collection?
-            <input name="addCollection" type="checkbox" checked={addCollection} onChange={this.handleInputChange} />
-          </label>
+            <input name="addCollection" className='checkbox4' type="checkbox" checked={addCollection} onChange={this.handleInputChange} />
+						Add a new collection?
+					</label>
           <label>
-            Set as introimage
-            <input name="addIntroImage" type="checkbox" checked={introImage} onChange={this.handleInputChange} />
-          </label>
+            <input name="addIntroImage" className='checkbox5' type="checkbox" checked={introImage} onChange={this.handleInputChange} />
+						Set as introimage
+					</label>
           {addCollection &&
           <input type="text"
           name="newCollection"

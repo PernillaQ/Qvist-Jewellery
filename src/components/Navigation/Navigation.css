@@ -15,7 +15,7 @@
 .Navigation ul {
   list-style-type: none;
   padding-top: 0.5rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .Navigation li {
@@ -40,4 +40,24 @@
 .Navigation li a:hover {
  transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
  background-position: 0%;
+}
+
+@media screen and (min-width:200px) and (max-width: 374px){
+  .Navigation ul {
+    list-style-type: none;
+    padding-top: 0.5rem;
+    margin-top: -5rem;
+    margin-left: -11rem;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 767px){
+  .Navigation {
+    margin-left: 0;
+  }
+  .Navigation ul {
+    list-style-type: none;
+    padding-top: 0.5rem;
+    margin-top: -2rem;
+    margin-left: -2rem;
+  }
 }

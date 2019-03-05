@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Admin.css'
 import Login from './../Login/login.js'
 import AddPost from './Addpost/Addpost.js'
+import AddStory from './AddAbout/Addabout.js'
 import { HashLink as Link } from 'react-router-hash-link';
 import firebase from './../../Utils/firebase.js'
 
@@ -50,17 +51,27 @@ removePost = (key, collection, filename) => {
   }
 
   handleChange= (e)=> {
-    const { toggleRemovePost, toggleAddPost } = this.props
+    const { toggleRemovePost, toggleAddPost, toggleEditStory } = this.props
     if (e.target.checked === true) {
-      e.target.name === 'removePost' ? toggleRemovePost(true) : toggleAddPost(true)
+      if (e.target.name === 'removePost'){
+        toggleRemovePost(true)
+      }
+      if(e.target.name === 'addPost'){
+        toggleAddPost(true)
+      }
+      if(e.target.name === 'editStory'){
+      toggleEditStory(true)
+      }
     }
-    else {
-      e.target.name === 'removePost' ? toggleRemovePost(false) : toggleAddPost(false)
+  else{
+      toggleRemovePost(false)
+      toggleAddPost(false)
+      toggleEditStory(false)
     }
   }
 
   render () {
-    const { user, removePost, addPost } = this.props
+    const { user, removePost, addPost, editStory } = this.props
     return (
       <div className='Admin-wrapper' id='admin'>
       {user &&
@@ -70,19 +81,26 @@ removePost = (key, collection, filename) => {
         {user &&
         <div className='Admin-selectToDo'>
         <h3>What do you want to change?</h3>
-        <label>
+        <label className='container'>
           <input name="removePost" type="checkbox" checked={removePost} onChange={this.handleChange} />
+           <span className="checkbox1"></span>
           Remove a post?
         </label>
-        <label>
+        <label className='container'>
           <input name="addPost" type="checkbox" checked={addPost} onChange={this.handleChange} />
+           <span className="checkbox2"></span>
           Add a post?
+        </label>
+        <label className='container'>
+          <input name="editStory" type="checkbox" checked={editStory} onChange={this.handleChange} />
+           <span className="checkbox3"></span>
+          Edit story?
         </label>
         </div>}
     {removePost &&
         <div className ='Admin-preview'>
         <h3>Remove a post</h3>
-        <h4>DangerZone</h4>
+        <h4>Dangerzone</h4>
       {this.getPreviewList()}
       </div>}
         <div className='Admin-content'>
@@ -92,6 +110,11 @@ removePost = (key, collection, filename) => {
           <div className='Admin-addpost'>
             <AddPost {...this.props} />
           </div>}
+        {editStory &&
+          <div className='Admin-editStory'>
+            <AddStory {...this.props} />
+          </div>}
+        }
         </div>}
          <Link to='#home'><button className='homeBtn' onClick={this.home}>Home</button></Link>
       </div>

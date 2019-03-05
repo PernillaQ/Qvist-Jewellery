@@ -181,13 +181,19 @@
  font-size: 2rem;
  letter-spacing: 0.05rem;
  position: absolute;
- margin-top: 6.5rem;
+ bottom: 14rem;
+/* margin-top: 6.5rem;*/
 }
 
 .Collections-intro-wrapper {
+  margin:  2rem 6rem;
+  min-height: 0;
+  min-width: 0;
+  -webkit-animation: fadeInOpacity ease-in 2s;
+          animation: fadeInOpacity ease-in 2s;
  background-color: transparent;
  width: 30vw;
- height: 45rem;
+ height: 35rem;
  display: -webkit-box;
  display: -ms-flexbox;
  display: flex;
@@ -198,9 +204,6 @@
  -webkit-box-align: center;
      -ms-flex-align: center;
          align-items: center;
- -webkit-box-pack: center;
-     -ms-flex-pack: center;
-         justify-content: center;
   position: relative;
   margin-top: 7rem;
 }
@@ -216,13 +219,13 @@
          animation: fadeInOpacity ease-in 2s;
 }
 
-.Collections-intro-wrapper {
+/*.Collections-intro-wrapper {
  margin:  2rem 6rem;
  min-height: 0;
  min-width: 0;
  -webkit-animation: fadeInOpacity ease-in 2s;
          animation: fadeInOpacity ease-in 2s;
-}
+}*/
 
 .Collections-intro-wrapper a {
   margin-top: 7rem;
@@ -240,7 +243,7 @@
  font-weight: 100;
  line-height: 2rem;
  position: absolute;
- bottom: 3rem;
+ bottom: 4rem;
 }
 
 .Collections-collection {
@@ -318,10 +321,11 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
 -webkit-animation: fadeInOpacity ease-in-out 2.9s;
        animation: fadeInOpacity ease-in-out 2.9s;
 }
+
 .Detailview-collection-wrapper .DetailView-btn-wrapper{
   position: relative;
-  min-width: 0;
-  min-height: 0;
+  align-self: flex-end;
+  margin-right: 10rem;
 }
 
 .Detailview-collection-wrapper h3 {
@@ -373,21 +377,38 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
  margin-top: 4rem;
 }
 
-.Detailview-collection-wrapper button {
- background-color: transparent;
- color: gray;
- position: absolute;
- font-size: 2rem;
- border: none;
- margin-top: 0;
+.Detailview-collection-wrapper button, .Detailview-detailinfo-wrapper button {
+  font-family: 'Open-Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #303b40;
+  align-self: flex-end;
+  outline: #1a2023;
+  text-decoration: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  background-image: linear-gradient(to right,#f3e5c9,#f3e5c9 50%,#303b40 50%);
+  margin-bottom: 6rem;
+}
+
+.Detailview-collection-wrapper button::before, .Detailview-collection-wrapper button::after,.Detailview-detailinfo-wrapper button::before, .Detailview-detailinfo-wrapper button::after {
+  height: 0;
+  transition: none;
+}
+
+.Detailview-collection-wrapper button:hover, .Detailview-detailinfo-wrapper button:hover {
+  transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+  background-position: 0%;
 }
 
 .Detailview-collection-wrapper img {
- width: 45%;
- height: auto;
- opacity: 1;
- -webkit-animation: fadeInOpacity ease-in-out 2.9s;
-         animation: fadeInOpacity ease-in-out 2.9s;
+  width: 45%;
+  height: auto;
+  opacity: 1;
+    -webkit-animation: fadeInOpacity ease-in-out 2.9s;
+  animation: fadeInOpacity ease-in-out 2.9s;
 }
 
 .Detailview-collection {
@@ -438,9 +459,9 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
  background: -o-radial-gradient(#1a2023, #121416,#000000, #090909);
  background: radial-gradient(#1a2023, #121416,#000000, #090909);
 /*  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 -webkit-clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
-clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
+clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);*/
  width: 60%;
  height: 35rem;
  display: -webkit-box;
@@ -486,12 +507,12 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
  -ms-flex-item-align: end;
      align-self: flex-end;
 }
-
+/*
 .Detailview-detailinfo button {
  background: transparent;
  font-size: 1.5rem;
  margin-top: 34rem;
-}
+}*/
 
 .Detailview-detailinfo p {
   color: gray;
@@ -517,4 +538,82 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
  100% {
    opacity: 1;
  }
+}
+@media screen and (min-width:200px) and (max-width: 374px){
+  .Collections-hexagon {
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top:0;
+    margin-top: 6rem;
+  }
+  .Collections-intro-wrapper{
+    margin: 0;
+    width: 100vw;
+    max-width: 100%;
+  }
+  .Collections-intro-wrapper img {
+    margin-top: 0;
+  }
+  .Collections-wrapper h2 {
+    font-size: 2rem;
+    margin: 1rem;
+    align-self: flex-end;
+    margin-top: 4rem;
+    margin-left: 4rem;
+  }
+  .Collections-intro-wrapper {
+    width: 85vw;
+    max-width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    height: 32rem;
+  }
+  .Collections-intro-wrapper p{
+    width: 80%;
+    bottom: 1.5rem;
+  }
+  .Collections-wrapper h3{
+    bottom: 18rem;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 767px){
+.Collections-hexagon {
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top:0;
+  margin-top: 6rem;
+}
+.Collections-intro-wrapper{
+  margin: 0;
+  width: 100vw;
+  max-width: 100%;
+}
+.Collections-intro-wrapper img {
+  margin-top: 0;
+}
+.Collections-wrapper h2 {
+  font-size: 3rem;
+  margin: 1rem;
+  align-self: flex-end;
+  margin-top: 4rem;
+  margin-left: 6rem;
+}
+.Collections-intro-wrapper {
+  width: 100vw;
+  max-width: 100%;
+  margin-top: 5rem;
+  height: 32rem;
+}
+.Collections-intro-wrapper p{
+  width: 80%;
+  bottom: 1.5rem;
+}
+.Collections-wrapper h3{
+  bottom: 16rem;
+}
 }

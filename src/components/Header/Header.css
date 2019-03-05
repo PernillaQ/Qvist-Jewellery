@@ -201,3 +201,175 @@ h1:nth-child(1) h1:nth-child(2) {
     stroke-dashoffset: 0;
   }
 }
+@media screen and (min-width:200px) and (max-width: 374px){
+  .Header-wrapper{
+    width: 100vw;
+    max-width: 100%;
+  }
+  .Header {
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .Header h1 {
+    font-size: 1.3rem;
+    height: 30rem;
+    width: 30rem;
+    right: 0;
+}
+.Header svg {
+  display: none;
+}
+.Header img {
+  width: 25%;
+  height: auto;
+  left: 1rem;
+}
+.Header-h1-wrapper {
+  width: 100vw;
+  max-width: 100%;
+  right: 0;
+  bottom: 0;
+}
+.vividDream, .hiddenDesires {
+  width: 100vw;
+  max-width: 100%;
+}
+.vividDream h1:nth-child(1){
+  width: 100vw;
+  max-width: 100%;
+  height: 3rem;
+  margin-left: 0;
+}
+.vividDream h1:nth-child(2){
+  width: 100vw;
+  max-width: 100%;
+  height: 3rem;
+  margin-left: -5rem;
+}
+.hiddenDesires h1:nth-child(1){
+  width: 100vw;
+  max-width: 100%;
+  height: 3rem;
+  margin-right: 4rem;
+}
+.hiddenDesires h1:nth-child(2) {
+  width: 100vw;
+  max-width: 100%;
+  height: 3rem;
+  position: relative;
+  margin-left: 7rem;
+  margin-right: 0;
+}
+.and h1 {
+  width: 100vw;
+  max-width: 100%;
+  height: 6rem;
+  font-size: 5rem;
+  margin-top: 2rem;
+  margin-left: 0;
+  margin-right: 6rem;
+}
+.distantMemories h1:nth-child(1){
+  width: 100vw;
+  max-width: 100%;
+  height: 3rem;
+  margin-bottom: 2rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+.distantMemories h1:nth-child(2){
+  width: 100vw;
+  max-width: 100%;
+  height: 3rem;
+  letter-spacing: 1.25rem;
+  margin: 0;
+}
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px){
+  .Header-wrapper{
+    width: 100vw;
+    max-width: 100%;
+  }
+  .Header {
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+  }
+.Header svg {
+  display: none;
+}
+.Header img {
+  width: 25%;
+  height: auto;
+  left: 1rem;
+}
+.Header h1 {
+  font-size: 1.6rem;
+  height: 30rem;
+  width: 30rem;
+  right: 0;
+}
+.Header-h1-wrapper {
+  width: 100vw;
+  max-width: 100%;
+  right: 0;
+  bottom: 0;
+}
+.vividDream, .hiddenDesires, .distantMemories{
+  width: 100vw;
+  max-width: 100%;
+}
+.vividDream h1:nth-child(1){
+  width: 100vw;
+  max-width: 100%;
+  height: 3rem;
+  margin-left: 0;
+}
+.vividDream h1:nth-child(2){
+  width: 100vw;
+  max-width: 100%;
+  height: 3rem;
+  margin-left: -5rem;
+}
+.hiddenDesires h1:nth-child(1){
+  width: 100vw;
+  max-width: 100%;
+  height: 3rem;
+  margin-right: 4rem;
+}
+.hiddenDesires h1:nth-child(2) {
+  width: 100vw;
+  max-width: 100%;
+  height: 3rem;
+  position: relative;
+}
+.and h1 {
+  width: 100vw;
+  max-width: 100%;
+  height: 6rem;
+  font-size: 5rem;
+  margin-top: 2rem;
+  margin-left: 0;
+  margin-right: 6rem;
+}
+.distantMemories h1:nth-child(1){
+  width: 100vw;
+  max-width: 100%;
+  height: 3rem;
+  margin-bottom: 2rem;
+  margin-left: 0;
+  margin-right: 2rem;
+  margin-right: 0;
+}
+.distantMemories h1:nth-child(2){
+  width: 100vw;
+  max-width: 100%;
+  height: 3rem;
+  letter-spacing: 1.25rem;
+  margin: 0;
+}
+}

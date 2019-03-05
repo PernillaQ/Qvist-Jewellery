@@ -95,3 +95,21 @@
   letter-spacing: 0.01rem;
   color: #464646;
 }
+@media screen and (min-width:200px) and (max-width: 374px){
+  .Retailers h2 {
+    width: 100vw;
+    max-width: 100%;
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px){
+  .Retailers-wrapper {
+    margin-top: 0;
+  }
+  .Retailers h2 {
+    width: 100vw;
+    max-width: 100%;
+    font-size: 3rem;
+  }
+}

@@ -71,3 +71,15 @@ background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 }*/
+
+@media screen and (min-width:200px) and (max-width: 374px){
+  .App-triangle{
+    height: 3rem;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .App-triangle{
+    height: 5rem;
+  }
+}
