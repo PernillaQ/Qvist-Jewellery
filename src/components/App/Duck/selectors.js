@@ -33,6 +33,14 @@ const getEditRetailers = (state) => {
   return getApp(state).editRetailers
 }
 
+const getStoryContent = (state) => {
+  return getApp(state).storyContent
+}
+
+const getStoryImg = (state) => {
+  return getApp(state).storyImg
+}
+
 const getUser = (state) => {
   return getApp(state).user
 }
@@ -118,6 +126,8 @@ export default {
   getAddPost,
   getEditStory,
   getEditRetailers,
+  getStoryContent,
+  getStoryImg,
   getUser,
   getEmail,
   getPassword,

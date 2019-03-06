@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import './App.css'
 import Header from './../Header/Header.js'
 import Navbar from './../Navigation/Navigation.js'
-import CollectionsContainer from './../Collections/CollectionsContainer.js'
-import About from './../About/About.js'
-import RetailersContainer from './../Retailers/RetailersContainer.js'
+import Collections from './../Collections/CollectionsContainer.js'
+import About from './../About/AboutContainer.js'
+import Retailers from './../Retailers/RetailersContainer.js'
 import Contact from './../Contact/Contact.js'
-import AdminContainer from './../Admin/AdminContainer.js'
-import FooterContainer from './../Footer/FooterContainer.js'
+import Admin from './../Admin/AdminContainer.js'
+import Footer from './../Footer/FooterContainer.js'
 
 /*    return (
         <Router>
@@ -43,14 +43,14 @@ class App extends Component {
             <Header />
             <Navbar />
             <div className='App-triangle' />
-            <CollectionsContainer />
-            <RetailersContainer />
+            <Collections />
+            <Retailers />
             <About />
             <Contact />
-            <FooterContainer {...this.props} />
+            <Footer {...this.props} />
           </div>}
         {admin &&
-        <AdminContainer {...this.props} />
+        <Admin {...this.props} />
         }
       </div>
 

@@ -59,6 +59,20 @@ const _toggleEditRetailers = (state = INITIAL_STATE, action) => {
   }
 }
 
+const _setStoryContent = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    storyContent: action.value
+  }
+}
+
+const _setStoryImg = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    storyImg: action.value
+  }
+}
+
 const _setUser = (state = INITIAL_STATE, action) => {
   return {
     ...state,
@@ -200,6 +214,8 @@ const HANDLERS = {
   [Types.TOGGLE_ADD_POST]: _toggleAddPost,
   [Types.TOGGLE_EDIT_STORY]: _toggleEditStory,
   [Types.TOGGLE_EDIT_RETAILERS]: _toggleEditRetailers,
+  [Types.SET_STORY_CONTENT]: _setStoryContent,
+  [Types.SET_STORY_IMG]: _setStoryImg,
   [Types.SET_USER]: _setUser,
   [Types.SET_EMAIL]: _setEmail,
   [Types.SET_PASSWORD]: _setPassword,

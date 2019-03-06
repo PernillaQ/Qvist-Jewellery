@@ -11,6 +11,8 @@ export const INITIAL_STATE = {
   addPost: false,
   editStory: false,
   editRetailers: false,
+  storyContent: '',
+  storyImg: '',
   collectionOptions: [],
   newCollection: '',
   addCollection: false,
