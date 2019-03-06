@@ -52,6 +52,13 @@ const _toggleEditStory = (state = INITIAL_STATE, action) => {
   }
 }
 
+const _toggleEditRetailers = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    editRetailers: action.value
+  }
+}
+
 const _setUser = (state = INITIAL_STATE, action) => {
   return {
     ...state,
@@ -113,6 +120,13 @@ const _setAllPosts = (state = INITIAL_STATE, action) => {
   }
 }
 
+const _setRetailers = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    retailers: action.value
+  }
+}
+
 const _setDetailId = (state = INITIAL_STATE, action) => {
   return {
     ...state,
@@ -131,6 +145,20 @@ const _setContent = (state = INITIAL_STATE, action) => {
   return {
     ...state,
     content: action.value
+  }
+}
+
+const _setLocation = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    location: action.value
+  }
+}
+
+const _setWebsite = (state = INITIAL_STATE, action) => {
+  return {
+    ...state,
+    website: action.value
   }
 }
 
@@ -171,6 +199,7 @@ const HANDLERS = {
   [Types.TOGGLE_REMOVE_POST]: _toggleRemovePost,
   [Types.TOGGLE_ADD_POST]: _toggleAddPost,
   [Types.TOGGLE_EDIT_STORY]: _toggleEditStory,
+  [Types.TOGGLE_EDIT_RETAILERS]: _toggleEditRetailers,
   [Types.SET_USER]: _setUser,
   [Types.SET_EMAIL]: _setEmail,
   [Types.SET_PASSWORD]: _setPassword,
@@ -180,9 +209,12 @@ const HANDLERS = {
   [Types.SET_ADD_COLLECTION]: _setAddCollecion,
   [Types.SET_COLLECTION]: _setCollection,
   [Types.SET_ALL_POSTS]: _setAllPosts,
+  [Types.SET_RETAILERS]: _setRetailers,
   [Types.SET_DETAIL_ID]: _setDetailId,
   [Types.SET_TITLE]: _setTitle,
   [Types.SET_CONTENT]: _setContent,
+  [Types.SET_LOCATION]: _setLocation,
+  [Types.SET_WEBSITE]: _setWebsite,
   [Types.SET_FILE]: _setFile,
   [Types.SET_SELECTED_IMAGE]: _setSelectedImage,
   [Types.SET_URL]: _setUrl,

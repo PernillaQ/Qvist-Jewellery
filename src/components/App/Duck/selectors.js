@@ -29,6 +29,10 @@ const getEditStory = (state) => {
   return getApp(state).editStory
 }
 
+const getEditRetailers = (state) => {
+  return getApp(state).editRetailers
+}
+
 const getUser = (state) => {
   return getApp(state).user
 }
@@ -65,6 +69,10 @@ const getAllPosts = (state) => {
   return getApp(state).allPosts
 }
 
+const getRetailers = (state) => {
+  return getApp(state).retailers
+}
+
 const getDetailId = (state) => {
   return getApp(state).detailId
 }
@@ -75,6 +83,14 @@ const getTitle = (state) => {
 
 const getContent = (state) => {
   return getApp(state).content
+}
+
+const getLocation = (state) => {
+  return getApp(state).location
+}
+
+const getWebsite = (state) => {
+  return getApp(state).website
 }
 
 const getFile = (state) => {
@@ -101,6 +117,7 @@ export default {
   getRemovePost,
   getAddPost,
   getEditStory,
+  getEditRetailers,
   getUser,
   getEmail,
   getPassword,
@@ -110,9 +127,12 @@ export default {
   getAddCollection,
   getCollection,
   getAllPosts,
+  getRetailers,
   getDetailId,
   getTitle,
   getContent,
+  getLocation,
+  getWebsite,
   getFile,
   getSelectedImage,
   getUrl,

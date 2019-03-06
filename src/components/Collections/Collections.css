@@ -42,7 +42,7 @@
  -ms-flex-wrap: wrap;
      flex-wrap: wrap;
  padding-top: 6rem;
- padding-bottom: 6rem;
+ padding-bottom: 12rem;;
  margin-top: -2rem;
  -webkit-animation: fadeInOpacity ease-in 1s;
          animation: fadeInOpacity ease-in 1s;
@@ -161,7 +161,7 @@
  background-color: #000000; /*** check when dark **/
 /* color: transparent;*/ /** check when dark **/
  position: absolute;
- margin-left: 35vw;
+ margin-left: 33vw;
  text-shadow: inset 2px 2px 3px rgba(0,0,0,0.5);
   -webkit-background-clip: text;
    -moz-background-clip: text;
@@ -412,6 +412,8 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
 }
 
 .Detailview-collection {
+  width: 100vw;
+  max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

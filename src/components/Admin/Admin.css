@@ -26,8 +26,8 @@
   -webkit-background-clip: text;
       -moz-background-clip: text;
            background-clip: text;
-  margin-top: 3rem;
-  margin-bottom: 5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   opacity: 0.9;
 }
 
@@ -67,11 +67,11 @@
   background-image: linear-gradient(to right,#f3e5c9,#f3e5c9 50%,#303b40 50%);
   align-self: flex-end;
   border: none;
-  margin-top: 3rem;
-  margin-right: 3rem;
+  margin-top: 2rem;
+  margin-right: 2rem;
 }
 
-.Admin-wrapper .homeBtn:hover, .Admin-wrapper .signoutBtn:hover {
+.Admin-wrapper .homeBtn:hover, .Admin-wrapper .signoutBtn:hover, .AddPost-uploadImg label:hover, .AddStory-uploadImg label:hover, .Editretailers-uploadImg label:hover  {
   transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
   background-position: 0%;
 }
@@ -85,9 +85,10 @@
 }
 
 .Admin-selectToDo {
+  background: radial-gradient(#171c1f,#121416, transparent, transparent);
   width: 100vh;
   max-width: 100%;
-  height: auto;
+  height: 25rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -106,82 +107,77 @@
   left:10rem;
 }
 
-.checkbox1, .checkbox2, .checkbox3  {
+.checkbox1, .checkbox2, .checkbox3, .checkbox4, .checkbox5, .checkbox6 {
   position: absolute;
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
   background: radial-gradient(#121416, #000000);
   border-radius: 50%;
-  border: 1px inset #1a2023;
+  /*border: 1px inset #1a2023;*/
   -webkit-box-shadow: inset 2px 10px 2px 0px rgba(0,0,0,0.7),
-   1px 1px 3px 2px rgba(26,32,35,0.4);
-  -moz-box-shadow: 1px 1px 3px 2px rgba(26,32,35,0.4),
+   1px 1px 4px 2px rgba(26,32,35,0.6);
+  -moz-box-shadow: 1px 1px 4px 2px rgba(26,32,35,0.6),
   inset 2px 2px 10px 0px rgba(0,0,0,0.7);
-  box-shadow: 1px 1px 3px 2px rgba(26,32,35,0.4),
+  box-shadow: 1px 1px 4px 2px rgba(26,32,35,0.6),
   inset 2px 2px 10px 0px rgba(0,0,0,0.7);
   left: 10rem;
 }
-
-.container:hover input ~ .checkbox1, .container:hover input ~ .checkbox2, .container:hover input ~ .checkbox3 {
-  background: radial-gradient(#1a2013, #000000);
+.checkbox5, .checkbox6 {
+  left: 41%;
 }
 
-/*.container input:checked ~ .checkbox{
-  background-color: #121416;
-  -webkit-box-shadow: inset 10px 10px 118px 0px rgba(0,0,0,0.83);
--moz-box-shadow: inset 10px 10px 118px 0px rgba(0,0,0,0.83);
-box-shadow: inset 10px 10px 118px 0px rgba(0,0,0,0.83);
+.container:hover input ~ .checkbox1, .container:hover input ~ .checkbox2, .container:hover input ~ .checkbox3, .container:hover input ~ .checkbox4, .container:hover input ~ .checkbox5, .container:hover input ~ .checkbox6{
+  background: radial-gradient(#1a2013, #000000);
+}
+/*
+.container input:checked ~ .checkbox1,.container input:checked ~ .checkbox2, .container input:checked ~ .checkbox3 {
+  background-color: #1a2013;
+  -webkit-box-shadow: inset 1px 1px 3px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: inset 1px 1px 3px 0px rgba(0,0,0,0.2);
+      box-shadow: inset 1px 1px 3px 0px rgba(0,0,0,0.2);
 }*/
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkbox1::after, .checkbox2::after, .checkbox3::after {
+.checkbox1::after, .checkbox2::after, .checkbox3::after, .checkbox4::after, .checkbox5::after, .checkbox6::after  {
   content: "";
   position: absolute;
   display: none;
 }
 
-.container .checkbox1::after, .container .checkbox2::after, .container .checkbox3::after{
-  left: 4px;
-  top: 4px;
-  width: 16px;
-  height: 16px;
+.container .checkbox1::after, .container .checkbox2::after, .container .checkbox3::after, .container .checkbox4::after,.container .checkbox5::after, .container .checkbox6::after{
+  left: 4.45px;
+  top: 4.45px;
+  width: 10px;
+  height: 10px;
   background-color: #e6c68a;
   border: outset 0.75px #1a2023;
   box-shadow:
-  inset 2px 0 4px #ffffff,
+  inset 2px 0 5px #ffffff,
   inset -3px 2px 3px #ddb260,
   inset -1px 1.5px 2.5px #3b484f,
-    inset 1px 1.5px 2.5px #d49e36;
+  inset -2px 2px 2px #121416,
+  inset 2px 2px 3px #d49e36;
   border-radius:50%;
 }
 
-
 /* Show the checkmark when checked */
-.container input:checked ~ .checkbox1::after, .container input:checked ~ .checkbox2::after, .container input:checked ~ .checkbox3::after {
+.container input:checked ~ .checkbox1::after, .container input:checked ~ .checkbox2::after, .container input:checked ~ .checkbox3::after, .container input:checked ~ .checkbox4::after, .container input:checked ~ .checkbox5::after, .container input:checked ~ .checkbox6::after {
   display: block;
 }
 
-/*.Admin-selectToDo h3 {
-  color: #f4f4f4;
-  font-weight: 100;
-  margin: 0;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  letter-spacing: 0.05rem;
-}*/
-
-.Admin-preview {
-  margin-bottom: 4rem;
+.Admin-preview, .Admin-previewRetailers {
+  margin-bottom: 8rem;
 }
 
-.Admin-preview h3, .Admin-selectToDo h3{
+.Admin-preview h3, .Admin-previewRetailers h3, .Admin-selectToDo h3{
   color:#303b40;
   font-size: 2rem;
   font-weight: 300;
   margin-bottom: 4rem;
+  margin-top: 0;
 }
 
-.Admin-preview h4 {
+.Admin-preview h4, .Admin-previewRetailers h4 {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
   font-weight: 100;
@@ -192,7 +188,7 @@ box-shadow: inset 10px 10px 118px 0px rgba(0,0,0,0.83);
     animation: glow 1s ease-in-out infinite alternate;
 }
 
-.Admin-preview .Admin-post {
+.Admin-preview .Admin-post , .Admin-previewRetailers .Retailers-post{
   width: 60vw;
   height: auto;
   display: flex;
@@ -213,13 +209,16 @@ box-shadow: inset 10px 10px 118px 0px rgba(0,0,0,0.83);
   padding: 0 2rem;
 }
 
-.Admin-preview .Admin-post img {
-  width: 7rem;
+.Admin-preview .Admin-post img , .Admin-previewRetailers .Retailers-post img{
+  width: 6rem;
   height: auto;
+}
+
+.Admin-preview .Admin-post img  {
   margin-top: 2rem;
 }
 
-.Admin-preview .Admin-post h3 {
+.Admin-preview .Admin-post h3, .Admin-previewRetailers .Retailers-post h3{
   color: gray;
   font-weight: 100;
   font-size: 1.3rem;
@@ -227,7 +226,7 @@ box-shadow: inset 10px 10px 118px 0px rgba(0,0,0,0.83);
   letter-spacing: 0.05rem;
 }
 
-.Admin-preview .Admin-posttext {
+.Admin-preview .Admin-posttext , .Admin-previewRetailers .Admin-retailerstext {
   align-content: center;
   color: gray;
   width: 100%;
@@ -240,7 +239,7 @@ box-shadow: inset 10px 10px 118px 0px rgba(0,0,0,0.83);
 }
 
 /*** Remove button ***/
-.Admin-preview .Admin-posttext button  {
+.Admin-preview .Admin-posttext button , .Admin-previewRetailers  button {
   font-family: 'Open-Sans', sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
@@ -258,12 +257,12 @@ box-shadow: inset 10px 10px 118px 0px rgba(0,0,0,0.83);
   margin-bottom: 0.35rem;
 }
 
-.Admin-preview .Admin-posttext button::before, .Admin-preview .Admin-posttext button::after {
+.Admin-preview .Admin-posttext button::before, .Admin-preview .Admin-posttext button::after. .Admin-previewRetailers button::after {
   height: 0;
   transition: none;
 }
 
-.Admin-preview .Admin-posttext button:hover {
+.Admin-preview .Admin-posttext button:hover, .Admin-previewRetailers button:hover {
   transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
   background-position: 0%;
 }
@@ -300,16 +299,6 @@ color:#f4f4f4;
   animation: glow 1s ease-in-out infinite alternate;
 }*/
 
-@-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #bf0000, 0 0 40px #bf0000, 0 0 50px #bf0000, 0 0 60px #bf0000, 0 0 70px #bf0000;
-  }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #FF0000, 0 0 40px #FF0000, 0 0 50px #FF0000, 0 0 60px #FF0000, 0 0 70px #FF0000, 0 0 80px #FF0000;
-  }
-}
-
-
 .Admin-content h2 {
   align-self: center;
   font-size: 4.5rem;
@@ -328,17 +317,14 @@ color:#f4f4f4;
   margin-bottom: 4rem;
 }
 
-.Admin-addpost {
-width: 50rem;
-height: auto;
-}
-
 .Admin-selectToDo {
   display: flex;
   flex-direction: column;
 }
 
 .Admin-selectToDo .container {
+  width: 90%;
+  align-self: center;
   display: block;
   position: relative;
   margin-bottom: 12px;
@@ -356,19 +342,39 @@ height: auto;
   margin-bottom: 2rem;
 }
 
-/*** Addpost/ AddStory ***/
-.AddPost-uploadImg, .AddStory-uploadImg {
+/*** Addpost/ AddStory / editRetailers ***/
+.AddPost-uploadImg, .AddStory-uploadImg, .Editretailers-uploadImg {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-bottom: 0.5rem;
 }
 
-.Addpost-wrapper, .AddStory-wrapper {
+.AddStory-wrapper img, .Editretailers-wrapper img {
+  width: 25%;
+  height: auto;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+}
+
+.AddPost-uploadImg label, .AddStory-uploadImg label, .Editretailers-uploadImg label{
   color: gray;
-  width: 100vw;
+  text-decoration: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  background-image: linear-gradient(to right,#f3e5c9,#f3e5c9 50%,gray 50%);
+  align-self: flex-end;
+  border: none;
+  margin-bottom: 0.5rem;
+}
+
+.Addpost-wrapper, .AddStory-wrapper, .Editretailers-wrapper{
+  background: radial-gradient(#1a2023 1%, transparent, transparent);
+  color: gray;
   max-width: 100%;
-  height: 40rem;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -376,8 +382,15 @@ height: auto;
   margin-bottom: 4rem;
 }
 
-.Addpost-wrapper label {
-  color:gray;
+.AddStory-wrapper, .Editretailers-wrapper {
+  height: 40rem;
+}
+
+.Addpost-wrapper .container {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: justify;
+  color: gray;
   text-align: center;
 }
 
@@ -390,14 +403,14 @@ height: auto;
   height: auto;
 }
 
-.Addpost-wrapper form, .AddStory-wrapper form{
+.Addpost-wrapper form, .AddStory-wrapper form, .Editretailers-wrapper form{
   width: 15rem;
   height: auto;
   display: flex;
   flex-direction: column;
 }
 
-.Addpost-wrapper input {
+.Addpost-wrapper input, .Editretailers-wrapper input {
   background: radial-gradient(#121416, #000000);
   color: gray;
   /*width: 100%;*/
@@ -409,11 +422,23 @@ height: auto;
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
-/*.Addpost-wrapper .checkbox4, .Addpost-wrapper .checkbox5{
-  margin-top: 1rem;
-}*/
 
-.Addpost-wrapper textarea, .AddStory-wrapper textarea {
+.Addpost-wrapper .container input{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 1rem;
+  width: 1rem;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+}
+
+.Addpost-wrapper .newCollectionInput{
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  	        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.Addpost-wrapper textarea, .AddStory-wrapper textarea, .Editretailers-wrapper textarea {
   background: radial-gradient(#121416, #000000);
   color:gray;
   width: 100%;
@@ -427,7 +452,7 @@ height: auto;
   margin-bottom: 1rem;
 }
 
-.Addpost-wrapper input[type="file"], .AddStory-wrapper input[type="file"]{
+.Addpost-wrapper input[type="file"], .AddStory-wrapper input[type="file"], .Editretailers-wrapper input[type='file']{
   background: none;
   width: 10rem;
   height: 2rem;
@@ -441,13 +466,16 @@ height: auto;
   z-index: -1;
 }
 
-.Addpost-wrapper input[type='submit'], .AddStory-wrapper input[type='submit']{
+.Addpost-wrapper input[type='submit'], .AddStory-wrapper input[type='submit'], .Editretailers-wrapper input[type='submit']{
   background: radial-gradient(#1a2023, #000000);
   height: 2rem;
-  color:#ead6c0;
+  color:gray;
   font-family: 'Open Sans', sans-serif;
   border:1px outset #1a2013;
   border-radius: 0.5em;
+  -webkit-box-shadow: 5px 5px 45px 4px rgba(0,0,0,0.5);
+    -moz-box-shadow: 5px 5px 45px 4px rgba(0,0,0,0.5);
+      box-shadow: 5px 5px 45px 4px rgba(0,0,0,0.5);
   cursor: pointer;
 }
 
@@ -461,27 +489,69 @@ height: auto;
   border:1px solid black;
   border-bottom-left-radius: 0.5em;
   border-top-left-radius:0.5em;
-  box-shadow: inset 10px 10px 29px -6px rgba(0,0,0,0.75);
-  -webkit-box-shadow: inset 10px 10px 29px -6px rgba(0,0,0,0.75);
-   -moz-box-shadow: inset 10px 10px 29px -6px rgba(0,0,0,0.75);
+  box-shadow: inset 10px 10px 29px -6px rgba(0,0,0,0.75),
+  5px 5px 45px 4px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 10px 10px 29px -6px rgba(0,0,0,0.75),
+  5px 5px 45px 4px rgba(0,0,0,0.5);
+   -moz-box-shadow: inset 10px 10px 29px -6px rgba(0,0,0,0.75),
+   5px 5px 45px 4px rgba(0,0,0,0.5);
   padding: 0.15em 2em;
   margin-top: 1em;
 }
 
-.Addpost-wrapper option {
+.Addpost-wrapper option:nth-child(even), .Addpost-wrapper option:nth-child(odd) {
   background-color:#1d2731;
   font-family: 'Open Sans', sans-serif;
   cursor: pointer;
 }
+.Addpost-wrapper option:nth-child(odd) {
+  background-color:#121416;
+}
 
-.Addpost-wrapper button,  .AddStory-wrapper button {
+.Addpost-wrapper button,  .AddStory-wrapper button, .Editretailers-wrapper button {
   background: radial-gradient(#1a2023, #000000);
-  color:#ead6c0;
+  color:gray;
+  font-family: 'Open Sans', sans-serif;
   width: 6rem;
   height: 2rem;
   border: 1px outset #1a2013;
   border-radius: 0.5em;
+  -webkit-box-shadow: 5px 5px 45px 4px rgba(0,0,0,0.6);
+    -moz-box-shadow: 5px 5px 45px 4px rgba(0,0,0,0.6);
+      box-shadow: 5px 5px 45px 4px rgba(0,0,0,0.6);
   cursor: pointer;
   padding: 0.25rem;
   margin-left: 1rem;
+}
+
+.Addpost-wrapper button:hover,  .AddStory-wrapper button:hover,.Editretailers-wrapper button:hover, .Addpost-wrapper input[type='submit']:hover, .AddStory-wrapper input[type='submit']:hover,.Editretailers-wrapper input[type='submit']:hover {
+  color: #f4f4f4;
+  animation: buttonGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #bf0000, 0 0 40px #bf0000, 0 0 50px #bf0000, 0 0 60px #bf0000, 0 0 70px #bf0000;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #FF0000, 0 0 40px #FF0000, 0 0 50px #FF0000, 0 0 60px #FF0000, 0 0 70px #FF0000, 0 0 80px #FF0000;
+  }
+}
+
+@-webkit-keyframes buttonGlow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ddb260, 0 0 40px #ddb260, 0 0 50px #ddb260, 0 0 60px #ddb260, 0 0 70px #ddb260;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #e6c68a, 0 0 40px #e6c68a, 0 0 50px #e6c68a, 0 0 60px #e6c68a, 0 0 70px #e6c68a 0 0 80px #e6c68a;
+  }
 }

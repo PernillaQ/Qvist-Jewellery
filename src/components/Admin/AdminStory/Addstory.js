@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import firebase from './../../../Utils/firebase.js';
 
-
 class AddStory extends Component{
 // Add img to storage and add a post to firebase.
 addAll = (e) => {
@@ -61,14 +60,14 @@ render() {
 	return(
 		  <div className ="AddStory-wrapper">
         <h3>Edit story</h3>
+				{content !== '' ?
+					<img src={url}alt="a Piece of jewellery"/>
+				:''}
 				<div className='AddStory-uploadImg'>
         <label htmlFor="inputtypefile">Choose an image</label>
 		    <input type="file" onChange={this.fileSelectedHandler} id='inputtypefile'/>
         <button onClick={this.addFile}>Upload</button>
 				</div>
-        {content !== '' ?
-          <img src={url}alt="a Piece of jewellery"/>
-        :''}
 	      <form onSubmit={this.addAll}>
           <textarea
           id="textarea3"

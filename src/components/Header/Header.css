@@ -20,7 +20,7 @@
   top: 0.75rem;
   left: 3.5rem;
   animation: fadeInLogo 3s ease-in-out both;
-  animation-delay: 4.25s;
+  animation-delay: 5s;
 }
 
 .Header canvas {
@@ -37,7 +37,7 @@
 
 .Header svg {
   width: 75%;
-  right: 7rem;
+  right: 6.25rem;
   margin-top: 3.2rem;
   position: absolute;
 }
@@ -92,17 +92,17 @@
 }
 
 .vividDream h1:nth-child(1) {
-  opacity: 0.85;
+  opacity: 0.8;
   position: relative;
   margin-left: 2rem;
   animation: fadeIn1 3s ease-in-out both;
 }
 
 .vividDream h1:nth-child(2) {
-  opacity: 0.85;
+  opacity: 0.7;
   position: relative;
   margin-left: 8rem;
-  animation: fadeIn1 3s ease-in-out both;
+  animation: fadeIn2 3s ease-in-out both;
   animation-delay: 1s;
 }
 
@@ -111,19 +111,19 @@ h1:nth-child(1) h1:nth-child(2) {
 }
 
 .hiddenDesires h1:nth-child(1) {
-  opacity: 0.65;
+  opacity: 0.6;
   position: absolute;
   z-index: 2;
-  animation: fadeIn2 3s ease-in-out both;
+  animation: fadeIn4 3s ease-in-out both;
   animation-delay: 1.5s;
 }
 
 .hiddenDesires h1:nth-child(2) {
-  opacity: 0.65;
+  opacity: 0.5;
   position: absolute;
-  margin-left: 14rem;
+  margin-left: 15rem;
   z-index: 2;
-  animation: fadeIn2 3s ease-in-out both;
+  animation: fadeIn5 3s ease-in-out both;
   animation-delay: 2s;
 }
 
@@ -133,8 +133,8 @@ h1:nth-child(1) h1:nth-child(2) {
   align-self: center;
   opacity: 0.15;
   position: absolute;
-  margin-top: 3.5rem;
-  margin-left: 2rem;
+  margin-top: 3rem;
+  margin-left: 1.5rem;
   z-index: 1;
   animation: fadeIn3 3s ease-in-out both;
   animation-delay: 2.5s;
@@ -142,65 +142,24 @@ h1:nth-child(1) h1:nth-child(2) {
 
 .distantMemories h1:nth-child(1) {
   position: relative;
-  opacity: 0.5;
+  opacity: 0.4;
   margin-right: 8rem;
   margin-bottom: 2rem;
-  animation: fadeIn4 3s ease-in-out both;
-  animation-delay: 3s;
+  animation: fadeIn6 3s ease-in-out both;
+  animation-delay: 3.5s;
 }
 
 .distantMemories h1:nth-child(2){
   position: relative;
   letter-spacing: 1.4rem;
-  opacity: 0.3;
+  opacity: 0.2;
   margin-left: 1rem;
-  animation: fadeIn 3s ease-in-out both;
-  animation-delay: 4s;
+  animation: fadeIn7 3s ease-in-out both;
+  animation-delay: 4.5s;
+  /*animation: flicker-in-1 1.6s linear both;
+  animation-delay: 4s;*/
 }
 
-/*** Animations ***/
-
-@keyframes fadeIn1{
-  0% {opacity:0}
-  50%{opacity:1}
-  100%{opacity:0.85}
-}
-
-@keyframes fadeIn2{
-  0% {opacity:0}
-  50%{opacity:0.75}
-  100%{opacity:0.65}
-}
-
-@keyframes fadeIn3{
-  0% {opacity:0}
-  50%{opacity:0.25}
-  100%{opacity:0.15}
-}
-
-@keyframes fadeIn4{
-  0% {opacity:0}
-  50%{opacity:0.55}
-  100%{opacity:0.45}
-}
-
-@keyframes fadeIn{
-  0% {opacity:0}
-  50%{opacity:0.4}
-  100%{opacity:0.3}
-}
-
-@keyframes fadeInLogo{
-  0% {opacity:0}
-  50%{opacity:0.6}
-  100%{opacity:0.5}
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 @media screen and (min-width:200px) and (max-width: 374px){
   .Header-wrapper{
     width: 100vw;
@@ -372,4 +331,154 @@ h1:nth-child(1) h1:nth-child(2) {
   letter-spacing: 1.25rem;
   margin: 0;
 }
+}
+
+/*** Animations ***/
+
+@keyframes fadeIn1{
+  0% {opacity:0}
+  50%{opacity:1}
+  100%{opacity:0.8}
+}
+
+@keyframes fadeIn2{
+  0% {opacity:0}
+  50%{opacity:0.9}
+  100%{opacity:0.7}
+}
+
+@keyframes fadeIn3{
+  0% {opacity:0}
+  50%{opacity:0.35}
+  100%{opacity:0.1}
+}
+
+@keyframes fadeIn4{
+  0% {opacity:0}
+  50%{opacity:0.8}
+  100%{opacity:0.6}
+}
+
+@keyframes fadeIn5{
+  0% {opacity:0}
+  50%{opacity:0.7}
+  100%{opacity:0.5}
+}
+@keyframes fadeIn6{
+  0% {opacity:0}
+  50%{opacity:0.6}
+  100%{opacity:0.4}
+}
+@keyframes fadeIn7{
+  0% {opacity:0}
+  50%{opacity:0.4}
+  100%{opacity:0.3}
+}
+
+@keyframes fadeInLogo{
+  0% {opacity:0}
+  50%{opacity:0.35}
+  100%{opacity:0.3}
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes flicker-in-1 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  10.1% {
+    opacity: 0.8;
+  }
+  10.2% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  20.1% {
+    opacity: 1;
+  }
+  20.6% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  30.1% {
+    opacity: 1;
+  }
+  30.5% {
+    opacity: 1;
+  }
+  30.6% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 0;
+  }
+  45.1% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+  }
+  55.1% {
+    opacity: 0;
+  }
+  57% {
+    opacity: 0;
+  }
+  57.1% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  60.1% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
+  }
+  65.1% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  75.1% {
+    opacity: 0;
+  }
+  77% {
+    opacity: 0;
+  }
+  77.1% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  85.1% {
+    opacity: 0;
+  }
+  86% {
+    opacity: 0;
+  }
+  86.1% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 0.55;
+  }
 }

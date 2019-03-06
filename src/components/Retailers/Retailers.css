@@ -1,15 +1,5 @@
 /*** Retailers ***/
-
-.Retailers-wrapper {
-  width: 100vw;
-  max-width: 100%;
-  display: flex;
-  flex-direction: row;
-  margin-top: 6rem;
-  padding-top: 3rem;
-}
-
-.Retailers {
+.Retailers-wrapper{
   background: radial-gradient(circle at bottom left, #1a2023 15%, #121416,#000000, #000000, #000000);
   color: #f4f4f4;
   width: 100vw;
@@ -20,28 +10,46 @@
   padding-bottom: 4rem;
 }
 
-.Retailers1 {
+.Retailers {
+  width: 100vw;
+  max-width: 100%;
   display: flex;
-  flex-direction: column;
-  width: 45vw;
+  flex-direction: row;
   align-items: center;
-  max-width: 50%;
-  height: 55rem;
-  left: 0;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  padding-top: 4rem;
 }
 
-.Retailers2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 45vw;
-  max-width: 50%;
-  height: 55rem;
-  right: 0;
-  position: absolute;
+.Retailers-info {
+  width: 33.33%;
+  height: auto;
+  margin-bottom: 4rem;
 }
 
-.Retailers h2 {
+.Retailers a {
+  font-family: 'Open-Sans', sans-serif;
+  font-weight: 300;
+  color: #303b40;
+  text-decoration: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  background-image: linear-gradient(to right,gray, gray 50%,#303b40 50%);
+}
+
+.Retailers a:hover {
+  transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+  background-position: 0%;
+}
+
+.Retailers img {
+  width: 30%;
+  height: auto;
+}
+
+.Retailers-wrapper h2 {
   align-self: center;
   background-color: #1a2023;
   color: transparent;
@@ -56,34 +64,8 @@
   margin-bottom: 1rem;
 }
 
-.NordicMuseum img {
-  width: 28%;
-  height: auto;
-}
-
-.GaleriaAlice img {
-  width: 30%;
-  height: auto;
-}
-
-.GothenburgMuseum img, .WildNArrow img{
-  width: 40%;
-  height: auto;
-}
-
-.NordicMuseum, .GaleriaAlice, .WildNArrow{
-  height: 15rem;
-  width: 50%;
-}
-
-.GothenburgMuseum{
-  height: 15rem;
-  width: 50%;
-  margin-top: 2rem;
-}
-
-.Retailers h3 {
-  font-size: 1.5rem;
+.Retailers h4 {
+  font-size: 1.2rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   letter-spacing: 0.01rem;

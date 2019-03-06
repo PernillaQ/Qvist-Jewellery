@@ -4,7 +4,7 @@ import Header from './../Header/Header.js'
 import Navbar from './../Navigation/Navigation.js'
 import CollectionsContainer from './../Collections/CollectionsContainer.js'
 import About from './../About/About.js'
-import Retailers from './../Retailers/Retailers.js'
+import RetailersContainer from './../Retailers/RetailersContainer.js'
 import Contact from './../Contact/Contact.js'
 import AdminContainer from './../Admin/AdminContainer.js'
 import FooterContainer from './../Footer/FooterContainer.js'
@@ -44,7 +44,7 @@ class App extends Component {
             <Navbar />
             <div className='App-triangle' />
             <CollectionsContainer />
-            <Retailers />
+            <RetailersContainer />
             <About />
             <Contact />
             <FooterContainer {...this.props} />

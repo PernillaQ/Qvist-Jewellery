@@ -10,16 +10,20 @@ export const INITIAL_STATE = {
   removePost: false,
   addPost: false,
   editStory: false,
+  editRetailers: false,
   collectionOptions: [],
   newCollection: '',
   addCollection: false,
   collection: 'thecity',
   allPosts: [],
+  retailers: [],
   detailId: '',
   title: '',
   content: '',
+  location: '',
+  website: '',
   file: '',
-  selectedImage: null, // {}
+  selectedImage: null,
   url: '',
   introImage: false
 }

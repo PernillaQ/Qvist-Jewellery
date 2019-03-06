@@ -1,40 +1,50 @@
 import React, { Component } from 'react'
 import './Retailers.css'
-import nordic from './RetailersImages/Nordiska.png'
-import gothenburg from './RetailersImages/Gothenburg.png'
-import alice from './RetailersImages/AliceF.png'
-import wild from './RetailersImages/WildNArrow.png'
+import firebase from './../../Utils/firebase.js'
 
 class Retailers extends Component {
+  
+  componentWillMount(){
+      firebase.database().ref(`retailers`).on('value', (snapshot) => {
+      this.toRetailersArray(snapshot.val());
+    })
+  }
+
+ toRetailersArray = (firebaseObject) => {
+   const { setRetailers } = this.props
+   let retail = []
+
+   for(let item in firebaseObject){
+      retail.push({key:item , value:firebaseObject[item]})
+   }
+   setRetailers(retail)
+ }
+
+
+ getRetailers = () => {
+   const { retailers } = this.props;
+   let res = retailers
+
+   let retailersList = res.map(retail =>
+   <div className="Retailers-info" key={retail.key}>
+     <img src={retail.value.url}alt="Retailers logotype"/>
+     <h4>{retail.value.title}</h4>
+     <p>{retail.value.location}</p>
+     <a rel="noopener noreferrer" href={retail.value.website} target="_blank">Visit website</a>
+   </div>
+ )
+ return retailersList
+}
+
+
   render () {
+    let allRetailers = this.getRetailers()
+
     return (
-      <div className='Retailers'>
+      <div className='Retailers-wrapper'>
         <h2>Retailers</h2>
-        <div className='Retailers-wrapper' id='retailers'>
-          <div className='Retailers1'>
-            <div className='NordicMuseum'>
-              <img src={nordic} alt='The nordic museum´s logotype' />
-              <h3>The Nordic Museum</h3>
-              <p>Stockholm - Sweden</p>
-            </div>
-            <div className='GothenburgMuseum'>
-              <img src={gothenburg} alt='The townmuseum of Gothenburgs logotype' />
-              <h3>The Gothenburg Townmuseum</h3>
-              <p>Gothenburg - Sweden</p>
-            </div>
-          </div>
-          <div className='Retailers2'>
-            <div className='GaleriaAlice'>
-              <img src={alice} alt='Logotype of galeria Alice Floriano' />
-              <h3>Galeria Alice Floriano</h3>
-              <p>Porto Alegre - Brazil</p>
-            </div>
-            <div className='WildNArrow'>
-              <img src={wild} alt='Logotype of wild and arrow' />
-              <h3>Wild & Arrow</h3>
-              <p>Stockholm - Sweden</p>
-            </div>
-          </div>
+        <div className='Retailers' id='retailers'>
+      {allRetailers}
         </div>
       </div>
     )

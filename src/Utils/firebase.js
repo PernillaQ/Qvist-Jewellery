@@ -5,7 +5,7 @@ import 'firebase/auth'
 
 // Initialize Firebase
 var config = {
-  apiKey:  /* process.env.FIREBASE_APIKEY */,
+  apiKey: /* process.env.FIREBASE_APIKEY */,
   authDomain: 'qvist-jewellery.firebaseapp.com',
   databaseURL: 'https://qvist-jewellery.firebaseio.com',
   projectId: 'qvist-jewellery',
@@ -23,13 +23,6 @@ firebase.initializeApp(config)
   signIn = (email, password) => {
     return this.auth.signInWithEmailAndPassword(email, password);
   }
-  getStory = this.firebase.database().ref(`story`).on('value', (snapshot) => {
-      return snapshot.val()
-  })
-
-  getCollections = this.firebase.database().ref(`collections`).on('value', (snapshot) => {
-      return snapshot.val()
-  })
 } */
 // skapa instansen av firebase..för att instansiering inte ska behöva ske flera gånger..
 // detta kommer vi använda

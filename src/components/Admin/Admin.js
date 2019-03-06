@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import './Admin.css'
 import Login from './../Login/login.js'
-import AddPost from './Addpost/Addpost.js'
-import AddStory from './AddAbout/Addabout.js'
+import AddPost from './AdminPost/Addpost.js'
+import PreviewList from './AdminPost/Removepost.js'
+import RetailersList from './AdminRetailers/Removeretailer.js'
+import AddStory from './AdminStory/Addstory.js'
+import Addretailers from './AdminRetailers/Addretailer.js'
 import { HashLink as Link } from 'react-router-hash-link';
 import firebase from './../../Utils/firebase.js'
 
@@ -13,36 +16,6 @@ class Admin extends Component {
     toggleAdmin(false)
   }
 
-removePost = (key, collection, filename) => {
-    firebase.database().ref(`collections/${collection}/${key}`).remove()
-      .then(() => { console.log('Post Removed!') })
-      .catch(error => { console.log('You messed up', error) })
-
-    let storage = firebase.storage()
-    let imgRef = storage.ref(`images/${filename}`)
-    imgRef.delete()
-      .then(() => { console.log(filename + 'was deleted') })
-      .catch(error => { console.log(error) })
-  }
-
-  getPreviewList = (collection) => {
-    const { allPosts } = this.props
-    let previewList = ''
-    let collect = allPosts
-
-      previewList = collect.map(post =>
-        <div className="Admin-post" key={post.key}>
-          <img src={post.value.url}alt="a Piece of jewellery"/>
-          <div className="Admin-posttext">
-          <h3>{post.value.title}</h3>
-        {/*  <p>{post.value.collection}</p> */}
-          <button onClick={()=>{this.removePost(post.key, post.value.collection, post.value.filename)}}>x</button>
-          </div>
-        </div>
-        )
-    return previewList
-  }
-
   onLogout = () => {
     const { setMessage } = this.props
    firebase.auth()
@@ -50,8 +23,9 @@ removePost = (key, collection, filename) => {
    .then(setMessage("signed out"))
   }
 
-  handleChange= (e)=> {
-    const { toggleRemovePost, toggleAddPost, toggleEditStory } = this.props
+  handleChange = (e) => {
+    console.log(e.target.name)
+    const { toggleRemovePost, toggleAddPost, toggleEditStory, toggleEditRetailers} = this.props
     if (e.target.checked === true) {
       if (e.target.name === 'removePost'){
         toggleRemovePost(true)
@@ -62,16 +36,20 @@ removePost = (key, collection, filename) => {
       if(e.target.name === 'editStory'){
       toggleEditStory(true)
       }
+      if(e.target.name === 'editRetailers'){
+      toggleEditRetailers(true)
+      }
     }
   else{
       toggleRemovePost(false)
       toggleAddPost(false)
       toggleEditStory(false)
+      toggleEditRetailers(false)
     }
   }
 
   render () {
-    const { user, removePost, addPost, editStory } = this.props
+    const { user, removePost, addPost, editStory, editRetailers } = this.props
     return (
       <div className='Admin-wrapper' id='admin'>
       {user &&
@@ -96,26 +74,27 @@ removePost = (key, collection, filename) => {
            <span className="checkbox3"></span>
           Edit story?
         </label>
+        <label className='container'>
+          <input name="editRetailers" type="checkbox" checked={editRetailers} onChange={this.handleChange} />
+           <span className="checkbox4"></span>
+          Edit retailers?
+        </label>
         </div>}
-    {removePost &&
-        <div className ='Admin-preview'>
-        <h3>Remove a post</h3>
-        <h4>Dangerzone</h4>
-      {this.getPreviewList()}
-      </div>}
         <div className='Admin-content'>
+        {removePost &&
+            <PreviewList {...this.props} />}
         {!user &&
             <Login {...this.props} />}
-       {addPost &&
-          <div className='Admin-addpost'>
-            <AddPost {...this.props} />
-          </div>}
+        {addPost &&
+            <AddPost {...this.props} funcFileUpload={this.fileUploadHandler}/>}
         {editStory &&
-          <div className='Admin-editStory'>
-            <AddStory {...this.props} />
-          </div>}
-        }
-        </div>}
+            <AddStory {...this.props} funcFileUpload={this.fileUploadHandler}/>}
+        {editRetailers &&
+          <div className='editRetailers'>
+            <RetailersList {...this.props} />
+            <Addretailers {...this.props} funcFileUpload={this.fileUploadHandler}/>
+            </div>}
+        </div>
          <Link to='#home'><button className='homeBtn' onClick={this.home}>Home</button></Link>
       </div>
     )

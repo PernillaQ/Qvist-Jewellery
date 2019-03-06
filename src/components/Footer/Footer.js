@@ -12,11 +12,13 @@ class Footer extends Component {
   render () {
     return (
       <div className='Footer-wrapper'>
-      <a href="http://instagram.com/qvistjewellery?ref=badge" className="fa fa-instagram" >
-      </a>
-      <a href="http://facebook.com/qvistjewellery?ref=badge" className="fa fa-facebook" >
-      </a>
-      <Link to='#admin'><button onClick={this.toAdmin}>Admin</button></Link>
+        <div className='FooterLinks-wrapper'>
+          <Link to='#admin'><button onClick={this.toAdmin}>Admin</button></Link>
+          <a href="http://instagram.com/qvistjewellery?ref=badge" className="fa fa-instagram" >
+          </a>
+          <a href="http://facebook.com/qvistjewellery?ref=badge" className="fa fa-facebook" >
+          </a>
+        </div>
      </div>
 
     )

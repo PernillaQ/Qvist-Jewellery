@@ -8,8 +8,11 @@ const mapStateToProps = state => {
   const password = appSelectors.getPassword(state)
   const message = appSelectors.getMessage(state)
   const allPosts = appSelectors.getAllPosts(state)
+  const retailers = appSelectors.getRetailers(state)
   const title = appSelectors.getTitle(state)
   const content = appSelectors.getContent(state)
+  const location = appSelectors.getLocation(state)
+  const website = appSelectors.getWebsite(state)
   const file = appSelectors.getFile(state)
   const selectedImage = appSelectors.getSelectedImage(state)
   const url = appSelectors.getUrl(state)
@@ -22,6 +25,7 @@ const mapStateToProps = state => {
   const removePost = appSelectors.getRemovePost(state)
   const addPost = appSelectors.getAddPost(state)
   const editStory = appSelectors.getEditStory(state)
+  const editRetailers = appSelectors.getEditRetailers(state)
 
   return {
     user,
@@ -29,8 +33,11 @@ const mapStateToProps = state => {
     password,
     message,
     allPosts,
+    retailers,
     title,
     content,
+    location,
+    website,
     file,
     selectedImage,
     url,
@@ -42,7 +49,8 @@ const mapStateToProps = state => {
     detailView,
     removePost,
     addPost,
-    editStory
+    editStory,
+    editRetailers
   }
 }
 
@@ -54,6 +62,8 @@ const mapDispatchToProps = dispatch => {
   const setMessage = (value) => dispatch(appCreators.setMessage(value))
   const setTitle = (value) => dispatch(appCreators.setTitle(value))
   const setContent = (value) => dispatch(appCreators.setContent(value))
+  const setLocation = (value) => dispatch(appCreators.setLocation(value))
+  const setWebsite = (value) => dispatch(appCreators.setWebsite(value))
   const setFile = (value) => dispatch(appCreators.setFile(value))
   const setSelectedImage = (value) => dispatch(appCreators.setSelectedImage(value))
   const setUrl = (value) => dispatch(appCreators.setUrl(value))
@@ -65,6 +75,7 @@ const mapDispatchToProps = dispatch => {
   const toggleRemovePost = (value) => dispatch(appCreators.toggleRemovePost(value))
   const toggleAddPost = (value) => dispatch(appCreators.toggleAddPost(value))
   const toggleEditStory = (value) => dispatch(appCreators.toggleEditStory(value))
+  const toggleEditRetailers = (value) => dispatch(appCreators.toggleEditRetailers(value))
 
   return {
     toggleAdmin,
@@ -74,6 +85,8 @@ const mapDispatchToProps = dispatch => {
     setMessage,
     setTitle,
     setContent,
+    setLocation,
+    setWebsite,
     setFile,
     setSelectedImage,
     setUrl,
@@ -84,7 +97,8 @@ const mapDispatchToProps = dispatch => {
     setDetailView,
     toggleRemovePost,
     toggleAddPost,
-    toggleEditStory
+    toggleEditStory,
+    toggleEditRetailers
   }
 }
 
