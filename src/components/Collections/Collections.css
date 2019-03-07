@@ -15,12 +15,13 @@
          flex-direction: column;
  text-align: center;
  margin-top: -3rem;
+ padding-top: 4rem;
 }
 
 .Collections-hexagon {
-  background: -webkit-radial-gradient(#1a2023 13%, #121416,#000000, #090909);
-  background: -o-radial-gradient(#1a2023 13%, #121416,#000000, #090909);
-  background: radial-gradient(#1a2023 13%, #121416,#000000, #090909);
+  background: -webkit-radial-gradient(#1a2023 10%, #121618,#000000, #000000);
+  background: -o-radial-gradient(#1a2023, #121618,#000000, #000000);
+  background: radial-gradient(#1a2023, #121618,#000000, #000000);
  /*  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
  width: 100vw;
@@ -69,7 +70,7 @@
 }
 
 .Collections-wrapper button {
- background: rgba(0,0,0,0.15);
+ background: rgba(0,0,0,0.05);
  color:gray;
  display: inline-block;
  font-size: 1rem;
@@ -266,8 +267,6 @@
 }
 
 .Collections-detailview {
- width: 80%;
- height: auto;
  display: -webkit-box;
  display: -ms-flexbox;
  display: flex;
@@ -278,10 +277,6 @@
  -webkit-box-pack: center;
      -ms-flex-pack: center;
          justify-content: center;
- -webkit-box-align: center;
-     -ms-flex-align: center;
-         align-items: center;
- margin:4rem 2rem;
 }
 
 .Collection-detailview h4 {
@@ -320,12 +315,18 @@
 clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
 -webkit-animation: fadeInOpacity ease-in-out 2.9s;
        animation: fadeInOpacity ease-in-out 2.9s;
+  padding-top: 4rem;
 }
 
 .Detailview-collection-wrapper .DetailView-btn-wrapper{
-  position: relative;
-  align-self: flex-end;
-  margin-right: 10rem;
+  max-width: 100%;
+  width: 100vw;
+  margin-top: 4rem;
+  height: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  position: absolute;
 }
 
 .Detailview-collection-wrapper h3 {
@@ -390,7 +391,7 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
   background-size: 200% 100%;
   background-position: 100%;
   background-image: linear-gradient(to right,#f3e5c9,#f3e5c9 50%,#303b40 50%);
-  margin-bottom: 6rem;
+  right: 7rem;
 }
 
 .Detailview-collection-wrapper button::before, .Detailview-collection-wrapper button::after,.Detailview-detailinfo-wrapper button::before, .Detailview-detailinfo-wrapper button::after {
@@ -412,7 +413,7 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
 }
 
 .Detailview-collection {
-  width: 100vw;
+  width: 90vw;
   max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -423,7 +424,7 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
   flex-direction: row;
   flex-flow: wrap;
     -ms-flex-flow: wrap;
-  margin-top: 12rem;
+  margin-top: 10rem;
   margin-bottom: 5rem;
 }
 
@@ -440,6 +441,7 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
  -webkit-box-align: center;
      -ms-flex-align: center;
          align-items: center;
+  margin-bottom: 2rem;
 }
 
 .Detailview-detailinfo-wrapper  h3 {
@@ -457,7 +459,7 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
 }
 
 .Detailview-detailinfo {
- background: -webkit-radial-gradient(#1a2023, #121416,#000000, #090909);
+ background: -webkit-radial-gradient(#1a2023 10%, #121416,#000000, #090909);
  background: -o-radial-gradient(#1a2023, #121416,#000000, #090909);
  background: radial-gradient(#1a2023, #121416,#000000, #090909);
 /*  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
@@ -489,7 +491,8 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);*/
 }
 
 .Detailview-detailinfo img {
- width: 45%;
+  width: 65%;
+  align-self: flex-end;
  height: auto;
  -webkit-animation-delay: 0.5s;
          animation-delay: 0.5s;
@@ -517,12 +520,21 @@ clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);*/
 }*/
 
 .Detailview-detailinfo p {
+  font-size: 1.2rem;
   color: gray;
+  width: 30rem;
+  font-weight: 100;
+  letter-spacing: 0.01rem;
+  text-align: justify;
+  line-height: 1.8rem;
+  position: absolute;
+  bottom: 2.5rem;
+/*  color: gray;
   width: 28rem;;
   text-align: justify;
   line-height: 1.5rem;
   position: absolute;
-  bottom: 9rem;
+  bottom: 9rem;*/
 }
 
 @-webkit-keyframes fadeInOpacity {

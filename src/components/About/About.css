@@ -11,6 +11,8 @@
   padding-bottom: 12rem;
   position: relative;
   margin-top: -1rem;
+  -webkit-animation: fadeInOpacity ease-in 2s;
+          animation: fadeInOpacity ease-in 2s;
 }
 
 .About-wrapper img:nth-child(2){
@@ -105,4 +107,13 @@
     text-align: center;
     margin-left: 0;
   }
+}
+
+@-webkit-keyframes fadeInOpacity {
+ 0% {
+   opacity: 0;
+ }
+ 100% {
+   opacity: 1;
+ }
 }

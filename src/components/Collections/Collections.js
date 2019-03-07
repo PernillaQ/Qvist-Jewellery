@@ -66,10 +66,10 @@ class Collections extends Component {
 
     let detailList = filterList.map(post =>
     <div className="Collections-detailview" key={post.key}>
+      <button onClick={() => { this.hideTheJewels('closeDetailView') }}>X</button>
       <img src={post.value.url}alt="a Piece of jewellery"/>
       <h4>{post.value.title}</h4>
       <p>{post.value.content}</p>
-      <button onClick={() => { this.hideTheJewels('closeDetailView') }}>X</button>
     </div>
   )
   return detailList

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './About.css'
 import firebase from './../../Utils/firebase.js'
-//import pernilla from './../App/pernilla.png'
 import welding from './../App/svetsloppan.png'
 
 class About extends Component {

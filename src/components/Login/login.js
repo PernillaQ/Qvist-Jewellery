@@ -4,48 +4,31 @@ import './Login.css'
 //import api from './../../Utils/firebase.js';
 
 class Login extends Component{
-  /*state = {
-    message:''
-  }*/
 
-// when user sign in
    componentDidMount(){
      const { setUser } = this.props
     firebase.auth()
      .onAuthStateChanged((user) => {
-        if(user){
-            // If user exists save user in state
-            setUser(user)
-        }
-        else{
-            // If not..
-         setUser('')
-        }
-     })
+        user? setUser(user):setUser('')
+      })
    }
 
    onSubmit = e => {
      const { email, password, setMessage } = this.props
      firebase.auth().signInWithEmailAndPassword(email, password)
      .then(setMessage("signed in:" + email))
-     .catch(error => setMessage(error));
+     .catch(error => setMessage(error.message));
     e.preventDefault();
    }
 
-   // listner function.value save in event -store in state. name email, name password
 onChange = e => {
   const {setEmail, setPassword} = this.props
-  if (e.target.name === 'email'){
-    setEmail(e.target.value)
-  }
-  if (e.target.name === 'password'){
-    setPassword(e.target.value)
-  }
+  e.target.name === 'email'? setEmail(e.target.value) : setPassword(e.target.value)
 }
-    render(){
 
+    render(){
       const { user, email, password, message} = this.props
-            console.log( email, password, message)
+      console.log(message)
         return(
           <div className='Login-wrapper'>
               <div className="Login" id="login">
@@ -56,6 +39,8 @@ onChange = e => {
                     <input type="text" name="email" placeholder="Email" value={email} onChange={this.onChange}/>}
                   {!user &&
                     <input type="password" name="password" placeholder="Password" value={password} onChange={this.onChange}/>}
+                  {!user &&
+                    <p>{message}</p>}
                   {!user &&
                     <input type="submit" value="Log in"/>}
                 </form>

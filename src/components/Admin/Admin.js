@@ -17,10 +17,18 @@ class Admin extends Component {
   }
 
   onLogout = () => {
-    const { setMessage } = this.props
+    const { setMessage, setEmail, setPassword, setUser,toggleRemovePost, toggleAddPost, toggleEditStory, toggleEditRetailers} = this.props
    firebase.auth()
    .signOut()
    .then(setMessage("signed out"))
+   setEmail('')
+   setPassword('')
+   setMessage('')
+   setUser('')
+   toggleRemovePost(false)
+   toggleAddPost(false)
+   toggleEditStory(false)
+   toggleEditRetailers(false)
   }
 
   handleChange = (e) => {
@@ -56,6 +64,8 @@ class Admin extends Component {
         <button className='signoutBtn' onClick={this.onLogout}><span>Logout</span></button>
       }
         <h2>Administration</h2>
+        {!user &&
+          <Login {...this.props} />}
         {user &&
         <div className='Admin-selectToDo'>
         <h3>What do you want to change?</h3>
@@ -83,8 +93,6 @@ class Admin extends Component {
         <div className='Admin-content'>
         {removePost &&
             <PreviewList {...this.props} />}
-        {!user &&
-            <Login {...this.props} />}
         {addPost &&
             <AddPost {...this.props} funcFileUpload={this.fileUploadHandler}/>}
         {editStory &&

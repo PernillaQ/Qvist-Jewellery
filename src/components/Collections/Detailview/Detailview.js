@@ -20,17 +20,17 @@ class DetailView extends Component {
       <div className={cssStyling}>
         <h3>{header}</h3>
         { showAllJewels && // images of all city collections
-          <div className='Detailview-collection' id='collection'>
-            {this.props.funcPosts(detailView)}
+          <div className='DetailView-btn-wrapper'>
+            <button onClick={() => { this.props.funcHide('closeAllJewels') }}>X</button>
           </div>}
+        { showAllJewels &&
+        <div className='Detailview-collection' id='collection'>
+          {this.props.funcPosts(detailView)}
+        </div>}
         {!showAllJewels && // single jewellery info
         <div className='Detailview-detailinfo' id='detailview'>
           {this.props.funcDetail(detailView, detailId)}
         </div>}
-        { showAllJewels &&
-          <div className='DetailView-btn-wrapper'>
-            <button onClick={() => { this.props.funcHide('closeAllJewels') }}>X</button>
-          </div>}
       </div>
     )
   }
