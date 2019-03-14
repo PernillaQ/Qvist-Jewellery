@@ -31,7 +31,6 @@ class Canvas extends Component {
     window.addEventListener('mousemove', function (event) {
       mouse.x = event.x
       mouse.y = event.y
-    //  console.log(mouse)
     })
 
     window.addEventListener('resize', function (event) {
@@ -65,6 +64,7 @@ class Canvas extends Component {
         ctx.shadowColor = '#e6c68a'
       }
 
+      // Bounce back when reaching edges
       this.update = function () {
         if (this.x + this.radius > window.innerWidth || this.x - this.radius < 0) {
           this.dx = -this.dx
@@ -120,7 +120,6 @@ class Canvas extends Component {
     return (
       <div>
         <canvas ref={this.canvas} width={window.innerWidth} height={window.innerHeight} />
-        {/*  <img ref='image' src={cheese} className='hidden' /> */}
       </div>
     )
   }

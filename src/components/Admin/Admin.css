@@ -1,7 +1,7 @@
 /*** Admin ***/
 
 .Admin-wrapper {
-  background: radial-gradient(#1a2023,#121416 15%, #000000);
+  background: radial-gradient(#1a2023,#121416 25%, #000000);
   width: 100vw;
   max-width: 100%;
   height: auto;
@@ -17,13 +17,13 @@
 }
 
 .Admin-wrapper h2 {
-  background-color: #121416;
-/*  color: transparent;*/
-  width: 100%;
+  background-color: #121618;
+  width: 100vw;
+  max-width: 100%;
   font-size: 4.5rem;
   letter-spacing: 0.3rem;
   text-align: center;
-  text-shadow:1px 1px 1.5px rgba(64, 64, 64,0.05);
+  text-shadow:1px 1px 1.5px rgba(64, 64, 64,0.15);
   -webkit-background-clip: text;
       -moz-background-clip: text;
            background-clip: text;
@@ -182,10 +182,10 @@
   font-size: 1.5rem;
   font-weight: 100;
   color:#f4f4f4;
-      padding-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
     -webkit-animation: glow 1s ease-in-out infinite alternate;
     -moz-animation: glow 1s ease-in-out infinite alternate;
-    animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
 }
 
 .Admin-preview .Admin-post , .Admin-previewRetailers .Retailers-post{
@@ -239,6 +239,7 @@
 }
 
 /*** Remove button ***/
+/*
 .Admin-preview .Admin-posttext button , .Admin-previewRetailers  button {
   font-family: 'Open-Sans', sans-serif;
   font-weight: 300;
@@ -265,39 +266,30 @@
 .Admin-preview .Admin-posttext button:hover, .Admin-previewRetailers button:hover {
   transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
   background-position: 0%;
-}
-/*.Admin-preview .Admin-posttext button {
-
+}*/
+.Admin-preview .Admin-posttext button , .Admin-previewRetailers  button{
+  font-family: 'Open-Sans', sans-serif;
+  font-weight: lighter;
+  font-size: 1.5rem;
+  color: #303b40;
   background: none;
   border:none;
-  color: gray;
   margin-top: 0;
-  font-size: 1.5rem;
   align-self: flex-end;
-  transform:scaleX(1.3);
+  transform:scaleX(1.15);
   cursor: pointer;
- background-color: #1a2023;
-  color: #1a2023;
-  width: 2rem;
-  align-self: flex-end;
-  font-size: 0.8rem;
-  font-weight: bold;
   text-decoration: none;
-  text-shadow: -0.5px -0.5px rgba(255, 255, 255, 0.44), 0.5px 0.5px rgba(0, 0, 0, 0.38);
-  border: 1px outset gray;
-  border-radius: 50%;
-  outline-color:  0.5px solid #bf0000;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
-  padding: 0.4rem 0.1rem 0.45rem 0.2rem;
   margin-top: 0;
-}*/
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
 
-/*.Admin-preview .Admin-posttext button:hover{
+.Admin-preview .Admin-posttext button:hover, .Admin-previewRetailers button:hover{
 color:#f4f4f4;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
-}*/
+}
 
 .Admin-content h2 {
   align-self: center;
@@ -380,16 +372,16 @@ color:#f4f4f4;
   flex-direction: column;
   align-items: center;
   margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 8rem;
 }
 
 .AddStory-wrapper, .Editretailers-wrapper {
-  height: 30rem;
+  height: auto;
 }
 
 .Addpost-wrapper .container {
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
   text-align: justify;
   color: gray;
   text-align: center;
@@ -399,9 +391,82 @@ color:#f4f4f4;
   position: absolute;
 }
 
-.Addpost-wrapper img {
-  width: 10rem;
+/***Preview in post ***/
+.Addpost-preview-beforepost{
+  width: 25rem;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px dotted gray;
+  margin-bottom: 2rem;
+}
+.AddRetailer-preview-beforepost{
+  width: 25rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px dotted gray;
+  margin-bottom: 2rem;
+}
+
+.Addpost-preview-beforepost h4, .AddRetailer-preview-beforepost h4 {
+  width: 90%;
+  color: #f3e5c9;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 100;
+  align-self: center;
+  text-align: left;
+  margin-top: -4rem;
+  margin-bottom: 0;
+}
+
+.AddRetailer-preview-beforepost h4 {
+  width: 90%;
+  color: #979d9f;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 100;
+  align-self: center;
+  text-align: center;
+  margin-top: -4rem;
+  margin-bottom: 0;
+}
+
+.Addpost-preview-beforepost p {
+  font-size: 1rem;
+  width: 90%;
+  height: auto;
+  text-align: justify;
+  align-self: center;
+  padding-bottom: 2rem;
+}
+
+ .AddRetailer-preview-beforepost p {
+   color: #596266;
+   font-size: 1rem;
+   width: 90%;
+   height: auto;
+   text-align: center;
+   align-self: center;
+   padding-bottom: 2rem;
+ }
+
+.Addpost-preview-beforepost img {
+  width: 40%;
+  height: auto;
+  align-self: flex-end;
+  margin-right: 2rem;
+  padding-top: 2rem;
+}
+
+.AddRetailer-preview-beforepost img{
+  width: 40%;
+  height: auto;
+  align-self: center;
+  padding-top: 2rem;
 }
 
 .Addpost-wrapper form, .AddStory-wrapper form, .Editretailers-wrapper form{
@@ -555,4 +620,63 @@ color:#f4f4f4;
   to {
     text-shadow: 0 0 20px #fff, 0 0 30px #e6c68a, 0 0 40px #e6c68a, 0 0 50px #e6c68a, 0 0 60px #e6c68a, 0 0 70px #e6c68a 0 0 80px #e6c68a;
   }
+}
+
+@media screen and (min-width:200px) and (max-width: 374px){
+  .Admin-wrapper{
+    min-height: 100vh;
+    padding-top: 0.5rem;
+    justify-content: center;
+  }
+  .Admin-wrapper h2{
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+  .Admin-preview h3, .Admin-previewRetailers h3, .Admin-selectToDo h3{
+    font-size: 1.3rem;
+  }
+  .Admin-preview .Admin-post h3{
+    font-size: 1rem;
+  }
+  .Admin-preview, .Admin-previewRetailers{
+    width: 100vw;
+    max-width: 100%;
+  }
+  .Admin-preview .Admin-posttext, .Admin-previewRetailers .Admin-retailerstext{
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .Admin-preview .Admin-post, .Admin-previewRetailers .Retailers-post{
+    width: 65vw;
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .Admin-preview .Admin-posttext button{
+    margin-right: 0;
+  }
+  .Admin-wrapper .signoutBtn{
+    margin-right: 0.5rem;
+  }
+  .Admin-selectToDo .container{
+    width: 55%;
+  }
+  .Admin-selectToDo{
+    width: 100vw;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+  .Admin-preview .Admin-post img, .Admin-previewRetailers .Retailers-post img{
+    width: 4rem;
+  }
+  .Addpost-wrapper, .AddStory-wrapper, .Editretailers-wrapper{
+    margin-top: 0;
+  }
+  .AddStory-wrapper, .Editretailers-wrapper {
+    height: 20rem;
+  }
+  .checkbox5, .checkbox6, .Addpost-wrapper .container input{
+    left: 2rem;
+  }
+
 }

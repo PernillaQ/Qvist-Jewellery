@@ -20,8 +20,6 @@
   -webkit-background-clip: text;
      -moz-background-clip: text;
           background-clip: text;
-/*  background-color: #f4f4f4;
-  color: #f4f4f4;*/
   width: 25rem;
   align-self: center;
   text-align: center;
@@ -46,6 +44,7 @@
 }
 
 .Contact-wrapper a {
+  /*font-family: 'Open-Sans', sans-serif;*/
   font-size: 1.2rem;
   color: gray;
   text-align: justify;
@@ -62,10 +61,12 @@
  transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
  background-position: 0%;
 }
+
 @media screen and (min-width:200px) and (max-width: 374px){
   .Contact-wrapper h2 {
     max-width: 100%;
     font-size: 3rem;
+    margin-top: 2rem;
   }
   .Contact-wrapper{
     height: 20rem;
@@ -75,14 +76,15 @@
 }
 
 @media screen and (min-width: 375px) and (max-width: 767px){
-.Contact-wrapper{
-  height: 20rem;
-  -webkit-clip-path: polygon(49% 15%, 100% 0, 100% 100%, 0 100%, 0 0);
+  .Contact-wrapper{
+    height: 20rem;
+      -webkit-clip-path: polygon(49% 15%, 100% 0, 100% 100%, 0 100%, 0 0);
     clip-path: polygon(49% 15%, 100% 0, 100% 100%, 0 100%, 0 0);
   }
+
   .Contact-wrapper h2 {
     max-width: 100%;
     font-size: 3rem;
-    margin-top: 1rem;
+    margin-top: 3rem;
   }
 }

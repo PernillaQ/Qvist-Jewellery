@@ -1,9 +1,7 @@
 // import firebase from 'firebase';
 import firebase from 'firebase/app'
 import 'firebase/auth'
-// import * as firebase from 'firebase/app';
 
-// Initialize Firebase
 var config = {
   apiKey: /* process.env.FIREBASE_APIKEY */,
   authDomain: 'qvist-jewellery.firebaseapp.com',
@@ -14,21 +12,6 @@ var config = {
 }
 firebase.initializeApp(config)
 
-/* class Firebase {
-  constructor(){
-    firebase.initializeApp(config);
-    // behövs bara göras 1 gång.
-    this.auth = firebase.auth();
-  }
-  signIn = (email, password) => {
-    return this.auth.signInWithEmailAndPassword(email, password);
-  }
-} */
-// skapa instansen av firebase..för att instansiering inte ska behöva ske flera gånger..
-// detta kommer vi använda
-// const api = new Firebase();
-
-// export default api;
 export const auth = firebase.auth()
 
 export default firebase

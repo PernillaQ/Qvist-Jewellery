@@ -52,9 +52,9 @@
 
 .Retailers-wrapper h2 {
   align-self: center;
-  background-color: #14191c;
+  background-color: #121416;
   color: transparent;
-  text-shadow: 0.75px 0.75px 1.25px rgba(64,64,64,0.05);
+  text-shadow: 2px 2px 3px rgba(64,64,64,0.1);
    -webkit-background-clip: text;
       -moz-background-clip: text;
            background-clip: text;
@@ -79,11 +79,16 @@
   letter-spacing: 0.01rem;
   color: #596266;
 }
+
 @media screen and (min-width:200px) and (max-width: 374px){
-  .Retailers h2 {
+  .Retailers-wrapper h2 {
     width: 100vw;
     max-width: 100%;
-    font-size: 3rem;
+    font-size: 2rem;
+  }
+  .Retailers{
+    justify-content: center;
+    padding-top: 1rem;
   }
 }
 
@@ -91,9 +96,16 @@
   .Retailers-wrapper {
     margin-top: 0;
   }
-  .Retailers h2 {
+  .Retailers{
+    justify-content: center;
+    padding-top: 1rem;
+  }
+  .Retailers-wrapper h2 {
     width: 100vw;
     max-width: 100%;
     font-size: 3rem;
+  }
+  .Retailers-info{
+    width: 60%;
   }
 }

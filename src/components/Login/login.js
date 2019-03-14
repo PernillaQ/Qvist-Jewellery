@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import './Login.css'
-//import api from './../../Utils/firebase.js';
 
 class Login extends Component{
 
@@ -31,20 +30,16 @@ onChange = e => {
       console.log(message)
         return(
           <div className='Login-wrapper'>
+          {!user &&
               <div className="Login" id="login">
-                {!user &&
-                  <h3>Log in</h3>}
+                  <h3>Log in</h3>
                 <form onSubmit={this.onSubmit}>
-                  {!user &&
-                    <input type="text" name="email" placeholder="Email" value={email} onChange={this.onChange}/>}
-                  {!user &&
-                    <input type="password" name="password" placeholder="Password" value={password} onChange={this.onChange}/>}
-                  {!user &&
-                    <p>{message}</p>}
-                  {!user &&
-                    <input type="submit" value="Log in"/>}
+                    <input type="text" name="email" placeholder="Email" value={email} onChange={this.onChange}/>
+                    <input type="password" name="password" placeholder="Password" value={password} onChange={this.onChange}/>
+                    <input type="submit" value="Log in"/>
+                    <p>{message}</p>
                 </form>
-              </div>
+              </div>}
             </div>
         )
     }

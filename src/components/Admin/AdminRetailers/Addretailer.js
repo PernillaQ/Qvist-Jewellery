@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import firebase from './../../../Utils/firebase.js';
 
 class Editretailers extends Component{
-// Add img to storage and add a post to firebase.
 addAll = (e) => {
 	e.preventDefault();
 	this.fileUploadHandler()
 	this.addRetailer(e);
 }
 
-fileUploadHandler = () => { //.name
+fileUploadHandler = () => {
   const { selectedImage, file , setUrl } = this.props
   let uploadTask = firebase.storage().ref(`images/${selectedImage}`).put(file)
   uploadTask.on('state_changed',(snapshot) => {console.log("a file was uploaded")}
@@ -72,9 +71,12 @@ render() {
 	return(
 		  <div className ="Editretailers-wrapper">
         <h3>Add a retailer</h3>
-				{title !== '' ?
+				{title &&
+				<div className='AddRetailer-preview-beforepost'>
 					<img src={url}alt="a Piece of jewellery"/>
-				:''}
+					<h4>{title}</h4>
+					<p>{location}</p>
+					</div>}
 				<div className='Editretailers-uploadImg'>
           <label htmlFor="inputtypefile">Choose an image</label>
 		      <input type="file" onChange={this.fileSelectedHandler} id='inputtypefile'/>
@@ -96,12 +98,11 @@ render() {
           placeholder="www.retailerswebsite.com"
           value={website}
           onChange={this.onChange}/>
-
           <input type="submit" value="Add Retailers" />
         </form>
     </div>
     )
- } // End of render()
-} //End
+ }
+}
 
 export default Editretailers;

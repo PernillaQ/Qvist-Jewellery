@@ -8,8 +8,7 @@ class Contact extends Component {
         <h2>Contact</h2>
         <p>Retailers, press and regular people feel welcome to say hello.</p>
         <div className='Contact-mail'>
-          <a href='mailto:pernilla@qvistjewellery.com'>Hello</a>
-          <a href='mailto:pernilla@qvistjewellery.com' className='fa fa-envelope-o' />
+          <a href='mailto:pernilla@qvistjewellery.com' className='fa fa-envelope-o'> Hello</a>
         </div>
       </div>
     )

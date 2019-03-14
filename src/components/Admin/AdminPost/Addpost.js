@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
 import firebase from './../../../Utils/firebase.js';
-//import api from './../Utils/firebase.js'
 
 class AddPost extends Component{
-// Add img to storage and add a post to firebase.
-addAll = (e) => {
-	e.preventDefault();
-	this.fileUploadHandler();
-	this.addPost(e);
-}
 
-fileUploadHandler = () => { //.name
+fileUploadHandler = () => {
   const { selectedImage, file , setUrl } = this.props
   let uploadTask = firebase.storage().ref(`images/${selectedImage}`).put(file)
   uploadTask.on('state_changed',(snapshot) => {console.log("a file was uploaded")}
@@ -33,25 +26,25 @@ const objectToPush = {
 }
 
 let chosenCollection = ''
-
 newCollection !== '' ? chosenCollection = newCollection : chosenCollection = collection
-
 objectToPush.collection = chosenCollection
 
  firebase.database().ref(`collections/${chosenCollection}`).push(objectToPush)
  .then(()=> { console.log('Pushed!' + title) }) // title
- .then(()=>(this.clear()))
  .catch(error => { console.log('You messed up', error) })
- }
+
+ this.clear()
+}
 
  clear = () => {
-   const {toggleIntroImage, setTitle, setContent, setFile, setUrl, setSelectedImage} = this.props
+   const {toggleIntroImage, setTitle, setContent, setFile, setUrl, setSelectedImage, setNewCollection} = this.props
    setTitle('')
    setContent('')
    setUrl('')
    setFile('')
    setSelectedImage('')
    toggleIntroImage(false)
+	 setNewCollection('')
  }
 
  fileSelectedHandler = (e) => {
@@ -61,7 +54,7 @@ objectToPush.collection = chosenCollection
 }
 
 createOption = () => {
-  const {collectionOptions} = this.props // allCollections
+  const {collectionOptions} = this.props
   let allCollections = collectionOptions
   return allCollections.map(collection =>
   <option key={collection} value={collection}>{collection}</option> )
@@ -106,27 +99,31 @@ handleChange = e => {
 }
 
 render() {
+//	let upload = this.props.funcUpload
+	// let add = this.props.funcAdd
    const {title, content, url, introImage, addCollection, newCollection, collection} = this.props
-//  const {addCollection} = this.state
 	return(
 		  <div className ="Addpost-wrapper">
         <h3>Add a post</h3>
-				{title !== '' ?
+				{title &&
+				<div className='Addpost-preview-beforepost'>
 					<img src={url}alt="a Piece of jewellery"/>
-				:''}
+					<h4>{title}</h4>
+					<p>{content}</p>
+					</div>}
 				<div className='AddPost-uploadImg'>
         <label htmlFor="inputtypefile">Choose an image</label>
 		    <input type="file" onChange={this.fileSelectedHandler} id='inputtypefile'/>
         <button onClick={this.fileUploadHandler}>Upload</button>
 				</div>
-	      <form onSubmit={this.addAll}>
+	      <form onSubmit={this.addPost}>
           <input type="text"
           name="title"
           placeholder="Add a title"
           value={title}
           onChange={this.onChange}/>
           {!addCollection && <label>
-              Choose subject:
+              Choose a collection:
                 <select value={collection} onChange={this.handleChange}>
                   {this.createOption()}
                 </select>
@@ -159,7 +156,7 @@ render() {
         </form>
     </div>
     )
- } // End of render()
-} //End
+ }
+}
 
 export default AddPost;

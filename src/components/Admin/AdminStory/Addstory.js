@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import firebase from './../../../Utils/firebase.js';
 
 class AddStory extends Component{
-// Add img to storage and add a post to firebase.
 addAll = (e) => {
 	e.preventDefault();
 	this.addFile();
 	this.addStory(e);
 }
 
-addFile = () => { //.name
+addFile = () => {
   const { selectedImage, file , setUrl } = this.props
   let uploadTask = firebase.storage().ref(`images/${selectedImage}`).put(file)
   uploadTask.on('state_changed',(snapshot) => {console.log("a file was uploaded")}
@@ -80,7 +79,7 @@ render() {
         </form>
     </div>
     )
- } // End of render()
-} //End
+ } 
+}
 
 export default AddStory;
